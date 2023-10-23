@@ -1,5 +1,9 @@
-# C# related posts
+## C# related posts
 
-Here you find all the things related to C# neatly organized. 
+Here you will find a comprehensive collection of resources and information meticulously curated for C# enthusiasts.
 
-- **![Task vs ValueTask](task-yoki-valuetask.md)**
+<div class="row g-0 my-5">
+    <div class="list-group card col-lg-4 col-md-6">
+        <a href="task-yoki-valuetask.html" class="list-group-item list-group-item-action">Task vs ValueTask</a>
+    </div>
+</div>
