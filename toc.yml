@@ -1,5 +1,18 @@
-items:
+- name: Onboard 🚀
+  href: index.md
+
 - name: .NET
-  href: posts/NET/toc.yml
-- name: C#
-  href: posts/CSharp/toc.yml
+  href: dotnet/index.md
+  expanded: true
+  items:
+    - name: Logging Levels
+      href: dotnet/log-levels.md
+    - name: Logging Code Generation
+      href: dotnet/log-code-gen.md
+
+- name: C# 
+  href: csharp/index.md
+  expanded: true
+  items:
+    - name: Task vs ValueTask
+      href: csharp/task-yoki-valuetask.md

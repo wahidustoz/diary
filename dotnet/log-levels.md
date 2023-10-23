@@ -9,7 +9,7 @@ Dastur ishga tushgandan keyin kelib chiqqan xatoliklarni dasturda yozib borilayo
 
 Bugungi postda **Log Levels** ya’ni log xabarlarni muhimlik darajalariga qarab qanday ishlatishni o’rganamiz.
 
-### 1. `Trace — logger.LogTrace()`
+## 1. `Trace — logger.LogTrace()`
 
 Bu turdagi loglar dastur davomidagi har bir qadamni batafsil yozib ketish uchun ishlatiladi. Yangi jarayon, funksiya, loop yoki oqim boshlanishi va tugaganidan keyin iz qoldirish uchun Trace log yozib ketiladi.
 
@@ -35,7 +35,7 @@ public async Task ProcessOrder(CustomerOrder order)
 
 ---
 
-### 2. `Debug — logger.LogDebug()`
+## 2. `Debug — logger.LogDebug()`
 
 Bu turdagi log Tracega juda ham yaqin, lekin yagona farqi Debug log ichida o’zgaruvchilar qiymatlari batafsilroq yoritiladi. Shu sababli bu turdagi log ichida maxfiy ma’lumotlar bo’lishi mumkin. Debug va Trace log miqdori juda katta bo’lgani uchun odatda Production muhitda o’chirib qo’yish tavsiya qilinadi. 
 
@@ -68,11 +68,11 @@ public async Task ProcessOrder(CustomerOrder order)
 
 ---
 
-### Summary
+## Summary
 
 Yuqorida keltirilgan LogTrace va LogDebug odatda dasturchilar uchun yo’naltirilgan bo’ladi. Ya’ni bu turdagi loglarni odatda developerlar BUG🪲ni qidirib topish uchun ishlatishadi.
 
-### 3. `Information — logger.LogInformation()`
+## 3. `Information — logger.LogInformation()`
 
 Bu turdagi log odatda biror katta jarayon boshlanishi va muvaffaqiyatli tugaganini ko’rsatish uchun ketiladi. Trace va Debugdan farqli o’laroq, Information turidagi xabarlar miqdori juda kam bo’ladi. Bunday log ichida iloji boricha maxfiy ma’lumotlar ko’rsatilmasligi kerak.
 
@@ -102,7 +102,7 @@ public async Task ProcessOrder(CustomerOrder order)
 }
 ```
 
-### 4. `Warning — logger.LogWarning()`
+## 4. `Warning — logger.LogWarning()`
 
 Warning xabarlar dasturda kutilmagan holat yoki noto’g’ri ma’lumot paydo bo’lganda qoldiriladi. Bunday holat yuz berganda dasturchi, sistema admini yoki dasturni o’zi ham hech qanday amal bajarish orqali xatoni tuzatishga urinishi shart emas. 
 Bu xabarni muhim tarafi, sistemadagi bu kutilmagan holat keyinchalik e’tibor talab etuvchi jiddiy xatolikka olib borishi mumkin.
@@ -143,7 +143,7 @@ public async Task ProcessOrder(CustomerOrder order)
 
 ---
 
-### 5. `Error — logger.LogError()`
+## 5. `Error — logger.LogError()`
 
 Error xabarlar biror katta yumush bajarish jarayonida xatolik yuz berib shu funksiya oxiriga yeta olmasa qoldiriladi. Error xabar qoldirilish shu jarayon oxiriga yetmay qolganini lekin sistemaning boshqa qismlariga ta’sir qilmasligini anglatadi. Odatda Error xabarlarni sistemani o’zinig Error Handling, Retry mexanizmlari bartafar qiladi. Ayrim hollarda operatorlar ma’lumot xolatini o’zgartirish orqali ham bu Error holatdan chiqib ketishlari mumkin.
 
@@ -195,7 +195,7 @@ public async Task ProcessOrder(CustomerOrder order)
 
 ---
 
-### 6. `Critical — logger.LogCritical()`
+## 6. `Critical — logger.LogCritical()`
 
 Bunday Log sistemani barcha qismlarini ishdan chiqaruvchi xatolikni yozish uchun ishlatiladi. Masalan, RAM yoki SSD xotira tugab qolishi, butun dastur bo’ylab Database’ga bog’lana olmaslik yoki shunga o’xshash dastur ishlashi uchun so’zsiz kerak resursni yo’qligi.
 
