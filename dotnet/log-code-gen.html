@@ -6,16 +6,16 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Improve logging performance with code generation | Wahid Ustoz ">
       
-      <link rel="icon" href="../../../images/favicon/favicon.ico">
-      <link rel="stylesheet" href="../../../public/docfx.min.css">
-      <link rel="stylesheet" href="../../../public/main.css">
-      <meta name="docfx:navrel" content="../../../toc.html">
-      <meta name="docfx:tocrel" content="../../../toc.html">
+      <link rel="icon" href="../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
       
-      <meta name="docfx:rel" content="../../../">
+      <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/wahid-d/diary/blob/main/posts/NET/Logging/logging-code-generators.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/wahid-d/diary/blob/main/dotnet/log-code-gen.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,7 +29,7 @@
       <meta name="loc:copy" content="Copy">
   </head>
 
-  <script type="module" src="./../../../public/docfx.min.js"></script>
+  <script type="module" src="./../public/docfx.min.js"></script>
 
   <script>
     const theme = localStorage.getItem('theme') || 'auto'
@@ -41,8 +41,8 @@
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../../../index.html">
-            <img id="logo" class="svg" src="../../../images/icon.png" alt="Diary">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Diary">
             Diary
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,7 +85,7 @@
         <article data-uid="">
 <h1 id="improve-logging-performance-with-code-generation">Improve logging performance with code generation</h1>
 
-<p><a href="logging-levels.html">Avvalgi postda</a> <strong>logging levels</strong> __(logging darajalari)__ni tushintirib bergan edim. Bugun logging tezligini oshirish uchun taklif etilayotgan yangi feature <strong>Logging Code Generation</strong> haqida gaplashamiz.</p>
+<p><a href="log-levels.html">Avvalgi postda</a> <strong>logging levels</strong> __(logging darajalari)__ni tushintirib bergan edim. Bugun logging tezligini oshirish uchun taklif etilayotgan yangi feature <strong>Logging Code Generation</strong> haqida gaplashamiz.</p>
 <p>Code generation bu yangilik emas. Avvaldan Blazor, Razor va shunga o'xshash engine'lar compile vaqtida kod generate qiladi. <strong><code>.NET 6</code></strong> versiyasida olib kirilgan yangi attribute <code>LoggingMessageAttribute</code> bo'lsa aynan Logging samaradorligini oshirish uchun compile vaqtida reusable logging funksiyalari yaratish uchun ishlatiladi.
 Ushbu qo'shimcha haqida batafsil <a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/logger-message-generator">bu yerda</a> o'qishingiz mumkin.</p>
 <p>Logging Code generation ishlatish uchun <code>static partial</code> klas yaratib uni ichida <code>partial</code> kalit so'zi orqali methodlar elon qilishingiz kerak. Bu methodlarni tanasi compile vaqtida .NET tomonidan yaratiladi va qayta ishlatiladi.</p>
@@ -138,7 +138,7 @@ Agar sizga maxsus bitta generic <code>ILogger&lt;T&gt;</code> ustida ishlaydigan
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/wahid-d/diary/blob/main/posts/NET/Logging/logging-code-generators.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/wahid-d/diary/blob/main/dotnet/log-code-gen.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

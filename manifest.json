@@ -11,6 +11,56 @@
       }
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "csharp/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "csharp/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "csharp/task-yoki-valuetask.md",
+      "output": {
+        ".html": {
+          "relative_path": "csharp/task-yoki-valuetask.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "dotnet/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "dotnet/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "dotnet/log-code-gen.md",
+      "output": {
+        ".html": {
+          "relative_path": "dotnet/log-code-gen.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "dotnet/log-levels.md",
+      "output": {
+        ".html": {
+          "relative_path": "dotnet/log-levels.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Resource",
       "source_relative_path": "images/favicon/android-chrome-192x192.png",
       "output": {
@@ -96,36 +146,6 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "posts/CSharp/task-yoki-valuetask.md",
-      "output": {
-        ".html": {
-          "relative_path": "posts/CSharp/task-yoki-valuetask.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "posts/NET/Logging/logging-code-generators.md",
-      "output": {
-        ".html": {
-          "relative_path": "posts/NET/Logging/logging-code-generators.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "posts/NET/Logging/logging-levels.md",
-      "output": {
-        ".html": {
-          "relative_path": "posts/NET/Logging/logging-levels.html"
         }
       },
       "version": ""

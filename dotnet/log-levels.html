@@ -6,16 +6,16 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Logging Levels | Wahid Ustoz ">
       
-      <link rel="icon" href="../../../images/favicon/favicon.ico">
-      <link rel="stylesheet" href="../../../public/docfx.min.css">
-      <link rel="stylesheet" href="../../../public/main.css">
-      <meta name="docfx:navrel" content="../../../toc.html">
-      <meta name="docfx:tocrel" content="../../../toc.html">
+      <link rel="icon" href="../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
       
-      <meta name="docfx:rel" content="../../../">
+      <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/wahid-d/diary/blob/main/posts/NET/Logging/logging-levels.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/wahid-d/diary/blob/main/dotnet/log-levels.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,7 +29,7 @@
       <meta name="loc:copy" content="Copy">
   </head>
 
-  <script type="module" src="./../../../public/docfx.min.js"></script>
+  <script type="module" src="./../public/docfx.min.js"></script>
 
   <script>
     const theme = localStorage.getItem('theme') || 'auto'
@@ -41,8 +41,8 @@
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../../../index.html">
-            <img id="logo" class="svg" src="../../../images/icon.png" alt="Diary">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Diary">
             Diary
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,7 +91,7 @@
 </blockquote>
 <p>Dastur ishga tushgandan keyin kelib chiqqan xatoliklarni dasturda yozib borilayotgan Loglarsiz qidirib topishni imkoni yo’q.</p>
 <p>Bugungi postda <strong>Log Levels</strong> ya’ni log xabarlarni muhimlik darajalariga qarab qanday ishlatishni o’rganamiz.</p>
-<h3 id="1-trace--loggerlogtrace">1. <code>Trace — logger.LogTrace()</code></h3>
+<h2 id="1-trace--loggerlogtrace">1. <code>Trace — logger.LogTrace()</code></h2>
 <p>Bu turdagi loglar dastur davomidagi har bir qadamni batafsil yozib ketish uchun ishlatiladi. Yangi jarayon, funksiya, loop yoki oqim boshlanishi va tugaganidan keyin iz qoldirish uchun Trace log yozib ketiladi.</p>
 <pre><code class="lang-csharp">public async Task ProcessOrder(CustomerOrder order)
 {
@@ -112,7 +112,7 @@
 }
 </code></pre>
 <hr>
-<h3 id="2-debug--loggerlogdebug">2. <code>Debug — logger.LogDebug()</code></h3>
+<h2 id="2-debug--loggerlogdebug">2. <code>Debug — logger.LogDebug()</code></h2>
 <p>Bu turdagi log Tracega juda ham yaqin, lekin yagona farqi Debug log ichida o’zgaruvchilar qiymatlari batafsilroq yoritiladi. Shu sababli bu turdagi log ichida maxfiy ma’lumotlar bo’lishi mumkin. Debug va Trace log miqdori juda katta bo’lgani uchun odatda Production muhitda o’chirib qo’yish tavsiya qilinadi.</p>
 <blockquote>
 <p><em>Shaxsiy fikrimcha <strong>Debug</strong> yoki <strong>Trace</strong> darajasidan kamida bittasi <strong>Production</strong> muhitda ham ko’rinishi kerak.</em></p>
@@ -140,9 +140,9 @@
 }
 </code></pre>
 <hr>
-<h3 id="summary">Summary</h3>
+<h2 id="summary">Summary</h2>
 <p>Yuqorida keltirilgan LogTrace va LogDebug odatda dasturchilar uchun yo’naltirilgan bo’ladi. Ya’ni bu turdagi loglarni odatda developerlar BUG🪲ni qidirib topish uchun ishlatishadi.</p>
-<h3 id="3-information--loggerloginformation">3. <code>Information — logger.LogInformation()</code></h3>
+<h2 id="3-information--loggerloginformation">3. <code>Information — logger.LogInformation()</code></h2>
 <p>Bu turdagi log odatda biror katta jarayon boshlanishi va muvaffaqiyatli tugaganini ko’rsatish uchun ketiladi. Trace va Debugdan farqli o’laroq, Information turidagi xabarlar miqdori juda kam bo’ladi. Bunday log ichida iloji boricha maxfiy ma’lumotlar ko’rsatilmasligi kerak.</p>
 <pre><code class="lang-csharp">public async Task ProcessOrder(CustomerOrder order)
 {
@@ -168,7 +168,7 @@
     }
 }
 </code></pre>
-<h3 id="4-warning--loggerlogwarning">4. <code>Warning — logger.LogWarning()</code></h3>
+<h2 id="4-warning--loggerlogwarning">4. <code>Warning — logger.LogWarning()</code></h2>
 <p>Warning xabarlar dasturda kutilmagan holat yoki noto’g’ri ma’lumot paydo bo’lganda qoldiriladi. Bunday holat yuz berganda dasturchi, sistema admini yoki dasturni o’zi ham hech qanday amal bajarish orqali xatoni tuzatishga urinishi shart emas.
 Bu xabarni muhim tarafi, sistemadagi bu kutilmagan holat keyinchalik e’tibor talab etuvchi jiddiy xatolikka olib borishi mumkin.</p>
 <pre><code class="lang-csharp">public async Task ProcessOrder(CustomerOrder order)
@@ -204,7 +204,7 @@ Bu xabarni muhim tarafi, sistemadagi bu kutilmagan holat keyinchalik e’tibor t
 }
 </code></pre>
 <hr>
-<h3 id="5-error--loggerlogerror">5. <code>Error — logger.LogError()</code></h3>
+<h2 id="5-error--loggerlogerror">5. <code>Error — logger.LogError()</code></h2>
 <p>Error xabarlar biror katta yumush bajarish jarayonida xatolik yuz berib shu funksiya oxiriga yeta olmasa qoldiriladi. Error xabar qoldirilish shu jarayon oxiriga yetmay qolganini lekin sistemaning boshqa qismlariga ta’sir qilmasligini anglatadi. Odatda Error xabarlarni sistemani o’zinig Error Handling, Retry mexanizmlari bartafar qiladi. Ayrim hollarda operatorlar ma’lumot xolatini o’zgartirish orqali ham bu Error holatdan chiqib ketishlari mumkin.</p>
 <p>Error xabar yuz berganda Operatorlar yoki dasturchilar uyqularidan turib bo’lsa ham shu xatolikni bartaraf etishlari kerak. Shuning uchun bu turdagi xatoliklarni log qilishda shoshilmaslik kerak. <em>Operator va dasturchini uyqusini buzishga arziydimi</em> degan savolni berish kerak.</p>
 <p><img src="https://media4.giphy.com/media/jG5uIKBfJyouY/giphy.gif?cid=7941fdc6loeg1acst9hzogxw3f6v9r4lf2w9bwq1fm4xh9o9&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g" alt="https://media4.giphy.com/media/jG5uIKBfJyouY/giphy.gif?cid=7941fdc6loeg1acst9hzogxw3f6v9r4lf2w9bwq1fm4xh9o9&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"></p>
@@ -249,7 +249,7 @@ Bu xabarni muhim tarafi, sistemadagi bu kutilmagan holat keyinchalik e’tibor t
 }
 </code></pre>
 <hr>
-<h3 id="6-critical--loggerlogcritical">6. <code>Critical — logger.LogCritical()</code></h3>
+<h2 id="6-critical--loggerlogcritical">6. <code>Critical — logger.LogCritical()</code></h2>
 <p>Bunday Log sistemani barcha qismlarini ishdan chiqaruvchi xatolikni yozish uchun ishlatiladi. Masalan, RAM yoki SSD xotira tugab qolishi, butun dastur bo’ylab Database’ga bog’lana olmaslik yoki shunga o’xshash dastur ishlashi uchun so’zsiz kerak resursni yo’qligi.</p>
 <p>Bunday xatoliklar dastur davomida bir marta yuz beradi. Ya’ni Critical error yuz bergandan keyin dastur o’chib qolishi va Sistem adminstrator tomonidan qayta yoqilishi zarur. Critical error xabar yuz berganda Sistem Adminstrator uyqusidan turib bo’lsa ham xatolikni bartaraf etishi kerak.</p>
 <p><img src="https://media0.giphy.com/media/8p9O3TyoTaNlXDwmSj/giphy.gif?cid=7941fdc64lordhji9bsz6autt6r8xixu8q2yt1gvha6iz4vu&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g" alt="https://media0.giphy.com/media/8p9O3TyoTaNlXDwmSj/giphy.gif?cid=7941fdc64lordhji9bsz6autt6r8xixu8q2yt1gvha6iz4vu&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"></p>
@@ -274,7 +274,7 @@ Bu haqida batafsil keyingi postda.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/wahid-d/diary/blob/main/posts/NET/Logging/logging-levels.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/wahid-d/diary/blob/main/dotnet/log-levels.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
