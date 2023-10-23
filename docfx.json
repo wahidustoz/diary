@@ -6,6 +6,7 @@
           "**/*.{md,yml,html}"
         ],
         "exclude": [
+          "**/includes/**",
           "README.md"
         ]
       }
@@ -19,11 +20,12 @@
     ],
     "output": "_site",
     "globalMetadata": {
+      "_enableSearch": true,
       "_appTitle": "Wahid Ustoz",
       "_appName": "Diary",
       "_appLogoPath": "images/icon.png",
       "_appFaviconPath": "images/favicon/favicon.ico",
-      "_appFooter": "© Made with 💟 by <a href='https://t.me/wahidustoz'>WahidUstoz</a>",
+      "_appFooter": "© Made with 💟 by <a href='https://t.me/wahidustoz'>Wahid Ustoz</a>",
       "_enableNewTab": true
 
     },

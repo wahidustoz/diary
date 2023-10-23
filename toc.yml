@@ -1,5 +1,5 @@
 items:
 - name: .NET
-  href: articles/NET/
+  href: posts/NET/toc.yml
 - name: C#
-  href: articles/CSharp/
+  href: posts/CSharp/toc.yml
