@@ -4,6 +4,9 @@
       {
         "files": [
           "**/*.{md,yml,html}"
+        ],
+        "exclude": [
+          "README.md"
         ]
       }
     ],
@@ -33,5 +36,10 @@
     "postProcessors": [],
     "keepFileLink": false,
     "disableGitFeatures": false
+  },
+  "sitemap": {
+    "baseUrl": "https://wahid-d.github.io/diary",
+    "priority": 0.1,
+    "changefreq": "daily"
   }
 }
