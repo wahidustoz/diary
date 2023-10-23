@@ -3,7 +3,7 @@
     "content": [
       {
         "files": [
-          "**/*.{md,yml}"
+          "**/*.{md,yml,html}"
         ]
       }
     ],
@@ -15,6 +15,15 @@
       }
     ],
     "output": "_site",
+    "globalMetadata": {
+      "_appTitle": "Wahid Ustoz",
+      "_appName": "Diary",
+      "_appLogoPath": "images/icon.png",
+      "_appFaviconPath": "images/favicon/favicon.ico",
+      "_appFooter": "© Made with 💟 by <a href='https://t.me/wahidustoz'>WahidUstoz</a>",
+      "_enableNewTab": true
+
+    },
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [

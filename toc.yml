@@ -1,6 +1,4 @@
 items:
-- name: Posts
-  href: articles/
 - name: .NET
   href: articles/NET/
 - name: C#
