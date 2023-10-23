@@ -1,5 +1,4 @@
-items:
-- name: Log Levels
+- name: Logging Levels
   href: logging-levels.md
-- name: Logging Code Generators
+- name: Logging Code Generation
   href: logging-code-generators.md
