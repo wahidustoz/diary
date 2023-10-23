@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Task yoki ValueTask? | Wahid Ustoz </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Task yoki ValueTask? | Wahid Ustoz ">
+      
+      <link rel="icon" href="../../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/wahid-d/diary/blob/main/posts/CSharp/task-yoki-valuetask.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/icon.png" alt="Diary">
+            Diary
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="task-yoki-valuetask">Task yoki ValueTask?</h1>
+
+<p><code>Task</code> va uning jenerik sherigi <code>Task&lt;TResult&gt;</code> klasi ancha vaqtlardan beri bor va har bir .NETchi asinxron dasturlash uchun uni ishlatib ko’rgan. <strong>.NET Core 2.0</strong>dan boshlab yangi klas <code>ValueTask</code> va <code>ValueTask&lt;TResult&gt;</code> olib kirildi. Ho’sh siz ulardan qaysi birini ishlatishingiz kerak?</p>
+<p>Qisqa qilib aytganda, agarda siz kutubxona yozayotgan bo’lsangiz va shu kutubxona xotirani va resurslarni  judayam kam sarflashi zarur bo’lgan joylarda ishlatilsa, siz <code>ValueTask</code> haqida bosh qotirsangiz arziydi. Lekin <code>ValueTask</code> ishlatishda judayam extiyotkor bo’lish kerak. Odatiy kunlik ishlarda esa <strong>Senior</strong> darajada bo’lmagan dasturchilar <code>Task</code> klasi ishlatgani ma’qul.</p>
+<p>Ushbu postni oxirigacha o’qib tushinib olganingizdan keyin darajangizdan qatiy nazar <code>ValueTask</code> va <code>Task</code>ni qayerda va qanday ishlatishni tushinib olasiz.</p>
+<h2 id="tasktasktresult"><code>Task</code>/<code>Task&lt;TResult&gt;</code></h2>
+<p><code>Task</code> klasining vaziflari ko’p. Qisqa qilib aytganda u uzoq vaqt davom etadigan ish qaytaradigan ma’lumotni o’rash uchun <strong>wrapper</strong> sifatida ishlatiladi va <strong>promise</strong> ya’ni <em>va’da</em> deyiladi. Qaytarilgan <code>Task</code> <em>obyekt</em>ini hohlagan vaqtda <code>await</code> qilib kutib turgan holda natijasini olsa bo’ladi. Bundan tashqari shu <em>obyekt</em>ni hohlagancha qayta-qayta yoki parallel bir nechta <strong>thread</strong>da <code>await</code> qilsa ham bir xil natija qaytaradi. Bu judaham kuchli yechim!</p>
+<pre><code class="lang-csharp">async Task&lt;int&gt; GetNaturalGasPriceInUsdAsync()
+{
+    await Task.Delay(1000);
+
+    return 9; 
+}
+
+var uzbekNaturalGasPrice = GetNaturalGasPriceInUsdAsync();
+var price = await uzbekNaturalGasPrice;
+var price2 = await uzbekNaturalGasPrice;
+</code></pre>
+<p>Yuqoridagi kodda ko’rinib turibdiki bitta <code>Task</code> obyektini bir necha marta <code>await</code> qilish mumkin va u bir xil natija qaytaradi.</p>
+<h2 id="muammo">Muammo</h2>
+<p>Unda muammo nimada? Gap shundaki, <code>Task</code> va <code>Task&lt;TResult&gt;</code> klas tiplar bo’lib har safar asinxron funksiya chaqirilganda <code>Task</code> yoki <code>Task&lt;TResult&gt;</code> <strong>allocate</strong> (<em>xotirani o’zlashtirish</em>) qilib qaytarishga to’g’ri keladi. Hullas, har safar funksiya chaqirilganda yangi instance yaratib qaytarish dastur tezligi va xotira samaradorligiga sezilarli ta’sir qiladi.</p>
+<h2 id="runtimedagi-yechimlar"><code>Runtime</code>dagi yechimlar</h2>
+<p>Ko’p hollarda asinxron funksiyalar sodda bo’ladi va ularni bir marta await orqali chaqirish kifoya bo’ladi.</p>
+<pre><code class="lang-csharp">...
+await SendEmailAsync(email, cancellationToken);
+...
+</code></pre>
+<p>Bundan tashqari, ko’p hollarda asinxron funksiya ham ishini sinxron tugatadi ya’ni quyidagi misoldagidek ma’lum shartlar bajarilsagina asinxron ish bajariladi yo’qsa funksiya ishini sinxron tugatib Task qaytaradi.</p>
+<pre><code class="lang-csharp">public async Task SendEmailAsync(Email email, CancellationToken cancellationToken = default)
+{
+		if(email is not null)
+				await client.SendEmailAsync(email, cancellationToken);
+
+		logger.LogInformation(&quot;Email not sent!&quot;);
+}
+</code></pre>
+<p>Ushbu koddan tushinish mumkinki ba’zi hollarda funksiya hech qanday asinxron ish bajarilmaydi.</p>
+<p>Bunday holatlar juda ham ko’p takrorlangani uchun <strong>.NET Runtime</strong> o’zi <code>Task</code>ning hech qanday asinxron ish bajarilmaganda qaytariladigan nusxasini <strong>Cache</strong> qilib oladi va qayta-qayta ishlataveradi. Bu o’sha biz bilgan <code>Task.CompletedTask</code> <strong>obyekti</strong>. Yuqoridagi kodda agar <strong>email</strong> <code>null</code> bo’lsa <strong>Runtime</strong> o’zi <code>Task.CompletedTask</code>ni <strong>cache</strong>dan olib qaytaradi. Agar asinxron ish bajarilsa, yangi <code>Task</code> <strong>obyekti allocate</strong> qilib qaytariladi.</p>
+<p>Yana bir misolga qarang. Bir <code>Task&lt;bool&gt;</code> qaytaradigan funksiya bor. Bu funksiyada 3 xil holat bor:</p>
+<ul>
+<li>darxol sinxron <code>true</code> qaytaradi</li>
+<li>darxol sinxron <code>false</code> qaytaradi</li>
+<li>asinxron ravishda uzoq vaqtda true yoki false qaytaradi.</li>
+</ul>
+<p>Dastlabki ikki holatda <code>Task&lt;bool&gt;</code>dan yangi obyekt allocate qilib qaytarish shart emas. 2 ta dona qiymat bo’lgani uchun Runtime ularni allaqachon Cache saqlab qo’ygan bo’ladi va o’shalarni qaytaradi. Ya’ni yangi xotira allocate qilinmaydi.  Agar funksiya asinxron ish bajarsa, majburan <code>Task&lt;bool&gt;</code> obyekti allocate qilinadi. Quyidagi <strong>snippet</strong> shuni ko’rsatadi.</p>
+<pre><code class="lang-csharp">public async Task&lt;bool&gt; ShouldSendEmailAsync(User user, CancellationToken cancellationToken = default)
+{
+    if(user is null)
+            return false;
+
+    if(user.IsNew())
+            return true;
+
+    return await IsNotAdminAsync()
+}
+</code></pre>
+<p>Lekin hamma narsani ham <strong>Cache</strong> qilish practical yechim emas. Masalan, <code>Task&lt;int&gt;</code> qaytaradigan funksiyani hamma bo’lishi mumkin bo’lgan natijalarni <strong>Cache</strong>da saqlash Gigabaytlab xotira talab qiladi.</p>
+<p>Ko’plab kutibxonalar shunday <strong>Cache</strong> texnikasidan foydalanib yangi obyektlar yaratilishini oldini olishadi. Masalan, <code>MemoryStream.ReadAsync</code> funksiyadi <code>Task&lt;int&gt;</code> obyekti orqali nechta bayt o’qilganini qaytaradi. Bu funksiya ko’pincha bir xil son qaytargani uchuni ichkarida birinchi qaytarilgan <code>Task&lt;int&gt;</code> obyekti <strong>Cache</strong> qilinadi. Keyingi safar chaqirilganda, agar yana o’shancha bayt o’qigan bo’lsa eski <strong>Cache</strong> qilingan obyekt qaytariladi. Yo’qsa <code>Task.FromResult</code> ishlatib yangi obyekt yaratiladi.</p>
+<blockquote>
+<p><em>Bu funksiya .NET yangi versiyalarida <code>ValueTask&lt;int&gt;</code> qaytaradigan qilib update qilingan.</em></p>
+</blockquote>
+<h2 id="valuetasktresult"><code>ValueTask&lt;TResult&gt;</code></h2>
+<p>Yuqoridagi yechimni yanada takomillashtirish uchun <strong>.NET Core 2.0</strong>dan boshlab <code>ValueTask&lt;TResult&gt;</code>  <strong>struct</strong> tanishtirildi. U asinxon funksiyalardan qaytariladi va <code>TResult</code> yoki <code>Task&lt;TResult&gt;</code> uchun <strong>wrapper</strong> vazifasini bajaradi. Agar asinxron funksiya muvaffaqiyatli <strong>sinxron</strong> yakunlansa, <code>ValueTask&lt;TResult&gt;</code> <strong>struct</strong>i <code>TResult</code> ga <em>initialize</em> qilib qaytarialdi. Hech qanday <em>allocation</em> bo’lmaydi. Agar asinxron yakunlansa yoki qandaydir exception sodir bo’lsa, yangi <code>Task&lt;TResult&gt;</code> obyekti <strong>allocate</strong> qilib <code>ValueTask&lt;TResult&gt;</code>ga o’rab qaytariladi.</p>
+<p>Buning yordamida yuqorida keltirilgan <code>MemoryStream.ReadBytes</code> funksiyasi quyidagicha takomillashtirildi. Endi hech qanday <strong>Cache</strong> ishlatilmaydi.</p>
+<pre><code class="lang-csharp">public override ValueTask&lt;int&gt; ReadAsync(byte[] buffer, int offset, int count)
+{
+    try
+    {
+        int bytesRead = Read(buffer, offset, count);
+        return new ValueTask&lt;int&gt;(bytesRead);
+    }
+    catch (Exception e)
+    {
+        return new ValueTask&lt;int&gt;(Task.FromException&lt;int&gt;(e));
+    }
+}
+</code></pre>
+<h2 id="muhim-narsa-qolib-ketyapti">Muhim narsa qolib ketyapti</h2>
+<p><code>await</code> dasturlash yo’lining eng muhim xususiyatlaridan biri bu asinxron operatsiya yakunlanganda chaqirish imkonini beruvchi <strong>callback</strong> method bilan ta’minlash. Ya’ni <code>Task</code>/<code>Task&lt;TResult&gt;</code> qaytaradigan asinxron funksiyalarga ish tugatilganda chaqiriladigan <strong>callback</strong> method bersangiz bo’ladi.</p>
+<pre><code class="lang-csharp">async Task&lt;ZipArchive&gt; CreateZipArchiveFromCloudFiles()
+{
+    var files await DownloadAllFilesToTempFolderAsync();
+    return await CreateZipAsync(files);  
+}
+
+var zipArchive = await CreateZipArchiveFromCloudFiles()
+	.ContinueWith(async (task) =&gt;
+	{
+			await CleanupTempFolderAsync();
+	});
+</code></pre>
+<p>Buni amalga oshirish uchun xotirada shu operatsiyani aks ettiruvchi obyekt saqlanishi kerak va u orqali <em>callback method</em> chaqirilishi kerak. Shu hususiyatni ta’minlash uchun <strong>.NET Core 2.1</strong>dan boshlab <code>IValueTaskSource&lt;TResult&gt;</code> interface tanishtirildi. Bu interface asinxron operatsiya holati haqida ma’lumot saqlaydi va <strong>OnCompleted</strong> methodi orqali unga yuqoridagidan <em>callback method</em> bersa bo’aldi.</p>
+<blockquote>
+<p><code>*IValueTaskSource&lt;TResult&gt;</code> haqida keyingi postlarda.*</p>
+</blockquote>
+<p>Endi <code>ValueTask&lt;TResult&gt;</code> va <code>ValueTask</code> <strong>struct</strong>lari birgalikda asinxron funsiyalarni har qanday holatda ham hech qanday hotira <strong>allocate</strong> qilmasdan natija qaytarish imkonini beradi.</p>
+<h2 id="valuetask-ishlatishdagi-havf">ValueTask ishlatishdagi havf</h2>
+<p><code>ValueTask</code> va <code>ValueTask&lt;TResult&gt;</code> qisqa qilib aytganda oddiy holatlarda bir marta await qilib ishlatiladigan <strong>Task</strong>lar uchun chiqarilgan. Quyidagi holatlarda hech qachon <code>ValueTask</code> / <code>ValueTask&lt;TResult&gt;</code> ishlatmaslik kerak.</p>
+<ul>
+<li><strong><code>ValueTask</code> / <code>ValueTask&lt;TResult&gt;</code></strong> ni bir martadan ortiq <code>await</code> qilish. <code>ValueTask&lt;TResult&gt;</code> ichidagi <code>TResult</code> <strong>obyekti</strong> GC tomonidan <strong>recycle</strong> qilib yuborilgan bo’lishi yoki boshqa operatsiya tomonidan ishlatilayotgan bo’lishi mumkin</li>
+<li>**<code>ValueTask</code> / <code>ValueTask&lt;TResult&gt;</code>**ni bir vaqta bir nechta <strong>thread</strong>dan<code>await</code> qilish. Yuqoridagiday <code>TResult</code> obyekti bitta thread ishini tugatgach recycle qilib yuborilgan bo’lishi mumkin.</li>
+<li>Operatsiya yakunlanmasidan avval <code>.GetAwaiter().GetResult()</code> funksiyasi orqali blok qilib natijani kutish. <code>IValueTaskSource</code> va <code>IValueTaskSource&lt;TResult&gt;</code> interfacelari blok qilish imkoniyatini bermaydi.</li>
+</ul>
+<p>Agar sizga yuqoridagi imkoniyatlar chindan ham zarur bo’lsa, <code>.AsTask()</code> methodi orqali <code>ValueTask</code>/<code>ValueTask&lt;TResult&gt;</code> larni <strong>Task</strong>ga aylantirib olsangiz bo’ladi.</p>
+<blockquote>
+<p><strong>Ushbu maqolada qandaydir xatolik topsangiz habar bering.</strong></p>
+</blockquote>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/wahid-d/diary/blob/main/posts/CSharp/task-yoki-valuetask.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © Made with 💟 by <a href='https://t.me/wahidustoz'>Wahid Ustoz</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

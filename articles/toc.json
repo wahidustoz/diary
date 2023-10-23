@@ -1,2 +1,0 @@
-
-{"items":[{"name":"Intoduction","href":"intro.html","topicHref":"intro.html"},{"name":".NET","includedFrom":"~/articles/NET/toc.yml","items":[{"name":"First .NET article","href":"NET/dotnet.html","topicHref":"NET/dotnet.html"}]},{"name":"C#","includedFrom":"~/articles/CSharp/toc.yml","items":[{"name":"The First C# Post","href":"CSharp/csharp.html","topicHref":"CSharp/csharp.html"}]}]}

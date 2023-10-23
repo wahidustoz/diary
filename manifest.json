@@ -3,67 +3,12 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
-      "type": "Conceptual",
-      "source_relative_path": "articles/CSharp/csharp.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/CSharp/csharp.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/NET/dotnet.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/NET/dotnet.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/intro.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/intro.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "articles/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "articles/toc.html"
-        },
-        ".json": {
-          "relative_path": "articles/toc.json"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "Resource",
-      "source_relative_path": "images/avatar.png",
       "output": {
         "resource": {
-          "relative_path": "images/avatar.png"
+          "relative_path": "index.json"
         }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/avatar.svg",
-      "output": {
-        "resource": {
-          "relative_path": "images/avatar.svg"
-        }
-      },
-      "version": ""
+      }
     },
     {
       "type": "Resource",
@@ -151,6 +96,49 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "posts/CSharp/task-yoki-valuetask.md",
+      "output": {
+        ".html": {
+          "relative_path": "posts/CSharp/task-yoki-valuetask.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "posts/NET/Logging/logging-code-generators.md",
+      "output": {
+        ".html": {
+          "relative_path": "posts/NET/Logging/logging-code-generators.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "posts/NET/Logging/logging-levels.md",
+      "output": {
+        ".html": {
+          "relative_path": "posts/NET/Logging/logging-levels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "posts/NET/Logging/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "posts/NET/Logging/toc.html"
+        },
+        ".json": {
+          "relative_path": "posts/NET/Logging/toc.json"
         }
       },
       "version": ""
