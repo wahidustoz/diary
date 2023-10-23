@@ -46,6 +46,106 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "images/avatar.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/avatar.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/avatar.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/avatar.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon/android-chrome-192x192.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon/android-chrome-192x192.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon/android-chrome-512x512.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon/android-chrome-512x512.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon/apple-touch-icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon/apple-touch-icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon/favicon-16x16.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon/favicon-16x16.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon/favicon-32x32.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon/favicon-32x32.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon/favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon/site.webmanifest",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon/site.webmanifest"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
