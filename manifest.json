@@ -147,6 +147,16 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "images/tooling/vscode-setup-1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/tooling/vscode-setup-1.png"
+        }
+      },
+      "version": ""
+    },
+    {
       "log_codes": [
         "InvalidFileLink"
       ],
@@ -168,6 +178,39 @@
         },
         ".json": {
           "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "tooling/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "tooling/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tooling/vscode-install.md",
+      "output": {
+        ".html": {
+          "relative_path": "tooling/vscode-install.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tooling/vscode-setup.md",
+      "output": {
+        ".html": {
+          "relative_path": "tooling/vscode-setup.html"
         }
       },
       "version": ""
