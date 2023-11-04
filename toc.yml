@@ -16,3 +16,12 @@
   items:
     - name: Task vs ValueTask
       href: csharp/task-yoki-valuetask.md
+
+- name: Tooling ⚙️
+  href: tooling/index.md
+  expanded: true
+  items:
+    - name: VS Code o'rnatish ✨
+      href: tooling/vscode-install.md
+    - name: VS Code sozlash 🪛
+      href: tooling/vscode-setup.md
