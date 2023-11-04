@@ -35,7 +35,8 @@
     "fileMetadataFiles": [],
     "template": [
       "default",
-      "modern"
+      "modern", 
+      "mytemplate"
     ],
     "postProcessors": [],
     "keepFileLink": false,
