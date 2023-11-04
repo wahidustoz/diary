@@ -4,7 +4,7 @@ Here you will discover an extensive array of the most recent news, cutting-edge 
 
 <div class="row g-0 my-5">
     <div class="list-group card col-lg-4 col-md-6">
-        <a href="log-levels.html" class="list-group-item list-group-item-action">Logging Levels (and how to use them)</a>
-        <a href="log-code-gen.html" class="list-group-item list-group-item-action">Logging Code Generators</a>
+        <a href="log-levels.md" class="list-group-item list-group-item-action">Logging Levels (and how to use them)</a>
+        <a href="log-code-gen.md" class="list-group-item list-group-item-action">Logging Code Generators</a>
     </div>
 </div>
