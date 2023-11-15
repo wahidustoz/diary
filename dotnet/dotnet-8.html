@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>.NET 8 &#127881; | Wahid Ustoz </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=".NET 8 &#127881; | Wahid Ustoz ">
+      
+      <link rel="icon" href="../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/wahid-d/diary/blob/main/dotnet/dotnet-8.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2801S09L9Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-2801S09L9Y');
+  </script>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Diary">
+            Diary
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><img src="../images/dotnet/dotnet-8-1024x384.png" alt=".NET 8"></p>
+<h1 id="net-8-">.NET 8 🎉</h1>
+<p>Qaynoqqina yangilik, <strong>.NET Foundation</strong> yaqindagina <strong>.NET SDK 8</strong>ni ommaga taqdim etdi. Ushbu post orqali undagi eng qiziqarli o'zgarishlar va yangiliklar bilan tanishamiz.</p>
+<br>
+<h5 id="net-8-sdk-yuklash">.NET 8 SDK yuklash</h5>
+<p>Avvalo <strong>.NET 8</strong>ni o'rnatishdan boshlaymiz. Quyidagi powershell komandasini tering.</p>
+<pre><code class="lang-powershell">winget install Microsoft.DotNet.SDK.8
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Menga o'xshab <em>Nerd</em> bo'lmaganlar <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">👉 shu link</a> orqali o'zlariga kerakli installerni tortib olishlari mumkin.</p>
+</div>
+<div class="embeddedvideo"><iframe src="https://www.youtube-nocookie.com/embed/oDdy4APwUc4" frameborder="0" allowfullscreen="true"></iframe></div>
+<hr>
+<br>
+<p><img src="../images/csharp/csharp12-1024x576.png" alt="C# 12 Features"></p>
+<h2 id="c-12-">C# 12 😲</h2>
+<p>Ushbu qismda qismda <strong>C# 12</strong>dagi eng 🆒 <em>feature</em>larni ko'rib chiqamiz.</p>
+<br>
+<h2 id="-primary-constructor">⭐ Primary Constructor</h2>
+<p><code>class</code> va <code>struct</code> tiplarini elon qilishda bira to'la endi <em>asosiy konstruktor</em> berib ketsa bo'ladi. Primary Constructor orqali yuborilgan obyektlar klass hududi bo'ylab ko'rinadi.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Primary constructor orqali yuborilgan obyektlar <code>class</code> <strong>member</strong>i emas aksincha parametr ekanini yoddan chiqarmaslik kerak. Ularni <code>this</code> kalit so'zi orqali chaqirib bo'lmaydi.</p>
+</div>
+<p><code>struct</code> misolida.</p>
+<pre><code class="lang-csharp">public readonly struct Nuqta(int x, int y)
+{
+    public readonly int X =&gt; x;
+    public readonly int Y =&gt; y;
+}
+</code></pre>
+<p>ota <code>class</code>ga ma'lumot uzatish.</p>
+<pre><code class="lang-csharp">public class Ustoz(int id, string ism) : Ishchi(id)
+{
+    public int Id =&gt; id;
+    public string Ism =&gt; ism;
+}
+</code></pre>
+<p>Va eng keraklisi <em>dependency injection</em>.</p>
+<pre><code class="lang-csharp">public interface IService
+{
+    Distance GetDistance();
+}
+
+public class ExampleController(IService service) : ControllerBase
+{
+    [HttpGet]
+    public ActionResult&lt;Distance&gt; Get()
+    {
+        return service.GetDistance();
+    }
+}
+</code></pre><br>
+<h2 id="-collection-expressions">💡 Collection Expressions</h2>
+<p>Endi to'plamlarni e'lon qilishda <code>new</code> kalit so'zini ishlatishni hojati yo'q 😲.</p>
+<pre><code class="lang-csharp">int[] sonlar = [1, 2, 3, 4, 5];
+List&lt;string&gt; ismlar = [&quot;Ali&quot;, &quot;Vali&quot;, &quot;Hasan&quot;];
+
+double[] qator1 = [1, 2, 3];
+double[] qator2 = [4, 5, 6];
+
+// ko'p o'lchamli array yasash
+double[][] jadval = [qator1, qator2, [7, 8, 9]];
+</code></pre>
+<br>
+<h2 id="-spead-operator">💣 Spead Operator</h2>
+<p>Agar yuqoridagilari hali <em>miyyangizni portlatmagan</em> bo'lsa unda bunisiga qarang.
+Spread Operator <code>..</code> yordami mavjud to'plamlarni yangi to'plamga osonlik bilan qo'shing!</p>
+<pre><code class="lang-csharp">string[] qizlar = [&quot;Madina&quot;, &quot;Hadicha&quot;, &quot;Aisha&quot;];
+string[] yigitlar = [&quot;Umar&quot;, &quot;Ali&quot;, &quot;Abubakr&quot;];
+
+string[] hamma = [&quot;Wahid&quot;, ..yigitlar, ..qizlar];
+// hamma = [&quot;Wahid&quot;, &quot;Umar&quot;, &quot;Ali&quot;, &quot;Abubakr&quot;, &quot;Madina&quot;, &quot;Hadicha&quot;, &quot;Aisha&quot;]
+</code></pre>
+<br>
+<h2 id="-default-lambda-parameters">🌠 Default Lambda parameters</h2>
+<p><em>lambda expression</em> elon qilishda endi uning parametrlariga <strong>default</strong> qiymatlarni berib ketsa bo'ladi.</p>
+<pre><code class="lang-csharp">var yuza = (int a, int? b = null) =&gt; a * (b  ?? a);
+
+Console.WriteLine(yuza(5));     // 25
+Console.WriteLine(yuza(5, 6));  // 30
+</code></pre>
+<p>Bu yangi <em>feature</em> eng ko'p ishlatilishi kutilyapkan yana bir misol.</p>
+<pre><code class="lang-csharp">app.MapGet(&quot;/users&quot;, async (IUserService service, int? page = 1, int? pageSize = 50) =&gt; { });
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Yuqorida <em>lambda expression</em> yangi imkoniyatidan foydalanib Pagination uchun default qiymatlar berib ketilgan.</p>
+</div>
+<br>
+<h4 id="-keyingi-postda-aspnet-core-80-versiyasini-korib-chiqamiz">✌️ Keyingi postda ASPNET Core 8.0 versiyasini ko'rib chiqamiz.</h4>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/wahid-d/diary/blob/main/dotnet/dotnet-8.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © Made with 💟 by <a href='https://t.me/wahidustoz'>Wahid Ustoz</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

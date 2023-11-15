@@ -12,6 +12,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "csharp/csharp-12.md",
+      "output": {
+        ".html": {
+          "relative_path": "csharp/csharp-12.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "csharp/index.md",
       "output": {
         ".html": {
@@ -26,6 +36,16 @@
       "output": {
         ".html": {
           "relative_path": "csharp/task-yoki-valuetask.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "dotnet/dotnet-8.md",
+      "output": {
+        ".html": {
+          "relative_path": "dotnet/dotnet-8.html"
         }
       },
       "version": ""
@@ -56,6 +76,26 @@
       "output": {
         ".html": {
           "relative_path": "dotnet/log-levels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/csharp/csharp12-1024x576.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/csharp/csharp12-1024x576.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/dotnet/dotnet-8-1024x384.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/dotnet/dotnet-8-1024x384.png"
         }
       },
       "version": ""
@@ -156,6 +196,16 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "patterns/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "patterns/index.html"
         }
       },
       "version": ""
