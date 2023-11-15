@@ -16,6 +16,8 @@
   items:
     - name: Task vs ValueTask
       href: csharp/task-yoki-valuetask.md
+    - name: C# 12 - nimalar qo'shildi?
+      href: csharp/csharp-12.md
 
 - name: Tooling ⚙️
   href: tooling/index.md
@@ -25,3 +27,7 @@
       href: tooling/vscode-install.md
     - name: VS Code sozlash 🪛
       href: tooling/vscode-setup.md
+
+- name: Design Patterns 🧩
+  href: patterns/index.md
+  expanded: true
