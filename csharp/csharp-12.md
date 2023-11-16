@@ -1,5 +1,3 @@
-![C# 12 Features](../images/csharp/csharp12-1024x576.png)
-
 ## C# 12 :astonished:
 
 Ushbu qismda qismda **C# 12**dagi eng :cool: *feature*larni ko'rib chiqamiz.

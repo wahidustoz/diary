@@ -1,5 +1,3 @@
-![.NET 8](../images/dotnet/dotnet-8-1024x384.png)
-
 # .NET 8 :tada:
 
 Qaynoqqina yangilik, **.NET Foundation** yaqindagina **.NET SDK 8**ni ommaga taqdim etdi. Ushbu post orqali undagi eng qiziqarli o'zgarishlar va yangiliklar bilan tanishamiz.
@@ -21,8 +19,16 @@ winget install Microsoft.DotNet.SDK.8
 
 <br/>
 
-[!INCLUDE [scharp-12.md](../csharp/csharp-12.md)]
+> [!TIP]
+> **C# 12** bilan bog'liq yangiliklarni [bu yerda](../csharp/csharp-12.md) o'qing!
 
 <br/>
 
-#### :v: Keyingi postda ASPNET Core 8.0 versiyasini ko'rib chiqamiz.
+<br/>
+
+> [!TIP]
+> **ASP.NET Core 8.0** bilan bog'liq yangiliklarni [bu yerda](../dotnet/aspnetcore-8.md) o'qing!
+
+<br/>
+
+:warning: Har bir yangi qo'shilgan Feature ustida batafsil postlarni shu yerda berib boraman. Yangiliklardan qolib ketmaslik uchun [Telegram kanalim](https://t.me/wahidsblog)ga obuna bo'ling!
