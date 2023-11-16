@@ -91,9 +91,8 @@
         </div>
 
         <article data-uid="">
-
-<p><img src="../images/dotnet/dotnet-8-1024x384.png" alt=".NET 8"></p>
 <h1 id="net-8-">.NET 8 🎉</h1>
+
 <p>Qaynoqqina yangilik, <strong>.NET Foundation</strong> yaqindagina <strong>.NET SDK 8</strong>ni ommaga taqdim etdi. Ushbu post orqali undagi eng qiziqarli o'zgarishlar va yangiliklar bilan tanishamiz.</p>
 <br>
 <h5 id="net-8-sdk-yuklash">.NET 8 SDK yuklash</h5>
@@ -107,83 +106,18 @@
 <div class="embeddedvideo"><iframe src="https://www.youtube-nocookie.com/embed/oDdy4APwUc4" frameborder="0" allowfullscreen="true"></iframe></div>
 <hr>
 <br>
-<p><img src="../images/csharp/csharp12-1024x576.png" alt="C# 12 Features"></p>
-<h2 id="c-12-">C# 12 😲</h2>
-<p>Ushbu qismda qismda <strong>C# 12</strong>dagi eng 🆒 <em>feature</em>larni ko'rib chiqamiz.</p>
-<br>
-<h2 id="-primary-constructor">⭐ Primary Constructor</h2>
-<p><code>class</code> va <code>struct</code> tiplarini elon qilishda bira to'la endi <em>asosiy konstruktor</em> berib ketsa bo'ladi. Primary Constructor orqali yuborilgan obyektlar klass hududi bo'ylab ko'rinadi.</p>
 <div class="TIP">
 <h5>Tip</h5>
-<p>Primary constructor orqali yuborilgan obyektlar <code>class</code> <strong>member</strong>i emas aksincha parametr ekanini yoddan chiqarmaslik kerak. Ularni <code>this</code> kalit so'zi orqali chaqirib bo'lmaydi.</p>
+<p><strong>C# 12</strong> bilan bog'liq yangiliklarni <a href="../csharp/csharp-12.html">bu yerda</a> o'qing!</p>
 </div>
-<p><code>struct</code> misolida.</p>
-<pre><code class="lang-csharp">public readonly struct Nuqta(int x, int y)
-{
-    public readonly int X =&gt; x;
-    public readonly int Y =&gt; y;
-}
-</code></pre>
-<p>ota <code>class</code>ga ma'lumot uzatish.</p>
-<pre><code class="lang-csharp">public class Ustoz(int id, string ism) : Ishchi(id)
-{
-    public int Id =&gt; id;
-    public string Ism =&gt; ism;
-}
-</code></pre>
-<p>Va eng keraklisi <em>dependency injection</em>.</p>
-<pre><code class="lang-csharp">public interface IService
-{
-    Distance GetDistance();
-}
-
-public class ExampleController(IService service) : ControllerBase
-{
-    [HttpGet]
-    public ActionResult&lt;Distance&gt; Get()
-    {
-        return service.GetDistance();
-    }
-}
-</code></pre><br>
-<h2 id="-collection-expressions">💡 Collection Expressions</h2>
-<p>Endi to'plamlarni e'lon qilishda <code>new</code> kalit so'zini ishlatishni hojati yo'q 😲.</p>
-<pre><code class="lang-csharp">int[] sonlar = [1, 2, 3, 4, 5];
-List&lt;string&gt; ismlar = [&quot;Ali&quot;, &quot;Vali&quot;, &quot;Hasan&quot;];
-
-double[] qator1 = [1, 2, 3];
-double[] qator2 = [4, 5, 6];
-
-// ko'p o'lchamli array yasash
-double[][] jadval = [qator1, qator2, [7, 8, 9]];
-</code></pre>
 <br>
-<h2 id="-spead-operator">💣 Spead Operator</h2>
-<p>Agar yuqoridagilari hali <em>miyyangizni portlatmagan</em> bo'lsa unda bunisiga qarang.
-Spread Operator <code>..</code> yordami mavjud to'plamlarni yangi to'plamga osonlik bilan qo'shing!</p>
-<pre><code class="lang-csharp">string[] qizlar = [&quot;Madina&quot;, &quot;Hadicha&quot;, &quot;Aisha&quot;];
-string[] yigitlar = [&quot;Umar&quot;, &quot;Ali&quot;, &quot;Abubakr&quot;];
-
-string[] hamma = [&quot;Wahid&quot;, ..yigitlar, ..qizlar];
-// hamma = [&quot;Wahid&quot;, &quot;Umar&quot;, &quot;Ali&quot;, &quot;Abubakr&quot;, &quot;Madina&quot;, &quot;Hadicha&quot;, &quot;Aisha&quot;]
-</code></pre>
 <br>
-<h2 id="-default-lambda-parameters">🌠 Default Lambda parameters</h2>
-<p><em>lambda expression</em> elon qilishda endi uning parametrlariga <strong>default</strong> qiymatlarni berib ketsa bo'ladi.</p>
-<pre><code class="lang-csharp">var yuza = (int a, int? b = null) =&gt; a * (b  ?? a);
-
-Console.WriteLine(yuza(5));     // 25
-Console.WriteLine(yuza(5, 6));  // 30
-</code></pre>
-<p>Bu yangi <em>feature</em> eng ko'p ishlatilishi kutilyapkan yana bir misol.</p>
-<pre><code class="lang-csharp">app.MapGet(&quot;/users&quot;, async (IUserService service, int? page = 1, int? pageSize = 50) =&gt; { });
-</code></pre>
 <div class="TIP">
 <h5>Tip</h5>
-<p>Yuqorida <em>lambda expression</em> yangi imkoniyatidan foydalanib Pagination uchun default qiymatlar berib ketilgan.</p>
+<p><strong>ASP.NET Core 8.0</strong> bilan bog'liq yangiliklarni <a href="aspnetcore-8.html">bu yerda</a> o'qing!</p>
 </div>
 <br>
-<h4 id="-keyingi-postda-aspnet-core-80-versiyasini-korib-chiqamiz">✌️ Keyingi postda ASPNET Core 8.0 versiyasini ko'rib chiqamiz.</h4>
+<p>⚠️ Har bir yangi qo'shilgan Feature ustida batafsil postlarni shu yerda berib boraman. Yangiliklardan qolib ketmaslik uchun <a href="https://t.me/wahidsblog">Telegram kanalim</a>ga obuna bo'ling!</p>
 
 </article>
 
