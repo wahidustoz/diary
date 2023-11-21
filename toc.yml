@@ -23,6 +23,13 @@
     - name: C# 12 - nimalar qo'shildi?
       href: csharp/csharp-12.md
 
+- name: Algorithms / Data Structures
+  href: algorithms/index.md
+  expanded: true
+  items:
+    - name: Hash Maps - intervyu kaliti 🗝️
+      href: algorithms/hashmaps.md
+
 - name: Tooling ⚙️
   href: tooling/index.md
   expanded: true
@@ -35,3 +42,6 @@
 - name: Design Patterns 🧩
   href: patterns/index.md
   expanded: true
+
+- name: Glossary 📔
+  href: glossary.md
