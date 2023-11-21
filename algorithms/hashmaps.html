@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Hash Maps #️⃣ - intervyu kaliti &#128273; | Wahid Ustoz </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Hash Maps #️⃣ - intervyu kaliti &#128273; | Wahid Ustoz ">
+      
+      <link rel="icon" href="../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.json">
+      <meta name="docfx:tocrel" content="../toc.json">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/wahid-d/diary/blob/main/algorithms/hashmaps.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2801S09L9Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-2801S09L9Y');
+  </script>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Diary">
+            Diary
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="hash-maps----intervyu-kaliti-">Hash Maps #️⃣ - intervyu kaliti 🔑</h1>
+
+<p><strong>HashMap Data Structure</strong> tech intervyularda eng ko'p so'raladigan agoritmlardan biri.</p>
+<p>Lekin ajoyib hushxabar bor 🤩</p>
+<p><strong>HashMap</strong>ni eng ko'p uchraydigan 2ta holatda ishlatishni o'rganib olsangiz yetarli!</p>
+<p>Ushbu post davomida ikkala holatni ham misollar yordami o'rganib olasiz.</p>
+<h2 id="1-element-mavjudligini-aniqlash">1. Element mavjudligini aniqlash.</h2>
+<p><code>Array</code> ichida element bor/yo'qligini tekshirish <strong>linear</strong> <span class="math">\(O(N)\)</span> vaqt talab etadi. Ya'ni array ichidagi $N$ta elementlarni tekshirib chiqish kerak.</p>
+<p><code>HashMap</code> esa shu operatsiyani <strong>constant</strong> <span class="math">\(O(1)\)</span> vaqt ichida bajaradi.</p>
+<p>Tasavvur qiling sizda shu tekshirish operatsiyasini <span class="math">\(M\)</span> marta takrorlashingiz kerak. Array ustida bu <span class="math">\(O(NM)\)</span> vaqt talab qilsa, <code>HashMap</code> ustida <span class="math">\(O(M)\)</span> vaqt oladi.</p>
+<p>Bu nazariyani quyidagi LeetCode misollari orqali isbotlaymiz.</p>
+<br>
+<h4 id="two-sum">Two Sum</h4>
+<p><code>int array</code> <strong>nums</strong> va <code>int</code> <strong>target</strong> berilgan bo'lsa, <code>array</code> ichidan yig'indisi <strong>target</strong>ga teng 2ta elementlar <em>index</em>larini qaytarish kerak.</p>
+<p>👉 <a href="https://leetcode.com/problems/two-sum/solutions/3511887/best-solution-in-c/"> Masalaga havola</a></p>
+<pre><code class="lang-csharp">public class Solution 
+{
+    public int[] TwoSum(int[] nums, int target)
+    {
+        var juftlar = new Dictionary&lt;int, int&gt;();
+
+        for(int i = 0; i &lt; nums.Length; i++)
+            if(juftlar.ContainsKey(target - nums[i]))
+                return new int[] { i, juftlar[target - nums[i]]};
+            else
+                juftlar.TryAdd(nums[i], i);
+
+        return new int[] { };
+    }
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Yuqoridagi yechimda <code>HashMap</code>ga asoslangan <code>Dictionary</code> ishlatilgan.</p>
+<ul>
+<li>Qisqacha, <code>array</code>dagi har bir elementni juftini <code>Dictionary</code>dan qidiramiz.</li>
+<li>Agar jufti yo'q bo'lsa, shu elementni <code>Dictionary</code>ga qo'shamiz.</li>
+</ul>
+<p><code>Dictionary</code>dan qidirish <span class="math">\(O(1)\)</span> vaqt talab qiladi. Bu amal <code>for loop</code> ichida <span class="math">\(N\)</span> marta takrorlangani uchun yechim umumiy <span class="math">\(O(N)\)</span> vaqt talab qiladi.</p>
+</div>
+<br>
+<h4 id="counting-elements">Counting Elements</h4>
+<p>Berilgan <code>array</code> ichida <code>x + 1</code> jufti mavjud bo'lgan <code>x</code> qiymatli elementlar sonini qaytarish kerak. Agar shunday sonlar bir nechta bo'lsa, hammasi alohida sanalsin.</p>
+<p>👉 <a href="https://leetcode.ca/all/1426.html">Masalaga havola</a></p>
+<pre><code class="lang-csharp">public class Solution
+{
+    public int CountElements(int[] nums)
+    {
+        var frequency = new Dictionary&lt;int, int&gt;();
+        foreach(var num in nums)
+        {
+            frequency.TryGetValue(num, out var value);
+            frequency[num] = value + 1;
+        }
+
+        var count = 0;
+        foreach(var num in nums)
+            if(frequency.ContainsKey(num + 1))
+                count++;
+            
+        return count;
+    }
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Bu yechimda ham <code>HashMap</code> sifatida **C#**ning <code>Dictionary</code> <code>class</code>i ishlatilgan.</p>
+<ul>
+<li><code>Array</code> elementlari necha marta takrorlanishini <code>Dictionary</code>ga saqlab olamiz.</li>
+<li>Keyingi <strong>loop</strong>da shu <em>map</em> ichidan <span class="math">\(x+1\)</span> qiymatli elementlarni qidiramiz.</li>
+</ul>
+<p>Ikkala loop ham <span class="math">\(O(N)\)</span> vaqt sarflagani uchun umumiy algoritm <span class="math">\(O(N)\)</span> vaqt oladi.</p>
+</div>
+<br>
+<h4 id="first-letter-to-appear-twice">First Letter to Appear Twice</h4>
+<p>Kichik lotin harflaridan iborat <code>string</code> berilganda ikki marta takrorlanuvchi birinchi harfni qaytaring.</p>
+<p>👉 <a href="https://leetcode.com/problems/first-letter-to-appear-twice/">Masalaga havola</a></p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p><strong>Ushbu yechimni mashq sifatida o'zingiz bajarib ko'ring.</strong></p>
+<p>Savollar va mulohazalaringizni o'zingizga o'xshagan qiziquvchan dasturchilar bilan <a href="https://t.me/wahidustoz"><strong>Telegram Kanalimiz</strong></a>da ulashing ✍️.</p>
+</div>
+<hr>
+<br>
+<h2 id="2-takrorlanishlar-sonini-sanash">2. Takrorlanishlar sonini sanash</h2>
+<p><code>HashMap</code> yordamida istalgan elementni to'plamdagi <a href="../glossary.html#frequency"><strong>chastota</strong></a>sini aniqlash juda ham oson.</p>
+<p>Masalan, <code>string</code> ichidagi belgilar chastotasi bir xil yoki yo'qligini aniqlash.</p>
+<p><code>HashMap</code> yordami berilgan tekst ichidagi har bir belgi chastotasi bir xil yo'qlini bitta <code>loop</code> orqali <span class="math">\(O(N)\)</span> <strong>linear</strong> vaqt ichida aniqlasa bo'ladi.</p>
+<p>Keling yana misollar yordamida isbotlaymiz.</p>
+<br>
+<h4 id="subarray-sum-equals-k">Subarray Sum Equals K</h4>
+<p><code>int array</code> <strong>nums</strong> va <code>int</code> <strong>k</strong> berilgan bo'lsa, yig'indisi <strong>k</strong> ga teng bo'lgan <strong>subarray</strong>lar sonini qaytaring.</p>
+<p><strong>Subarray</strong> - ketma-ket joylashgan elementlardan tashkil topgan kichi array.</p>
+<p>👉 <a href="https://leetcode.com/problems/subarray-sum-equals-k/">Masalaga havola</a></p>
+<pre><code class="lang-csharp">public class Solution 
+{
+    public int SubarraySum(int[] nums, int k) 
+    {
+        var sumsMap = new Dictionary&lt;long, int&gt;();
+        var count = 0;
+        long sum = 0;
+
+        foreach(var num in nums)
+        {
+            sum += num;
+
+            if(sum == k)
+                count++;
+            
+            if(sumsMap.TryGetValue(sum - k, out var frequency))
+                count += frequency;
+            
+            sumsMap.TryGetValue(sum, out var x);
+            sumsMap[sum] = x + 1;
+        }
+
+        return count;
+    } 
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Yuqoridagi yechimda barcha <code>subarray</code>lar yig'indisini hisoblab ketish bilan bir vaqtda, shu yig'indini <code>HashMap</code>ga joylab, agar mavjud bo'lsa <strong>chastota</strong>sini oshirib ketamiz.</p>
+<ul>
+<li>Har bir <code>loop iteration</code>da yig'indi <span class="math">\(K\)</span> ga teng bo'lsa sanoqni birga oshiramiz</li>
+<li>Agar <code>HashMap</code> ichida joriy yig'indini jufti <span class="math">\(sum - k\)</span> mavjud bo'lsa, o'sha kalitli elementni chastotasini sanoqqa qo'shamiz.</li>
+</ul>
+<p><code>HashMap</code>dan qidirish <span class="math">\(O(1)\)</span> vaqt olgani va bu operatsiya <span class="math">\(N\)</span> marta takrorlangani uchun umumiy algoritm <span class="math">\(O(N)\)</span> vaqt oladi.</p>
+</div>
+<br>
+<h4 id="maximum-number-of-balloons">Maximum Number of Balloons</h4>
+<p><strong>text</strong> deb nomlangan <code>string</code> berilgan bo'lsa, undagi <strong><code>balloon</code></strong> takrorlanishlar sonini qaytaring.</p>
+<p>👉 <a href="https://leetcode.com/problems/maximum-number-of-balloons">Masalaga havola</a></p>
+<pre><code class="lang-csharp">public class Solution 
+{
+    public int MaxNumberOfBalloons(string text) 
+    {
+        var map = new Dictionary&lt;char, int&gt;
+        {
+            { 'b', 0 },
+            { 'a', 0 },
+            { 'l', 0 },
+            { 'o', 0 },
+            { 'n', 0 },
+        };
+
+        foreach(var c in text)
+            if(map.TryGetValue(c, out var frequency))
+                map[c] = ++frequency;
+        
+        // l va o ikki martadan keladi
+        map['l'] /= 2;
+        map['o'] /= 2;
+
+        var min = int.MaxValue;
+        foreach(var value in map.Values)
+            min = Math.Min(min, value);
+        
+        return min;
+    }
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Yechimda yana <code>HashMap</code> yordamida harflar chastotasi saqlangan. Keyin esa bu <strong>map</strong>dan eng kichik chastota tanlab olingan. Chunki shu eng kam marta takrorlangan harf <strong>balloon</strong> so'zini ko'pi bilan necha marta hosil qila olishimizni belgilaydi.</p>
+<ul>
+<li>Kod juda ham oddiy, tushinish muammo bo'lmasa kerak.</li>
+<li>Etiborga loyiq jihati 2ta <code>loop</code> ishlatilgan bo'lsa ham algoritm umumiy murakkabligi $O(N)$ligicha qoladi.</li>
+<li><strong>balloon</strong> so'zida <code>'o'</code> va <code>'l'</code> harflari 2 martadan takrorlangani uchun, ularni chastotatsini 2ga bo'lib qoyganmiz</li>
+</ul>
+</div>
+<hr>
+<br>
+<h3 id="-hulosa">👋 Hulosa</h3>
+<p><code>HashMap</code> yoki <code>HashTable</code> <strong>Data Structure</strong> dasturlashdagi eng muhim va juda ko'p uchraydigan algoritmlar. Ularni o'rganish va mashq qilish orqali nafaqat intervyu savollarida balki injinerlik faoliyatingizda ham sezilarli samara bo'ladi.</p>
+<br>
+<div class="alert alert-primary" role="alert">
+  <p>
+    Keyingi maqolada <code>Binary Heap</code> <strong>Data Structure</strong>ni eng ko'p uchraydigan <strong>use case</strong>larini misollar orqali o'rganamiz.
+  </p>
+  <p>
+  Shu kabi sifatli o'zbek tilidagi kontentni qo'llab quvvatlash uchun bizni <strong><a href="https://t.me/uzcoders"><i class="bi bi-telegram"></i> Telegram Kanalimiz</a></strong>ga obuna bo'ling.
+  </p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/wahid-d/diary/blob/main/algorithms/hashmaps.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © Made with 💟 by <a href='https://t.me/wahidustoz'>Wahid Ustoz</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

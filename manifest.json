@@ -12,6 +12,26 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "algorithms/hashmaps.md",
+      "output": {
+        ".html": {
+          "relative_path": "algorithms/hashmaps.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "algorithms/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "algorithms/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "csharp/csharp-12.md",
       "output": {
         ".html": {
@@ -86,6 +106,16 @@
       "output": {
         ".html": {
           "relative_path": "dotnet/log-levels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "glossary.md",
+      "output": {
+        ".html": {
+          "relative_path": "glossary.html"
         }
       },
       "version": ""
@@ -224,11 +254,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""
