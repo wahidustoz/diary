@@ -212,11 +212,8 @@ public class Solution
 `HashMap` yoki `HashTable` **Data Structure** dasturlashdagi eng muhim va juda ko'p uchraydigan algoritmlar. Ularni o'rganish va mashq qilish orqali nafaqat intervyu savollarida balki injinerlik faoliyatingizda ham sezilarli samara bo'ladi.
 
 <br/>
-<div class="alert alert-primary" role="alert">
-  <p>
-    Keyingi maqolada <code>Binary Heap</code> <strong>Data Structure</strong>ni eng ko'p uchraydigan <strong>use case</strong>larini misollar orqali o'rganamiz.
-  </p>
-  <p>
-  Shu kabi sifatli o'zbek tilidagi kontentni qo'llab quvvatlash uchun bizni <strong><a href="https://t.me/wahidustoz"><i class="bi bi-telegram"></i> Telegram Kanalimiz</a></strong>ga obuna bo'ling.
-  </p>
-</div>
+
+> [!Hint]
+> Keyingi maqolada [**Binary Heap**](./binaryheap.md) *Data Structure*ni **C#**ni eng zamonaviy *feature*larini qo'llagan holda implementatsiya qilamiz.
+> 
+> Shu kabi sifatli o'zbek tilidagi kontentni qo'llab quvvatlash uchun bizni [**Telegram Kanalimiz**](https://t.me/wahidustoz)ga obuna bo'ling.

@@ -1,5 +1,12 @@
 {
   "build": {
+    "markdownEngineProperties": {
+      "alerts": {
+        "Info": "alert alert-light",
+        "Hint": "alert alert-primary",
+        "Detail": "alert alert-secondary"
+      }
+    },
     "content": [
       {
         "files": [
