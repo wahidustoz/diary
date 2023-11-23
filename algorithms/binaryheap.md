@@ -1,4 +1,4 @@
-# Binary Heap
+# Binary Heap C# | Data Structure
 
 `Binary Heap` [data structure](../glossary.md#data-structure) ma'lumotlarni to'plamga juda tez qo'shish `O(log N)` va shu to'plamdagi eng katta/kichik elementni konstant `O(1)` vaqtda o'qish imkonini beradigan [**complete tree**](../glossary.md#complete-tree)]. U `heap sort`, `priority queue` va `Dijkstra's ` algoritmlarini o'zagi hisoblanadi. 
 

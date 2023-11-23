@@ -5,5 +5,6 @@ Here we explore some of the most commonly used algoritms and data structures wit
 <div class="row g-0 my-5">
     <div class="list-group card col-lg-4 col-md-6">
         <a href="hashmaps.md" class="list-group-item list-group-item-action">Hash Maps - intervyu kaliti 🗝️</a>
+        <a href="binaryheap.md" class="list-group-item list-group-item-action">Binary Heap C# | Data Structure</a>
     </div>
 </div>

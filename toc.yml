@@ -29,6 +29,8 @@
   items:
     - name: Hash Maps - intervyu kaliti 🗝️
       href: algorithms/hashmaps.md
+    - name: Binary Heap C# | Data Structure
+      href: algorithms/binaryheap.md
 
 - name: Tooling ⚙️
   href: tooling/index.md
