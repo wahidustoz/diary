@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Binary Heap | Wahid Ustoz </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Binary Heap | Wahid Ustoz ">
+      
+      <link rel="icon" href="../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.json">
+      <meta name="docfx:tocrel" content="../toc.json">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/wahid-d/diary/blob/main/algorithms/binaryheap.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2801S09L9Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-2801S09L9Y');
+  </script>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Diary">
+            Diary
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="binary-heap">Binary Heap</h1>
+
+<p><code>Binary Heap</code> <a href="../glossary.html#data-structure">data structure</a> ma'lumotlarni to'plamga juda tez qo'shish <code>O(log N)</code> va shu to'plamdagi eng katta/kichik elementni konstant <code>O(1)</code> vaqtda o'qish imkonini beradigan <a href="../glossary.html#complete-tree"><strong>complete tree</strong></a>]. U <code>heap sort</code>, <code>priority queue</code> va <code>Dijkstra's </code> algoritmlarini o'zagi hisoblanadi.</p>
+<h2 id="intro-">Intro 👋</h2>
+<p>Uni 2 ta asosiy hususiyatlari bor:</p>
+<p>✔️ <a href="../glossary.html#complete-tree"><strong>Complete Tree</strong></a>
+✔️ <a href="../glossary.html#heap-property"> <strong>Heap Property</strong></a></p>
+<p>Ushbu post orqali siz <code>Binary Heap</code>ni <strong>C#</strong> dasturlash tilida eng sodda usulda tushintirilishi visual elementlar orqali o'rganasiz 🚀</p>
+<br>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Ish maydonini tayyorlab olish uchun <code>Heap.cs</code> nomli fayl yarating va uni ichida empty <code>Heap</code> deb nomlangan <code>class</code> yozing.</p>
+<pre><code class="lang-csharp">public class Heap&lt;T&gt; where T : IComparable&lt;T&gt;
+</code></pre>
+<ul>
+<li><code>Heap</code> strukturaasi ichida istalgan turdagi ma'lumot saqlay olishni ta'minlash uchun uni <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics"><strong>generic</strong></a> <code>Heap&lt;T&gt;</code> qilib e'lon qilamiz.</li>
+<li><strong>Heap</strong>dagi  <code>where T : IComparable&lt;T&gt;</code> <em>constraint</em>i <a href="../glossary.html#heap-property"><em>heap property</em></a>ni saqlash uchun solishtirishda ishlatiladi.</li>
+</ul>
+</div>
+<hr>
+<br>
+<h2 id="node-class-">Node <code>class</code> 🥬</h2>
+<div class="row">
+<div class="col-lg-8">
+<p><a href="../glossary.html#data-structure">Data Stucture</a> olamida <a href="../glossary.html#node"><strong>node</strong></a> iborasi juda ko'p ishlatiladi. Ular strukturani o'zagi bo'lib ma'lumotlarni o'rab turishda ishlatialdi.</p>
+<p><code>Binary Heap</code> strukturasida har bir <a href="../glossary.html#node"><strong>node</strong></a> quyidagi elementlarni o'z o'chiga oladi.</p>
+<ul>
+<li><code>Value</code> - asosiy saqlanayotgan ma'lumot</li>
+<li><code>Left</code>- chap tarafdagi <a href="../glossary.html#child"><strong>child</strong></a><strong>-node</strong>ga <a href="../glossary.html#reference">reference</a></li>
+<li><code>Right</code> - o'ng tarafdagi <a href="../glossary.html#child"><strong>child</strong></a><strong>-node</strong>ga <a href="../glossary.html#reference">reference</a></li>
+</ul>
+</div>
+<div class="col-lg-4">
+<p><img src="../images/algorithms/binaryheap/binary-heap-node.png" alt="Node class"></p>
+</div>
+</div>
+<p>💡 <code>Node</code> klasi faqat <code>Heap</code> kaslini ichki amallarida ishlatigani uchun uni <code>private</code> qilib <strong>Heap</strong> class ichida elon qilamiz.</p>
+<pre><code class="lang-csharp">public class Heap&lt;T&gt; where T : IComparable&lt;T&gt;
+{
+    private class Node(T value)
+    {
+        public T Value { get; set; } = value;
+
+        private Node right = default;
+        public ref Node Right =&gt; ref right;
+        private Node left = default;
+        public ref Node Left =&gt; ref left;
+</code></pre>
+<div class="alert alert-secondary">
+<h5>DETAIL</h5>
+<p>💡 <code>Node</code> <strong>class</strong>ida <strong>C# 12</strong>dagi <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-12.0/primary-constructors"><strong>primary constructor</strong></a> hususiyati ishlatilgan.</p>
+<pre><code class="lang-csharp">private class Node(T value)
+</code></pre>
+<ul>
+<li><code>Right</code> va <code>Left</code> <a href="../glossary.html#child"><strong>child</strong></a><strong>-node</strong>larni keyinchalik to'liq manipulatsiya qila olishimiz va  <strong>C#</strong> da <strong>property</strong>larga <code>ref</code> kalit so'zini qo'yish mumkin emasligi uchun <code>ref</code> orqali <em>private backing field</em>lar e'lon qilib ma'lumotlarni shu <em>field</em>larda saqlaymiz. Keyin u <em>field</em>larga <strong>property</strong>lar orqali murojat qilamiz.</li>
+</ul>
+<pre><code class="lang-csharp">private Node right = default;
+public ref Node Right =&gt; ref right;
+private Node left = default;
+public ref Node Left =&gt; ref left;
+</code></pre></div>
+<p><br><br></p>
+<p>💡 Keling endi <code>Node</code> <strong>class</strong>iga keynchalik asqotadigan <em>helper method</em>lar qo'shib chiqamiz.</p>
+<h3 id="nodesize-"><code>Node.Size</code> 📏</h3>
+<div class="row">
+<div class="col-md-8">
+<div class="alert alert-secondary">
+<h5>DETAIL</h5>
+<pre><code class="lang-csharp">public int Size =&gt; (left?.Size ?? 0) + (right?.Size ?? 0) + 1;
+</code></pre>
+<p><code>Node</code> <strong>class</strong>idagi <code>Size</code> <strong>property</strong>si <a href="../glossary.html#recursion"><em>recursive</em></a> tarzda joriy <strong>Node</strong> hajmini aniqlaydi. Har bir <strong>node</strong>ning <strong>size</strong>i <code>1 + Left.Size + Right.Size</code>ga teng.</p>
+</div>
+</div>
+<div class="col-md-4">
+<p><img src="../images/algorithms/binaryheap/binary-heap-size.png" alt="Size"></p>
+</div>
+</div>
+<br>
+<h3 id="nodesmallerchild"><code>Node.SmallerChild</code></h3>
+<div class="row">
+<div class="col-lg-8">
+<div class="alert alert-secondary">
+<h5>DETAIL</h5>
+<p>Ushbu property joriy <strong>Node</strong>ni kichikroq <a href="../glossary.html#child"><strong>child</strong></a>iga <a href="../glossary.html#reference"><em>reference</em></a> qaytaradi.</p>
+<pre><code class="lang-csharp">public ref Node SmallerChild
+{
+    get
+    {
+        if(Left is null)
+            return ref Left;
+        else if(Right is null)
+            return ref Right;
+        else if(left.Size &lt;= right.Size)
+            return ref Left;
+        else
+            return ref Right;
+    }
+}
+</code></pre></div>
+</div>
+<div class="col-lg-4">
+<p><img src="../images/algorithms/binaryheap/binary-heap-smaller-leaf.png" alt="SmallerLeaf"></p>
+</div>
+</div>
+<br>
+<p>⭐ Endi <code>Node</code> <strong>class</strong>ini asosiy <em>method</em>lariga o'tamiz.</p>
+<h3 id="nodeheapify"><code>Node.Heapify()</code></h3>
+<div class="row">
+<div class="col-lg-8">
+<div class="alert alert-secondary">
+<h5>DETAIL</h5>
+<p><code>Heapify</code> funksiyasi <a href="../glossary.html#heap-property"><strong>heap property</strong></a>ni saqlab qolishni ta'minlaydi.</p>
+<pre><code class="lang-csharp">public void Heapify()
+{
+    if(Left is not null &amp;&amp; Left.Value.CompareTo(Value) &lt; 0)
+        SwapValueWith(Left);
+    if(Right is not null &amp;&amp; Right.Value.CompareTo(Value) &lt; 0)
+        SwapValueWith(Right);
+}
+</code></pre>
+<ul>
+<li><code>Min-heap</code>: har bir <strong>node</strong> uchun <a href="../glossary.html#parent"><strong>parent</strong></a><strong>-node</strong> qiymati <a href="../glossary.html#child"><strong>child</strong></a><strong>-node</strong>lar qiymatidan KICHIK yoki teng bo'lishi shart.</li>
+<li><code>Max-heap</code>: har bir <strong>node</strong> uchun <a href="../glossary.html#parent"><strong>parent</strong></a><strong>-node</strong> qiymati <a href="../glossary.html#child"><strong>child</strong></a><strong>-node</strong>lar qiymatidan KATTA yoki teng bo'lishi shart.</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-4">
+<p><img src="../images/algorithms/binaryheap/binary-heap-heapify.png" alt="SmallerLeaf"></p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Rasmda <code>Max-heap</code> ifodalangani uchun <em>3</em>  va <em>1</em> qiymatlari <em>swap</em> qilinishi kerak.</p>
+</div>
+</div>
+</div>
+<br>
+<h3 id="nodeswapvaluewithnode-other"><code>Node.SwapValueWith(Node other)</code></h3>
+<div class="row">
+<div class="col-lg-8">
+<div class="alert alert-secondary">
+<h5>DETAIL</h5>
+<p>Ushbu funksiya joriy <em>node</em> qiymatini berilgan <em>node</em> qiymati bilan alishtiradi.</p>
+<pre><code class="lang-csharp">public void SwapValueWith(Node other) =&gt; (other.Value, Value) = (Value, other.Value);
+</code></pre>
+<ul>
+<li>E'tibor bering, faqat qiymatlar alishtirilgani uchun bu funksiyada hech qanday <code>ref</code> kalit so'zi ishlatilmagan.</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-4">
+<p><img src="../images/algorithms/binaryheap/binary-heap-swap.png" alt="SmallerLeaf"></p>
+</div>
+</div>
+<br>
+<p>⭐ Ana endi navbat <code>Heap</code> <strong>class</strong>ini o'ziga keldi. Uni <em>member</em>lari haqida birma-bir to'xtalamiz.</p>
+<h2 id="heaproot"><code>Heap.root</code></h2>
+<p><code>Heap</code> <strong>class</strong>ida <a href="../glossary.html#root"><strong><code>root</code></strong></a> nomli <em>private field</em> yasab olamiz. U data strukturamiz boshlanish nuqtasi vazifasini bajaradi va birinchi <em>node</em>ga <em>reference</em> bo'ladi. Har safar <code>Heap</code>ni <a href="../glossary.html#traverse"><strong>traverse</strong></a> qilish  shu <em>object</em>dan boshlanadi.</p>
+<pre><code class="lang-csharp">private Node head = default;
+</code></pre>
+<p><code>Heap</code> <strong>class</strong>ida tashqariga ko'rinuvchi 3ta asosiy <strong>public</strong> methodlari mavjud. Ularni har biri haqida quyida batafsil to'xtalamiz.</p>
+<ul>
+<li><code>Print()</code> - <code>Heap</code> <strong>class</strong>ini <em>traverse</em> qilib har bir node qiymatini chop etish uchun.</li>
+<li><code>Enqueue(T value)</code> - yangi qiymatni kerakli joyga joylash uchun.</li>
+<li><code>T Dequeue()</code> - eng tepadagi birichi elementni qaytarib uni o'chirib yuboradi va <a href="../glossary.html#heap-property"><strong>heap property</strong></a>ni qayta hisoblab qo'yadi.</li>
+</ul>
+<h2 id="heapenqueue"><code>Heap.Enqueue</code></h2>
+<div class="row">
+<div class="col-lg-6">
+<pre><code class="lang-csharp">public void Enqueue(T value) =&gt; EnqueueRecursive(ref head, new Node(value));
+
+private void EnqueueRecursive(ref Node current, Node newNode)
+{
+    if(current is null)
+        current = newNode;
+    else if(current.Left is null)
+        current.Left = newNode;
+    else if(current.Right  is null)
+        current.Right = newNode;
+    else 
+        EnqueueRecursive(ref current.SmallerChild, newNode);
+
+    current.Heapify();
+}
+</code></pre></div>
+<div class="col-lg-6">
+<div class="alert alert-secondary">
+<h5>DETAIL</h5>
+<p>Ko'rib turganingizdek <code>Enqueue()</code> <strong>public</strong> methodi shunchaki <code>EnqueueRecursive</code>ga kerakli parametrlarni uzatib yuboradi holos. Asosiy <em>logika</em> ushbu private recursive method ichida amalga oshadi.</p>
+<p>Yangi elementi qo'shish <strong><code>O(log n)</code></strong> vaqt talab qiladi.</p>
+<ul>
+<li><p>Logikaga e'tibor bering, shunchaki <em>recursive</em> tarzda <code>null reference</code> ya'ni <code>Heap</code> tubiga yetib tushmaguncha kichikroq shox tanlab, shu shox bo'ylab tushib boriladi.</p>
+</li>
+<li><p><code>null reference</code>ga yetib kelganda, yangi node shu yerga joylanadi.</p>
+</li>
+<li><p><em><code>ref</code> imkoniyati bilan</em>, <strong>current</strong> obyekti qiymati <code>null</code> bolsa, ushbu obyekt referenci yangi yaratilgan nodega qaratib qo'yiladi. <em>Let that sink in!</em> 🤯.</p>
+</li>
+<li><p>Method oxirida <code>current.Heapify();</code> chaqiruvi <em>heap</em>ni eng tubiga tushib ortga rekursiv qaytish vaqtida har bir nodening <a href="../glossary.html#heap-property"><strong>heap property</strong></a>sini qayta hisoblab qo'yadi 💥.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<br>
+<h2 id="heapdequeue"><code>Heap.Dequeue</code></h2>
+<div class="row">
+<div class="col-lg-6">
+<pre><code class="lang-csharp">public T Dequeue()
+{
+    if(head is null)
+        throw new InvalidOperationException(&quot;Heap is empty.&quot;);
+
+    var temp = head.Value;
+    HeapifyDownRecursive(ref head);
+    
+    return temp;
+}
+
+private void HeapifyDownRecursive(ref Node current)
+{
+    if(current.Left is null &amp;&amp; current.Right is null)
+        current = null;
+    else if(current.Right is null)
+    {
+        current.SwapValueWith(current.Left);
+        HeapifyDownRecursive(ref current.Left);
+    }
+    else if(current.Left is null)
+    {
+        current.SwapValueWith(current.Right);
+        HeapifyDownRecursive(ref current.Right);
+    }
+    else if(current.Left.Value.CompareTo(current.Right.Value) &lt; 0)
+    {
+        current.SwapValueWith(current.Left);
+        HeapifyDownRecursive(ref current.Left);
+    }
+    else 
+    {
+        current.SwapValueWith(current.Right);
+        HeapifyDownRecursive(ref current.Right);
+    }
+}
+</code></pre></div>
+<div class="col-lg-6">
+<div class="alert alert-secondary">
+<h5>DETAIL</h5>
+<p><code>Dequeue()</code> - bu <a href="../glossary.html#root"><strong>root</strong></a><strong>-node</strong> o'chiriladi va uni o'rniga ikkita <a href="../glossary.html#child">child</a>dan biri priority bo'yicha tanlab olinadi, va huddi shu tartibda uni childlari ham bittadan yuqoriga siljiydi</p>
+<ul>
+<li><p><strong>Dequeue</strong> ham <strong>Enqueue</strong> kabi <code>O(log n)</code>** vaqt talab qiladi.</p>
+</li>
+<li><p>Avvalo <strong>heap</strong> empty bo'lsa <code>InvalidOperationException</code> otamiz.</p>
+</li>
+<li><p>Yo'qsa, rekursiv tarzda eng kichik qiymatli elementni <code>current</code> bilan <em>swap</em> qilib, pastga qarab ketaveramiz.</p>
+</li>
+<li><p><a href="../glossary.html#leaf"><strong>leaf</strong></a><strong>-node</strong>ga yetib borganimizda, uni <code>null reference</code>ga tenglab qo'yamiz.</p>
+</li>
+<li><p>Bu orqali osha eng oxiridagi <strong>node</strong>ni o'chirgan bo'lamiz. Xotirani bo'shatishni <code>GC</code> o'zi qoyillatadi.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<br>
+<h2 id="heapprint"><code>Heap.Print</code></h2>
+<div class="row">
+<div class="col-lg-6">
+<pre><code class="lang-csharp">public void Print()
+{
+    var queue = new Queue&lt;Node&gt;();
+    if(head is not null)
+        queue.Enqueue(head);
+    
+    while(queue.Any())
+    {
+        var node = queue.Dequeue();
+        Console.Write(&quot;{0} &quot;, node.Value);
+
+        if(node.Left is not null)
+            queue.Enqueue(node.Left);
+        if(node.Right is not null)
+            queue.Enqueue(node.Right);
+    }
+
+    Console.WriteLine();
+}
+</code></pre></div>
+<div class="col-lg-6">
+<div class="alert alert-secondary">
+<h5>DETAIL</h5>
+<p><code>Print</code> funksiyasida qiymatlarni to'g'ri ketma ketlikda chop etish uchun <code>Queue</code> strukturasidan foydalanilgan.</p>
+<ul>
+<li><code>Queue</code>da <strong>node</strong>lar qolmaguncha birinchi <strong>node</strong>ni olib chop etamiz va uni <strong>child node</strong>larini <strong>queue</strong>ga qo'shib ketaveramiz.</li>
+<li>Shu orqali har bir qatordagi <strong>node</strong> chapdan o'ngga qarab bir xilda chop etib ketaveramiz.</li>
+</ul>
+</div>
+</div>
+</div>
+<br>
+<h2 id="heapprint-1"><code>Heap.Print</code></h2>
+<p>Vanihoyat <code>Heap</code> klasimizdan obyekt olib uni sinab ko'rsak bo'ladi 😎</p>
+<pre><code class="lang-csharp">// Program.cs: testing
+var heap = new Heap&lt;int&gt;();
+int[] sonlar = [2, 3, 1, 5, 0, 6, 4];
+
+foreach(var son in sonlar)
+    heap.Enqueue(son);
+
+heap.Print();
+
+for(int i = 0; i &lt; 10; i++)
+    Console.WriteLine(heap.Dequeue());
+
+Console.WriteLine(heap.Dequeue()); // Exception
+</code></pre><hr>
+<table>
+<thead>
+<tr>
+<th>⭐ To'liq kodni <a href="https://gist.github.com/wahid-d/ab902d8e79140b217a8661cc1c710706">mana bu yerda</a> topasiz. ⭐</th>
+</tr>
+</thead>
+</table>
+<p>Kontent yoqqan bo'lsa unga izoh qoldirish va do'slaringizga ulashish orqali sifatli o'zbek tilidagi kontentni qo'llab quvvatlashingizni so'raymiz ❤️.</p>
+<br>
+<div class="alert alert-primary">
+<h5>HINT</h5>
+<p>Keyingi maqolada <strong>Binary Heap</strong> <em>Data Structure</em>ni eng ko'p uchraydigan <strong>use case</strong>larini misollar orqali o'rganamiz.</p>
+<p>Shu kabi sifatli o'zbek tilidagi kontentni qo'llab quvvatlash uchun bizni <a href="https://t.me/wahidustoz"><strong>Telegram Kanalimiz</strong></a>ga obuna bo'ling.</p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/wahid-d/diary/blob/main/algorithms/binaryheap.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © Made with 💟 by <a href='https://t.me/wahidustoz'>Wahid Ustoz</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

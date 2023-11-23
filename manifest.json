@@ -12,6 +12,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "algorithms/binaryheap.md",
+      "output": {
+        ".html": {
+          "relative_path": "algorithms/binaryheap.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "algorithms/hashmaps.md",
       "output": {
         ".html": {
@@ -116,6 +126,66 @@
       "output": {
         ".html": {
           "relative_path": "glossary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/algorithms/binaryheap/binary-heap-heapify.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/algorithms/binaryheap/binary-heap-heapify.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/algorithms/binaryheap/binary-heap-node.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/algorithms/binaryheap/binary-heap-node.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/algorithms/binaryheap/binary-heap-size.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/algorithms/binaryheap/binary-heap-size.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/algorithms/binaryheap/binary-heap-smaller-leaf.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/algorithms/binaryheap/binary-heap-smaller-leaf.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/algorithms/binaryheap/binary-heap-swap.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/algorithms/binaryheap/binary-heap-swap.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/algorithms/binaryheap/binary-heap.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/algorithms/binaryheap/binary-heap.png"
         }
       },
       "version": ""
