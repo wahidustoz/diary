@@ -11,17 +11,17 @@
   },
   "algorithms/index.html": {
     "href": "algorithms/index.html",
-    "title": "Algorithms / Data Structures :abacus: | Wahid Ustoz",
+    "title": "| Wahid Ustoz",
     "keywords": "Algorithms / Data Structures :abacus: Here we explore some of the most commonly used algoritms and data structures with easy to follow examples. Hash Maps - intervyu kaliti 🗝️ Binary Heap C# | Data Structure"
   },
   "csharp/csharp-12.html": {
     "href": "csharp/csharp-12.html",
-    "title": "C# 12 😲 | Wahid Ustoz",
+    "title": "| Wahid Ustoz",
     "keywords": "C# 12 😲 Ushbu qismda qismda C# 12dagi eng 🆒 featurelarni ko'rib chiqamiz. ⭐ Primary Constructor class va struct tiplarini elon qilishda bira to'la endi asosiy konstruktor berib ketsa bo'ladi. Primary Constructor orqali yuborilgan obyektlar klass hududi bo'ylab ko'rinadi. Tip Primary constructor orqali yuborilgan obyektlar class memberi emas aksincha parametr ekanini yoddan chiqarmaslik kerak. Ularni this kalit so'zi orqali chaqirib bo'lmaydi. struct misolida. public readonly struct Nuqta(int x, int y) { public readonly int X => x; public readonly int Y => y; } ota classga ma'lumot uzatish. public class Ustoz(int id, string ism) : Ishchi(id) { public int Id => id; public string Ism => ism; } Va eng keraklisi dependency injection. public interface IService { Distance GetDistance(); } public class ExampleController(IService service) : ControllerBase { [HttpGet] public ActionResult<Distance> Get() { return service.GetDistance(); } } 💡 Collection Expressions Endi to'plamlarni e'lon qilishda new kalit so'zini ishlatishni hojati yo'q 😲. int[] sonlar = [1, 2, 3, 4, 5]; List<string> ismlar = [\"Ali\", \"Vali\", \"Hasan\"]; double[] qator1 = [1, 2, 3]; double[] qator2 = [4, 5, 6]; // ko'p o'lchamli array yasash double[][] jadval = [qator1, qator2, [7, 8, 9]]; 💣 Spead Operator Agar yuqoridagilari hali miyyangizni portlatmagan bo'lsa unda bunisiga qarang. Spread Operator .. yordami mavjud to'plamlarni yangi to'plamga osonlik bilan qo'shing! string[] qizlar = [\"Madina\", \"Hadicha\", \"Aisha\"]; string[] yigitlar = [\"Umar\", \"Ali\", \"Abubakr\"]; string[] hamma = [\"Wahid\", ..yigitlar, ..qizlar]; // hamma = [\"Wahid\", \"Umar\", \"Ali\", \"Abubakr\", \"Madina\", \"Hadicha\", \"Aisha\"] 🌠 Default Lambda parameters lambda expression elon qilishda endi uning parametrlariga default qiymatlarni berib ketsa bo'ladi. var yuza = (int a, int? b = null) => a * (b ?? a); Console.WriteLine(yuza(5)); // 25 Console.WriteLine(yuza(5, 6)); // 30 Bu yangi feature eng ko'p ishlatilishi kutilyapkan yana bir misol. app.MapGet(\"/users\", async (IUserService service, int? page = 1, int? pageSize = 50) => { }); Tip Yuqorida lambda expression yangi imkoniyatidan foydalanib Pagination uchun default qiymatlar berib ketilgan."
   },
   "csharp/index.html": {
     "href": "csharp/index.html",
-    "title": "C# related posts | Wahid Ustoz",
+    "title": "| Wahid Ustoz",
     "keywords": "C# related posts Here you will find a comprehensive collection of resources and information meticulously curated for C# enthusiasts. Task vs ValueTask C# 12 😲"
   },
   "csharp/task-yoki-valuetask.html": {
@@ -41,7 +41,7 @@
   },
   "dotnet/index.html": {
     "href": "dotnet/index.html",
-    "title": ".NET and ASP.NET related posts | Wahid Ustoz",
+    "title": "| Wahid Ustoz",
     "keywords": ".NET and ASP.NET related posts Here you will discover an extensive array of the most recent news, cutting-edge features, and essential updates for .NET. 📰 ✨ Logging Levels (and how to use them) Logging Code Generators .NET 8 ASP.NET Core 8.0"
   },
   "dotnet/log-code-gen.html": {
@@ -61,18 +61,23 @@
   },
   "index.html": {
     "href": "index.html",
-    "title": "🚀 Wahid Ustoz tech space! 💻 | Wahid Ustoz",
+    "title": "| Wahid Ustoz",
     "keywords": "🚀 Wahid Ustoz tech space! 💻 .NET Discover valuable tips and in-depth tutorials related to .NET and ASP.NET Core. C# Language Explore the latest language features explained in a clear and accessible manner. Happy coding! 🎉 ⌨️"
   },
   "patterns/index.html": {
     "href": "patterns/index.html",
-    "title": "Design Patterns 🧩 | Wahid Ustoz",
+    "title": "| Wahid Ustoz",
     "keywords": "Design Patterns 🧩 Dastur hajmi oshib borgani sari uni qo'llab-quvvatlash, eski kodga ta'sir qilmasdan yangi funksiyalar qo'shish va eski funksiyalarni yangi modullarda muammosiz ishlatish murakkablashib boradi. Hech qanday dizayn patternlarga rioya qilinmasa yuqoridagi imkoniyatlar bilan hayrlashishga to'g'ri keladi. Code Basega kichik o'zgarishlar qo'shish ham sistemani juda ko'p qismiga o'zgarish kiritgani uchun barcha o'zgarishlarni tekshirish va testlash imkonsiz bo'lib boradi. Dizayn patternlar qo'llab-quvvatlashga, o'zgartirishga va kengaytirishga oson bo'lgan kod yozish imkonini beruvchi qo'liplardir. Dastur ehtiyojida kelib chiqib bir yoki bir-nechta dizayn patternlarni qo'llab uzoq yillar kengayib boradigan code base quriladi. Dizayn patternlarni quyadigi asosiy maqsadlari mavjud Kodni tartiblash - klass/komponentlarni strukturasi va bir-biri bilan munosabatini tartibga soluvchi qoidalar toplamiga ega Qayta ishlatish - dizayn patternlar qayta ishlatsa bo'ladigan moslashuvchan kod yozishni ta'minlaydi modulyar dizayn - module/komponentlarni mustaqil va boshqa komponentlarga bog'liq bo'lmasligini ta'minlaydi muammolarni yakkalash - faqatgina bitta muammoga e'tibor qaratadigan klasslar yaratishni ta'minlaydi umumiy yechimni abstraktsiyalash - muammolardagi umumiy yechimni/kodni abstraktsiyalash va qayta ishlatishni ta'minlaydi Kengaytirish - dasturni talablari o'sib borgan sari kelajakda kutiladigan o'zgarishlarga moslashuvchan kod yozish imkonini beradi Kommunikatsiya - barcha uchun tanish va uzor yillardan beri standardga aylangan dizayn patternlarni ishlatish orqali code baseni butunlay o'qib chiqmasdan ham tushinsa bo'ladigan, tashqaridan kelgan odamga gapirib yuboradigan kod yozish imkonini beradi stateDiagram-v2 designPatterns: Design Patterns creational: Creational structural: Structural behavioral: Behavioral designPatterns --> creational designPatterns --> structural designPatterns --> behavioral creational: Abstract Factory creational: Builder creational: Factory Method creational: Prototype creational: Singleton structural: Adapter structural: Bridge structural: Composite structural: Decorator structural: Flyweight structural: Proxy behavioral: Chain of Responsibility behavioral: Command behavioral: Interpreter behavioral: Iterator behavioral: Mediator behavioral: Memento behavioral: Observer behavioral: State behavioral: Strategy behavioral: Template Method behavioral: Visitor Dizayn patternlar asosiy 3 kategoriyaga bo'linadi: Creational - obyektlarni yaratish va initsializatsiya qilish jarayonini markazlashtirish, kodni keraksiz qismlariga bog'lanib qolishi(coupling)ni oldini olish uchun ishlatiladi Structural - asosiy vazifasi obyektlarni bir-biri bilan munosabatini qurish va tartiblash. Behavioral - ma'lum funksional maqsadga erishish uchun obyektlar bir-biri bilan qanday aloqa qilshi ko'rsatadi Tip Keyingi postlar dizayn patternlarni har biriga to'xtalib hayotiy misollar bilan tushintirib beraman 🫡"
   },
   "tooling/index.html": {
     "href": "tooling/index.html",
-    "title": "Tooling ⚙️ | Wahid Ustoz",
-    "keywords": "Tooling ⚙️ Here you will find a collection of useful tools and resources for your development workflow. 🛠️ ⚙️ VS Code o'rnatish ✨ VS Code sozlash 🪛"
+    "title": "| Wahid Ustoz",
+    "keywords": "Tooling ⚙️ Here you will find a collection of useful tools and resources for your development workflow. 🛠️ ⚙️ VS Code o'rnatish ✨ VS Code sozlash 🪛 Bir nechta git remote bilan ishlash 🖇️"
+  },
+  "tooling/multiple-git-remotes.html": {
+    "href": "tooling/multiple-git-remotes.html",
+    "title": "🖇️ Bir loyihani bir vaqtning o'zida GitHub va GitLabda boshqarish | Wahid Ustoz",
+    "keywords": "🖇️ Bir loyihani bir vaqtning o'zida GitHub va GitLabda boshqarish Git'da bir nechta remotelarni sozlashni bilasizmi? 🤔 Marhamat, quyidagi super-yengil qadamlar orqali GitHub va GitLab uchun alohida SSH Keylar yaratib, ulardan qanday foydalanishni o'rganib oling! 🎉 🔑 SSH Keylarni yaratish 1. Terminalda ~/.ssh papkasiga o'tamiz: agar unday papka mavjud bo'lmasa, yaratishni unutmang 😉 cd ~/.ssh 2. SSH kalitlarlar yaratamiz. GitHub va GitLab email manzillarini to'ldirishni unutmang (email bir xil bo'lsa ham muammo yo'q 😉): ssh-keygen -t rsa -C \"your@github.email\" ssh-keygen -t rsa -C \"your@gitLAB.email\" 3. Yaratilgan keylar ~/.ssh papkasida saqlanadi. Endi terminalda quyidagini yozib, ~/.ssh papkasida config fayl yaratamiz: code config 4. config faylga quyidagi kodlarni yozamiz va saqlaymiz: Host github.com Hostname github.com User git IdentityFile ~/.ssh/github Host gitlab.com Hostname gitlab.com User git IdentityFile ~/.ssh/gitlab 🔗 SSH Key'larni GitHub va GitLab'ga ulash 🐙 GitHub uchun: GitHub'da Settings > SSH and GPG keys bo'limiga o'ting. New SSH key tugmasini bosing. ~/.ssh/github.pub faylini ochib, ichidagi hamma tekstni nusxa oling. Title maydoniga kalit uchun nom kiriting va nusxa olingan tekstni quyi maydonga joylashtiring. Add SSH Key tugmasini bosing. ✅ 🦊 GitLab uchun: GitLab'da Preferences > SSH Keys sahifasiga o'ting. ~/.ssh/gitlab.pub faylini ochib, ichidagi hamma tekstni nusxa oling. Key maydoniga nusxa olingan tekstni joylashtiring. Title maydoniga kalit uchun nom kiriting va Expiration Datega 1 yillik amal qilish muddatini belgilang (tavsiya qilinadi 📅). Add Key tugmasini bosing. ✅ 🔄 Git Remotelarni sozlash Endi kodlaringizni yuklashda HTTPS linklar o'rniga SSH linklardan foydalanishingiz kerak! 👌 Misol uchun: git remote add github \"github repo ssh link\" git remote add gitlab \"gitlab repo ssh link\" Shundan keyin, bir vaqtning o'zida kodlaringizni ikkala platformaga yuklashingiz mumkin: git push github main git push gitlab main 🎉 You've made it! Hammasi tayyor! Endi siz GitHub va GitLab'ni bir vaqtda boshqarishingiz mumkin. 👏🚀"
   },
   "tooling/vscode-install.html": {
     "href": "tooling/vscode-install.html",

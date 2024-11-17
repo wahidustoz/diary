@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>&#128391;️ Bir loyihani bir vaqtning o&#39;zida GitHub va GitLabda boshqarish | Wahid Ustoz </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="&#128391;️ Bir loyihani bir vaqtning o&#39;zida GitHub va GitLabda boshqarish | Wahid Ustoz ">
+      
+      
+      <link rel="icon" href="../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/wahidustoz/diary/blob/main/tooling/multiple-git-remotes.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+      <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2801S09L9Y"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-2801S09L9Y');
+      </script>
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Diary">
+            Diary
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="-bir-loyihani-bir-vaqtning-ozida-github-va-gitlabda-boshqarish">🖇️ Bir loyihani bir vaqtning o'zida <strong>GitHub</strong> va <strong>GitLab</strong>da boshqarish</h1>
+
+<p>Git'da bir nechta <strong>remote</strong>larni sozlashni bilasizmi? 🤔 Marhamat, quyidagi super-yengil qadamlar orqali GitHub va GitLab uchun alohida <strong>SSH Key</strong>lar yaratib, ulardan qanday foydalanishni o'rganib oling! 🎉</p>
+<hr>
+<h2 id="-ssh-keylarni-yaratish">🔑 <strong>SSH Key</strong>larni yaratish</h2>
+<h4 id="1-terminalda-ssh-papkasiga-otamiz">1. Terminalda <code>~/.ssh</code> papkasiga o'tamiz:</h4>
+<blockquote>
+<p>agar unday papka mavjud bo'lmasa, yaratishni unutmang 😉</p>
+</blockquote>
+<pre><code class="lang-sh">cd ~/.ssh
+</code></pre>
+<h4 id="2-ssh-kalitlarlar-yaratamiz-github-va-gitlab-email-manzillarini-toldirishni-unutmang-email-bir-xil-bolsa-ham-muammo-yoq-">2. <strong>SSH kalitlar</strong>lar yaratamiz. GitHub va GitLab email manzillarini to'ldirishni unutmang (email bir xil bo'lsa ham muammo yo'q 😉):</h4>
+<pre><code class="lang-sh">ssh-keygen -t rsa -C &quot;your@github.email&quot;
+ssh-keygen -t rsa -C &quot;your@gitLAB.email&quot;
+</code></pre>
+<h4 id="3-yaratilgan-keylar-ssh-papkasida-saqlanadi-endi-terminalda-quyidagini-yozib-ssh-papkasida-config-fayl-yaratamiz">3. Yaratilgan keylar <code>~/.ssh</code> papkasida saqlanadi. Endi terminalda quyidagini yozib, <code>~/.ssh</code> papkasida <strong>config</strong> fayl yaratamiz:</h4>
+<pre><code class="lang-sh">code config
+</code></pre>
+<h4 id="4-config-faylga-quyidagi-kodlarni-yozamiz-va-saqlaymiz">4. <strong>config</strong> faylga quyidagi kodlarni yozamiz va saqlaymiz:</h4>
+<pre><code class="lang-plaintext">Host github.com
+    Hostname github.com
+    User git
+    IdentityFile ~/.ssh/github
+
+Host gitlab.com
+    Hostname gitlab.com
+    User git
+    IdentityFile ~/.ssh/gitlab
+</code></pre>
+<hr>
+<h2 id="-ssh-keylarni-github-va-gitlabga-ulash">🔗 SSH Key'larni GitHub va GitLab'ga ulash</h2>
+<h3 id="-github-uchun">🐙 <strong>GitHub</strong> uchun:</h3>
+<ol>
+<li>GitHub'da <strong>Settings &gt; SSH and GPG keys</strong> bo'limiga o'ting.</li>
+<li><strong>New SSH key</strong> tugmasini bosing.</li>
+<li><strong>~/.ssh/github.pub</strong> faylini ochib, ichidagi hamma tekstni nusxa oling.</li>
+<li><strong>Title</strong> maydoniga kalit uchun nom kiriting va nusxa olingan tekstni quyi maydonga joylashtiring.</li>
+<li><strong>Add SSH Key</strong> tugmasini bosing. ✅</li>
+</ol>
+<h3 id="-gitlab-uchun">🦊 <strong>GitLab</strong> uchun:</h3>
+<ol>
+<li>GitLab'da <strong>Preferences &gt; SSH Keys</strong> sahifasiga o'ting.</li>
+<li><strong>~/.ssh/gitlab.pub</strong> faylini ochib, ichidagi hamma tekstni nusxa oling.</li>
+<li><strong>Key</strong> maydoniga nusxa olingan tekstni joylashtiring.</li>
+<li><strong>Title</strong> maydoniga kalit uchun nom kiriting va <strong>Expiration Date</strong>ga 1 yillik amal qilish muddatini belgilang (tavsiya qilinadi 📅).</li>
+<li><strong>Add Key</strong> tugmasini bosing. ✅</li>
+</ol>
+<hr>
+<h2 id="-git-remotelarni-sozlash">🔄 <strong>Git Remote</strong>larni sozlash</h2>
+<p>Endi kodlaringizni yuklashda <strong>HTTPS</strong> linklar o'rniga <strong>SSH</strong> linklardan foydalanishingiz kerak! 👌 Misol uchun:</p>
+<pre><code class="lang-sh">git remote add github &quot;github repo ssh link&quot;
+git remote add gitlab &quot;gitlab repo ssh link&quot;
+</code></pre>
+<p>Shundan keyin, bir vaqtning o'zida kodlaringizni ikkala platformaga yuklashingiz mumkin:</p>
+<pre><code class="lang-sh">git push github main
+git push gitlab main
+</code></pre>
+<hr>
+<h2 id="-youve-made-it">🎉 You've made it!</h2>
+<p>Hammasi tayyor! Endi siz <strong>GitHub</strong> va <strong>GitLab</strong>'ni bir vaqtda boshqarishingiz mumkin. 👏🚀</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/wahidustoz/diary/blob/main/tooling/multiple-git-remotes.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © Made with 💟 by <a href='https://t.me/wahidustoz'>Wahid Ustoz</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

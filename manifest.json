@@ -345,6 +345,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "tooling/multiple-git-remotes.md",
+      "output": {
+        ".html": {
+          "relative_path": "tooling/multiple-git-remotes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "tooling/vscode-install.md",
       "output": {
         ".html": {
