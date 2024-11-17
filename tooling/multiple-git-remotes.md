@@ -1,4 +1,4 @@
-# 🖇️ Bir loyihani bir vaqtning o'zida **GitHub** va **GitLab**da boshqarish
+# 🖇️ Bir loyihani bir vaqtda **GitHub** va **GitLab**da boshqarish
 
 Git'da bir nechta **remote**larni sozlashni bilasizmi? 🤔 Marhamat, quyidagi super-yengil qadamlar orqali GitHub va GitLab uchun alohida **SSH Key**lar yaratib, ulardan qanday foydalanishni o'rganib oling! 🎉
 

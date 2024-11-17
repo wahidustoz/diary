@@ -40,6 +40,8 @@
       href: tooling/vscode-install.md
     - name: VS Code sozlash 🪛
       href: tooling/vscode-setup.md
+    - name: Bir nechta git remote bilan ishlash 🖇️
+      href: tooling/multiple-git-remotes.md
 
 - name: Design Patterns 🧩
   href: patterns/index.md
