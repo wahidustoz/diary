@@ -8,5 +8,6 @@ Here you will discover an extensive array of the most recent news, cutting-edge 
         <a href="log-code-gen.md" class="list-group-item list-group-item-action">Logging Code Generators</a>
         <a href="dotnet-8.md" class="list-group-item list-group-item-action">.NET 8</a>
         <a href="aspnetcore-8.md" class="list-group-item list-group-item-action">ASP.NET Core 8.0</a>
+        <a href="entity-model-dto.md" class="list-group-item list-group-item-action">Dto, Model va Entity</a>
     </div>
 </div>
