@@ -92,6 +92,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "dotnet/entity-model-dto.md",
+      "output": {
+        ".html": {
+          "relative_path": "dotnet/entity-model-dto.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "dotnet/index.md",
       "output": {
         ".html": {

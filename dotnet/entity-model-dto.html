@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>DTO, Model va Entity | Wahid Ustoz </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="DTO, Model va Entity | Wahid Ustoz ">
+      
+      
+      <link rel="icon" href="../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/wahidustoz/diary/blob/main/dotnet/entity-model-dto.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-2801S09L9Y"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-2801S09L9Y');
+      </script>
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Diary">
+            Diary
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="dto-model-va-entity">DTO, Model va Entity</h1>
+
+<h3 id="nega-bir-obyekt-orniga-uchta-kerak-">Nega bir obyekt o'rniga uchta kerak? 🤔</h3>
+<p>Tasdavvur qiling, siz bir xonadonda yashab, o'sha joyda ishlaysiz va mehmonlarni ham shu yerda qabul qilasiz. Tabiiyki, tartib bir oz buziladi, to'g'rimi? 🎉 <strong>Entity</strong>, <strong>Model</strong> va <strong>DTO</strong>larni ajratmaslik ham shunga o'xshaydi. Ularni birga ishlatsangiz, kod ham chalkashadi, ham o'qish qiyin bo'lib qoladi.</p>
+<p>Har biri o'z vazifasini bajarsa, kodni tushunish osonroq bo'ladi va har bir qatlam (API, biznes logika, ma'lumotlar bazasi) o'ziga xos mantiqda ishlaydi. 🎯</p>
+<hr>
+<h3 id="entity-nima-">Entity nima? 📦</h3>
+<p><strong>Entity</strong> — bu sizning ma'lumotlar bazasidagi jadvalning aksidir. Ya'ni, har bir qatorni obyekt ko'rinishida tasvirlaydi.</p>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Ma'lumotlar bazasidagi Book jadvali uchun Entity.
+/// &lt;/summary&gt;
+namespace Ilmhub.Api.Entities;
+
+public class Book
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public string Author { get; set; }
+    public decimal Price { get; set; }
+    public DateTime PublishedDate { get; set; }
+} 
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Entity bilan bevosita API yoki biznes qatlamida ishlash tavsiya etilmaydi. Chunki bu xavfsizlik va moslashuvchanlikni kamaytiradi.</p>
+</div>
+<hr>
+<h3 id="model-nima-">Model nima? 🛠️</h3>
+<p><strong>Model</strong> — bu biznes logikaga mos keladigan ma'lumotni tasvirlash uchun ishlatiladi. Ko'pincha validatsiya yoki ma'lumotni qayta ishlash uchun kerak bo'ladi.</p>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Ilovadagi ma'lumotni qayta ishlash uchun Model.
+/// &lt;/summary&gt;
+namespace Ilmhub.Api.Models;
+
+public class Book
+{
+    public string Title { get; set; }
+    public string Author { get; set; }
+    public decimal Price { get; set; }
+} 
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Model — bu qahvaxona ichidagi menyu: tashqi mijozlar uni ko'rmaydi, lekin u asosiy faoliyatni boshqaradi. ☕</p>
+</div>
+<hr>
+<h3 id="dto-nima-">DTO nima? 🚚</h3>
+<p><strong>DTO</strong> (Data Transfer Object) — bu ma'lumotni tashqi dunyoga (API mijozlariga) jo'natish uchun eng qulay shaklga keltirilgan obyekt.</p>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// API uchun DTO.
+/// &lt;/summary&gt;
+namespace Ilmhub.Api.Dtos;
+
+public class Book
+{
+    public string Title { get; set; }
+    public string Author { get; set; }
+} 
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>DTO ma'lumotni minimal miqdorda va xavfsiz shaklda yetkazish uchun ishlatiladi. Ya'ni, &quot;bu yerda faqat kerakli narsani oling&quot; tamoyiliga asoslanadi. 🛡️</p>
+</div>
+<hr>
+<h3 id="mapperlar-va-ularning-ahamiyati-">Mapperlar va ularning ahamiyati ✨</h3>
+<p>Mapperlar — bu ma'lumotni bir obyekt turidan ikkinchisiga avtomatik ravishda o'zgartiruvchi sehrli vosita. 🎩🐇</p>
+<p>Tasavvur qiling, qo'lda har bir <code>Entity</code>ni <code>DTO</code>ga aylantirasiz: bu <strong>matematika muammosi</strong>day gap! Mapperlar esa buni avtomatlashtirib, hayotingizni yengillashtiradi.</p>
+<h4 id="automapper-misoli">AutoMapper misoli</h4>
+<pre><code class="lang-csharp">var configuration = new MapperConfiguration(cfg =&gt;
+{
+    cfg.CreateMap&lt;Entities.Book, Dtos.Book&gt;();
+    cfg.CreateMap&lt;Models.Book, Entities.Book&gt;();
+});
+var mapper = configuration.CreateMapper();
+
+// Entity'dan DTO yaratish:
+var dto = mapper.Map&lt;Dtos.Book&gt;(entity); 
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Mapperlar ishlashda vaqtni tejaydi va kamroq xato qilishga yordam beradi. 🔧⏳</p>
+</div>
+<hr>
+<h3 id="hammasi-minimal-api-da-qanday-ishlaydi-">Hammasi Minimal API-da qanday ishlaydi? 🧩</h3>
+<p>Quyida <strong>Entity</strong>, <strong>Model</strong>, <strong>DTO</strong> va Mapperlar birgalikda qanday ishlashini ko'rsatamiz:</p>
+<pre><code class="lang-csharp">var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+// Misol uchun: xotira ichida ma'lumotlar bazasi
+var books = new List&lt;Entities.Book&gt;
+{
+    new Entities.Book { Id = 1, Title = &quot;C# in Depth&quot;, Author = &quot;Jon Skeet&quot;, Price = 39.99M, PublishedDate = DateTime.Now }
+};
+
+// Mapper sozlash
+var configuration = new MapperConfiguration(cfg =&gt;
+{
+    cfg.CreateMap&lt;Entities.Book, Dtos.Book&gt;();
+    cfg.CreateMap&lt;Models.Book, Entities.Book&gt;();
+});
+var mapper = configuration.CreateMapper();
+
+// Barcha kitoblarni olish (DTO shaklida)
+app.MapGet(&quot;/books&quot;, () =&gt;
+{
+    return books.Select(book =&gt; mapper.Map&lt;Dtos.Book&gt;(book));
+});
+
+// Yangi kitob qo'shish (Model orqali)
+app.MapPost(&quot;/books&quot;, (Models.Book model) =&gt;
+{
+    var newBook = mapper.Map&lt;Entities.Book&gt;(model);
+    newBook.Id = books.Count + 1;
+    newBook.PublishedDate = DateTime.Now;
+
+    books.Add(newBook);
+    return Results.Created($&quot;/books/{newBook.Id}&quot;, newBook);
+});
+
+app.Run(); 
+</code></pre><hr>
+<h3 id="xulosa-">Xulosa 🚀</h3>
+<ol>
+<li><strong>Entity</strong> — ma'lumotlar bazasini aks ettiradi.</li>
+<li><strong>Model</strong> — biznes logikani boshqaradi.</li>
+<li><strong>DTO</strong> — mijoz bilan aloqani soddalashtiradi.</li>
+<li><strong>Mapperlar</strong> esa ularning barchasini birlashtirib, hammasini zavq bilan boshqarishga imkon beradi. 😎</li>
+</ol>
+<p>Kodda tartib va chiroyli arxitektura — bu haqiqiy &quot;pro&quot; bo'lishning kaliti! 🔑</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/wahidustoz/diary/blob/main/dotnet/entity-model-dto.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © Made with 💟 by <a href='https://t.me/wahidustoz'>Wahid Ustoz</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
