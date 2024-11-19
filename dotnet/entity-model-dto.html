@@ -80,10 +80,49 @@
         <article data-uid="">
 <h1 id="dto-model-va-entity">DTO, Model va Entity</h1>
 
+<br>
+<br>
 <h3 id="nega-bir-obyekt-orniga-uchta-kerak-">Nega bir obyekt o'rniga uchta kerak? 🤔</h3>
 <p>Tasdavvur qiling, siz bir xonadonda yashab, o'sha joyda ishlaysiz va mehmonlarni ham shu yerda qabul qilasiz. Tabiiyki, tartib bir oz buziladi, to'g'rimi? 🎉 <strong>Entity</strong>, <strong>Model</strong> va <strong>DTO</strong>larni ajratmaslik ham shunga o'xshaydi. Ularni birga ishlatsangiz, kod ham chalkashadi, ham o'qish qiyin bo'lib qoladi.</p>
 <p>Har biri o'z vazifasini bajarsa, kodni tushunish osonroq bo'ladi va har bir qatlam (API, biznes logika, ma'lumotlar bazasi) o'ziga xos mantiqda ishlaydi. 🎯</p>
 <hr>
+<br>
+<h3 id="ular-ozi-nima-">Ular o'zi nima? 🤷‍♂️</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DTO</strong></td>
+<td>Ma'lumotlarni uzatish obyekti (DTO) — bu ilovaning qatlamlari o'rtasida ma'lumotlarni uzatish uchun ishlatiladigan yengil ob'ekt.</td>
+</tr>
+<tr>
+<td><strong>Model</strong></td>
+<td>Ilovangiz ichida ishlatiladigan ma'lumotlar tuzilmasini ifodalaydi, ko'pincha biznes mantiqiga yaqin.</td>
+</tr>
+<tr>
+<td><strong>Entity</strong></td>
+<td>Sizning saqlash qatlamingizdagi ma'lumotlar bazasi jadval tuzilmasini ifodalaydi, odatda EF Core kabi ORM bilan bog'liq.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="asosiy-farqlar">Asosiy Farqlar</h4>
+<pre><code class="lang-mermaid">graph TD;
+    Entity--&gt;Database[&quot;Ma'lumotlar Bazasi Jadvali&quot;];
+    Model--&gt;BusinessLogic[&quot;Biznes Mantiqi&quot;];
+    DTO--&gt;API[&quot;Mijoz yoki API Bilan O'zaro Ta'sir&quot;];
+</code></pre>
+<ul>
+<li><strong>Entity</strong>lar ma'lumotlar bazasi bilan o'zaro ta'sir qilish uchun ishlatiladi va jadvallardagi qatorlarni ifodalaydi.</li>
+<li><strong>Model</strong>lar ilovangiz ichida ma'lumotlarni qanday qayta ishlashini belgilaydi.</li>
+<li><strong>DTO</strong>lar qatlamlar o'rtasida yoki tashqi mijozlarga to'g'ri ma'lumotlarni uzatishga e'tibor qaratadi.</li>
+</ul>
+<hr>
+<br>
 <h3 id="entity-nima-">Entity nima? 📦</h3>
 <p><strong>Entity</strong> — bu sizning ma'lumotlar bazasidagi jadvalning aksidir. Ya'ni, har bir qatorni obyekt ko'rinishida tasvirlaydi.</p>
 <pre><code class="lang-csharp">/// &lt;summary&gt;
@@ -105,6 +144,7 @@ public class Book
 <p>Entity bilan bevosita API yoki biznes qatlamida ishlash tavsiya etilmaydi. Chunki bu xavfsizlik va moslashuvchanlikni kamaytiradi.</p>
 </div>
 <hr>
+<br>
 <h3 id="model-nima-">Model nima? 🛠️</h3>
 <p><strong>Model</strong> — bu biznes logikaga mos keladigan ma'lumotni tasvirlash uchun ishlatiladi. Ko'pincha validatsiya yoki ma'lumotni qayta ishlash uchun kerak bo'ladi.</p>
 <pre><code class="lang-csharp">/// &lt;summary&gt;
@@ -124,6 +164,7 @@ public class Book
 <p>Model — bu qahvaxona ichidagi menyu: tashqi mijozlar uni ko'rmaydi, lekin u asosiy faoliyatni boshqaradi. ☕</p>
 </div>
 <hr>
+<br>
 <h3 id="dto-nima-">DTO nima? 🚚</h3>
 <p><strong>DTO</strong> (Data Transfer Object) — bu ma'lumotni tashqi dunyoga (API mijozlariga) jo'natish uchun eng qulay shaklga keltirilgan obyekt.</p>
 <pre><code class="lang-csharp">/// &lt;summary&gt;
@@ -142,6 +183,7 @@ public class Book
 <p>DTO ma'lumotni minimal miqdorda va xavfsiz shaklda yetkazish uchun ishlatiladi. Ya'ni, &quot;bu yerda faqat kerakli narsani oling&quot; tamoyiliga asoslanadi. 🛡️</p>
 </div>
 <hr>
+<br>
 <h3 id="mapperlar-va-ularning-ahamiyati-">Mapperlar va ularning ahamiyati ✨</h3>
 <p>Mapperlar — bu ma'lumotni bir obyekt turidan ikkinchisiga avtomatik ravishda o'zgartiruvchi sehrli vosita. 🎩🐇</p>
 <p>Tasavvur qiling, qo'lda har bir <code>Entity</code>ni <code>DTO</code>ga aylantirasiz: bu <strong>matematika muammosi</strong>day gap! Mapperlar esa buni avtomatlashtirib, hayotingizni yengillashtiradi.</p>
@@ -161,6 +203,7 @@ var dto = mapper.Map&lt;Dtos.Book&gt;(entity);
 <p>Mapperlar ishlashda vaqtni tejaydi va kamroq xato qilishga yordam beradi. 🔧⏳</p>
 </div>
 <hr>
+<br>
 <h3 id="hammasi-minimal-api-da-qanday-ishlaydi-">Hammasi Minimal API-da qanday ishlaydi? 🧩</h3>
 <p>Quyida <strong>Entity</strong>, <strong>Model</strong>, <strong>DTO</strong> va Mapperlar birgalikda qanday ishlashini ko'rsatamiz:</p>
 <pre><code class="lang-csharp">var builder = WebApplication.CreateBuilder(args);
@@ -199,6 +242,7 @@ app.MapPost(&quot;/books&quot;, (Models.Book model) =&gt;
 
 app.Run(); 
 </code></pre><hr>
+<br>
 <h3 id="xulosa-">Xulosa 🚀</h3>
 <ol>
 <li><strong>Entity</strong> — ma'lumotlar bazasini aks ettiradi.</li>
