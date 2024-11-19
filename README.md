@@ -14,7 +14,7 @@ git clone https://github.com/wahidustoz/diary.git
 # 3️⃣ "diary" loyihasining direktoriyasiga kirish
 cd diary
 
-# 4️⃣ docfx orzusi bilan loyihani ishga tushirish
+# 4️⃣ docfx loyihasini ishga tushirish
 docfx docfx.json --serve
 ```
 
