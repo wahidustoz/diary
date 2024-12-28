@@ -106,9 +106,3 @@ https://t.me/HabitTrackerPlus_bot botidan misol
 https://t.me/MuazzinUz_bot da esa dastur har daqiqada ishlaydi. Namoz vaqtini oldindan bilsa bo’lmasligi uchun uni har daqiqada ishlaydigan qilgamman.
 
 - 0 * * * * * bu ifoda har daqiqada ishlasin degani.
-
---- 
-
-Xurmat bilan,
-
-Muhammd Khodjaev

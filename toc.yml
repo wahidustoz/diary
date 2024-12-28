@@ -16,7 +16,7 @@
     - name: Dto, Model va Entity
       href: dotnet/entity-model-dto.md
     - name: FluentValidation
-      href: dotnet/fluentvalidation.md
+      href: dotnet/fluent-validation.md
     - name: Middleware
       href: dotnet/middleware.md
 
