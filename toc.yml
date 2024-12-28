@@ -16,7 +16,7 @@
     - name: Dto, Model va Entity
       href: dotnet/entity-model-dto.md
     - name: FluentValidation
-      href: dotnet/fluentvalidation.md
+      href: dotnet/fluent-validation.md
     - name: Middleware
       href: dotnet/middleware.md
 
@@ -48,10 +48,10 @@
       href: tooling/vscode-setup.md
     - name: Bir nechta git remote bilan ishlash 🖇️
       href: tooling/multiple-git-remotes.md
-    - name: Semantic Versioning
-      href: tooling/Semver.md
-    - name: CRON
-      href: tooling/CRON.md
+    - name: Semantic Versioning 🔢
+      href: tooling/semantic-versioning.md
+    - name: CRON ⏰
+      href: tooling/cron.md
 
 - name: Design Patterns 🧩
   href: patterns/index.md

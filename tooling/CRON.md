@@ -106,12 +106,3 @@ https://t.me/HabitTrackerPlus_bot botidan misol
 https://t.me/MuazzinUz_bot da esa dastur har daqiqada ishlaydi. Namoz vaqtini oldindan bilsa bo’lmasligi uchun uni har daqiqada ishlaydigan qilgamman.
 
 - 0 * * * * * bu ifoda har daqiqada ishlasin degani.
-
----
-
-### Shunday qilib, CRON bu dasturlarni ma'lum vaqtda ishlatish uchun tool hisoblanar ekan. Dasturni yilning istalgan oyining istalgan kuning istalgan soatida ishga tushadigan qilib qo'ysa bo'ladi.
-
----
-Xurmat bilan,
-
-Muhammd Khodjaev

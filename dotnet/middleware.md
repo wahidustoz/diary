@@ -242,9 +242,3 @@ Quyidagi jadvalda [http://localhost:5000](http://localhost:5000)’ga yuborilgan
 ## Built-in middleware’lar
 
 [https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-9.0#built-in-middleware](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-9.0#built-in-middleware) → ushbu link orqali [ASP.NET](http://ASP.NET) Core’da biz middleware yozmasak ham, shundoq ham mavjud bo’lgan middleware’lar to’plami mavjud. Kirib o’qib chiqishni maslahat beraman.
-
-----------
-
-Xurmat bilan,
-
-Muhammad Khodjaev
