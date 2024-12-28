@@ -102,6 +102,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "dotnet/fluentvalidation.md",
+      "output": {
+        ".html": {
+          "relative_path": "dotnet/fluentvalidation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "dotnet/index.md",
       "output": {
         ".html": {
@@ -126,6 +136,16 @@
       "output": {
         ".html": {
           "relative_path": "dotnet/log-levels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "dotnet/middleware.md",
+      "output": {
+        ".html": {
+          "relative_path": "dotnet/middleware.html"
         }
       },
       "version": ""
@@ -206,6 +226,26 @@
       "output": {
         "resource": {
           "relative_path": "images/csharp/csharp12-1024x576.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/dotnet/Order-of-middleware.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/dotnet/Order-of-middleware.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/dotnet/Order-of-middleware2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/dotnet/Order-of-middleware2.png"
         }
       },
       "version": ""
@@ -302,6 +342,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/tooling/image.webp",
+      "output": {
+        "resource": {
+          "relative_path": "images/tooling/image.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/tooling/vscode-setup-1.png",
       "output": {
         "resource": {
@@ -334,11 +384,31 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "toc.json"
-        },
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tooling/CRON.md",
+      "output": {
+        ".html": {
+          "relative_path": "tooling/CRON.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tooling/Semver.md",
+      "output": {
+        ".html": {
+          "relative_path": "tooling/Semver.html"
         }
       },
       "version": ""

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Middleware tushunchasi | Wahid Ustoz </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Middleware tushunchasi | Wahid Ustoz ">
+      
+      
+      <link rel="icon" href="../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/wahidustoz/diary/blob/main/dotnet/middleware.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-2801S09L9Y"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-2801S09L9Y');
+      </script>
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Diary">
+            Diary
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="middleware-tushunchasi">Middleware tushunchasi</h1>
+
+<p>Middleware — bu <a href="http://ASP.NET">ASP.NET</a> Core’dagi fundamental va ajralmas qismlardan biri hisoblanadi. U HTTP Request’lar va response’lar ustida amal bajarishimizga yordam beradi. Bugun ushbu maqolada biz middleware haqidagi tushunchalarni, uni qo’llashni ko’rib chiqamiz, kettik 🚀.</p>
+<hr>
+<h2 id="middleware-ozi-nima">Middleware o’zi nima</h2>
+<p>Middleware — bu <a href="http://ASP.NET">ASP.NET</a> Core pipeline’ida HTTP request’lar va response’lar ustida amal bajarishimiz uchun bizga yordam beradigan dasturning tarkibiy qismi. Har bir middleware ushbu ishlarni amalga oshira oladi:</p>
+<ul>
+<li>Middleware biror-bir middleware’dan oldinham keyinham ish qila oladi.</li>
+<li>Request yoki Response’ni o’zgartira oladi.</li>
+<li>Pipeline’dan short-circuit (ya’ni chiqib ketish) qila oladi va response’ni <em>сразу</em> yubora oladi.</li>
+</ul>
+<blockquote>
+<p>Middleware — program.cs’da pipeline’ga qanday ketma-ketlika qo’yilgan/qo’shilgan bo’lsa, usha ketma-ketlikda ishlaydi.</p>
+</blockquote>
+<hr>
+<h2 id="middleware-qanday-ishlaydi">Middleware qanday ishlaydi</h2>
+<p>Yuqorida ikki martta ta’kidlaganimizdek, middleware bizga HTTP request yoki response’lar ustida ishlashimizni ta’minlaydi. Middleware’ni ishlatishga — 3 ta asosiy metodlar bor:</p>
+<ul>
+<li><code>Use</code> : Pipeline’ga middleware qo’shadi.</li>
+<li><code>Run</code> : Terminal middleware qo’shadi, ya’ni pipeline’ni to’xtatuvchi/hal qiluvchi middleware.</li>
+<li><code>Map</code> : Request’dan kelib chiqib (ya’ni conditional), pipeline’da yangi branch ochadi (Map’ham terminal middleware hisoblanadi).</li>
+</ul>
+<p>Ushbu metodlar yordamida middleware yozsak biz anonim metodlar orqali yozamiz ya’ni bu — in-line middleware hisoblanadi. Yoki umuman bu metodlarni ishlatmasdan, reusable (ya’ni alohida class) class’da yozib uni pipeline’ga qo’shib qo’ysakham bo’laveradi.</p>
+<hr>
+<h2 id="qanday-ishlatamiz-ozi">Qanday ishlatamiz o’zi</h2>
+<p><img src="../images/dotnet/Order-of-middleware.png" alt="Order-of-middleware"></p>
+<p>Ushbu rasmda middleware’lar o’zi qanday ishlashi haqida batafsil yoritilgan. E’tibor bering, qora strelka kelib birinchi middleware’ga uriladi, u yerda qandaydur ish bajariladi so’ng <code>next()</code> chaqiriladi. Keyin ikkinchi middleware’ga o’tib ketadi, keyin uchinchiga.</p>
+<p><strong>Diqqat! 3 chi ya’ni terminal middleware’dan ortga qaytib ketyapti, bu degani birinchi bo’lib 1-2-3 va oxiriga 3-2-1 ya’ni response qaytarish uchun yana oldingi middleware’larga yo’lda kiradi degani, agarda u yerdaham <code>next()</code> dan keyin</strong> qandaydur <code>logic</code> yozgan bo’lsangiz ularham ishga tushadi. Misolda ko’ramiz:</p>
+<pre><code class="lang-csharp">var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.Use(async (context, next) =&gt;
+{
+    Console.WriteLine(&quot;1 chi Use middleware'da birinchi amal&quot;);
+    await next.Invoke();
+    Console.WriteLine(&quot;1 chi Use middleware'da ikkinchi amal&quot;);
+});
+
+app.Use(async (context, next) =&gt;
+{
+    Console.WriteLine(&quot;2 chi Use middleware'da birinchi amal&quot;);
+    await next.Invoke();
+    Console.WriteLine(&quot;2 chi Use middleware'da ikkinchi amal&quot;);
+});
+
+app.Run(async context =&gt;
+{
+		Console.WriteLine(&quot;-----&quot;);
+    await context.Response.WriteAsync(&quot;3 chi middleware (terminal middleware)'dan salom&quot;);
+});
+
+app.Run();
+
+</code></pre>
+<p>Hozir bu kodda birinchi bo’lib birinchi <code>Use</code> middleware ishlaydi, so’ng <code>await next.Invoke()</code> bilan keyingi middleware’ni chaqiradi, keyin 2 chi middleware ishlaydi, so’ng 3 chi — <code>Run</code> ishlaydi. Tepada aytganimdek, pipeline ortga qaytib ketadi, yo’lda <code>Use</code> middleware’larga kiradi. U yerda <code>await next.Invoke()</code> dan keyin ham kod yozilgan, ular tabiiyki ishga tushadi. Xullas output quyidagicha:</p>
+<pre><code class="lang-bash">1 chi Use middleware'da birinchi amal
+2 chi Use middleware'da birinchi amal
+-----
+2 chi Use middleware'da ikkinchi amal
+1 chi Use middleware'da ikkinchi amal
+
+</code></pre>
+<p>3 chi middleware’dan salom esa, u Respone bo’lganligi uchun website’da ko’rinadi.</p>
+<hr>
+<h2 id="run-middleware">Run Middleware</h2>
+<p><code>Run</code> middleware’i <code>Use</code> kabi o’ziga <code>next</code> ni qabul qilmaydi va bu degani <code>Run</code> metodi ichida biz keyingi middleware’ni chaqira olmaymiz. Bu esa <code>Run</code> so’nggi ya’ni short-circuting middleware hisoblanadi.</p>
+<pre><code class="lang-csharp">var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.Use(async (context, next) =&gt;
+{
+    Console.WriteLine(&quot;1 chi Use middleware'da birinchi amal&quot;);
+    await next.Invoke();
+    Console.WriteLine(&quot;1 chi Use middleware'da ikkinchi amal&quot;);
+});
+
+app.Run(async context =&gt;
+{
+		Console.WriteLine(&quot;-----&quot;);
+    await context.Response.WriteAsync(&quot;3 chi middleware (terminal middleware)'dan salom&quot;);
+});
+
+app.Use(async (context, next) =&gt; // ushbu middleware hech qachon ishga tushmaydi.
+{
+    Console.WriteLine(&quot;2 chi Use middleware'da birinchi amal&quot;);
+    await next.Invoke();
+    Console.WriteLine(&quot;2 chi Use middleware'da ikkinchi amal&quot;);
+});
+
+app.Run();
+
+</code></pre>
+<p>Ushbu kodda ikkinchi <code>Use</code> middleware’i hech qachon ishga tushmaydi, chunki <code>Run</code> ichida <code>next</code> yo’q. Output quyidagicha bo’ladi:</p>
+<pre><code class="lang-bash">1 chi Use middleware'da birinchi amal
+-----
+1 chi Use middleware'da ikkinchi amal
+
+</code></pre>
+<hr>
+<h2 id="diqqat">Diqqat!</h2>
+<p>O’zi aslida <a href="http://ASP.NET">ASP.NET</a> Core’da middleware’lar biz uchun yozib qo’yilgan. Hozir ko’rib chiqayotgan <code>Use</code>, <code>Run</code>, va <code>Map</code>lar qo’shimcha middleware qo’shishimizni ta’minlaydi.</p>
+<p><img src="../images/dotnet/Order-of-middleware2.png" alt="Order-of-middleware2"></p>
+<p>Bu rasmdagilar o’zi bor middleware’lar. Biz ushbu metodlar bilan Custom Middleware yozamiz. Ammo bizda o’zi bor middleware’lar ustida to’liq nazorat bor (ya’ni biz ularni orasiga o’zimizni middleware’imizni qo’shsak bo’ladi).</p>
+<hr>
+<p>Middleware’lar ketma-ketligi <code>Program.cs</code>da joylashgan bo’ladi. Ularni ketma-ketligi judayam muhim chunki bu xavfsizlikka, dastur ishlashiga to’g’ridan to’g’ri ta’sir o’tkazadi.</p>
+<hr>
+<h2 id="map-middleware">Map Middleware</h2>
+<p><code>Map</code> metodi orqali biz pipeline’nni alohida branch (ya’ni shox)ga o’tkaza olamiz. Ya’ni Map ishlatilinayotganda biz PATH beramiz va agarda REQUEST PATH bilan bir-xil bo’lib qolsa, usha branch’ga kirib ketadi va ushbu middleware terminal (ya’ni hal qiluvchi/so’nggisi) bo’ladi.</p>
+<p>Masalan:</p>
+<pre><code class="lang-csharp">var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.Map(&quot;/map1&quot;, HandleMapTest1);
+
+app.Map(&quot;/map2&quot;, HandleMapTest2);
+
+app.Run(async context =&gt;
+{
+    await context.Response.WriteAsync(&quot;Map ishlamagan dasturdan salom&quot;);
+});
+
+app.Run();
+
+static void HandleMapTest1(IApplicationBuilder app)
+{
+    app.Run(async context =&gt;
+    {
+        await context.Response.WriteAsync(&quot;Map Test 1&quot;);
+    });
+}
+
+static void HandleMapTest2(IApplicationBuilder app)
+{
+    app.Run(async context =&gt;
+    {
+        await context.Response.WriteAsync(&quot;Map Test 2&quot;);
+    });
+}
+
+</code></pre>
+<p>Quyidagi jadvalda <a href="http://localhost:5000">http://localhost:5000</a>’ga yuborilgan REQUEST va RESPONSE’larni ko’rishingiz mumkin:</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://localhost:5000">http://localhost:5000</a></td>
+<td>Map ishlamagan dasturdan salom</td>
+</tr>
+<tr>
+<td><a href="http://localhost:5000/map1">http://localhost:5000/map1</a></td>
+<td>Map Test 1</td>
+</tr>
+<tr>
+<td><a href="http://localhost:5000/map2">http://localhost:5000/map2</a></td>
+<td>Map Test 2</td>
+</tr>
+<tr>
+<td><a href="http://localhost:5000/map3">http://localhost:5000/map3</a></td>
+<td>Map ishlamagan dasturdan salom</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="ichma-ich-map">Ichma-ich <code>Map</code></h3>
+<p>Map metodi shuningdek ichma-ich <code>map</code>ni qo’llab-quvvatlaydi:</p>
+<pre><code class="lang-csharp">app.Map(&quot;/level1&quot;, level1App =&gt; {
+    level1App.Map(&quot;/level2a&quot;, level2AApp =&gt; {
+        // &quot;/level1/level2a&quot; ishga tushyapti
+    });
+    level1App.Map(&quot;/level2b&quot;, level2BApp =&gt; {
+        // &quot;/level1/level2b&quot; ishga tushyapti
+    });
+});
+</code></pre>
+<hr>
+<h3 id="mapwhen">MapWhen</h3>
+<p>Va <code>MapWhen</code> bor. Bu nafaqat PATH’ni tekshiradi, balki uning so’rovini ham tekshira oladi. <code>Func&lt;HttpContext, bool&gt;</code> ushbu predicate’dan qaytgan qiymat (<code>true</code> yoki <code>false</code>)ga qarab turib yangi branch’ga olib kirib ketadi yoki yo’q. Ushbu misolda query string’ni tekshirib (ya’ni request’da kelgan so’rov)ni tekshirib beradi:</p>
+<pre><code class="lang-csharp">var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapWhen(context =&gt; context.Request.Query.ContainsKey(&quot;Muhammad&quot;), HandleBranch);
+
+app.Run(async context =&gt;
+{
+    await context.Response.WriteAsync(&quot;Map ishlamagan dasturdan salom.&quot;);
+});
+
+app.Run();
+
+static void HandleBranch(IApplicationBuilder app)
+{
+    app.Run(async context =&gt;
+    {
+        var branchVer = context.Request.Query[&quot;Muhammad&quot;];
+        await context.Response.WriteAsync($&quot;Ishlatilingan branch = {branchVer}&quot;);
+    });
+}
+
+</code></pre>
+<p>Quyidagi jadvalda <a href="http://localhost:5000">http://localhost:5000</a>’ga yuborilgan REQUEST va RESPONSE’larni ko’rishingiz mumkin:</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://localhost:5000">http://localhost:5000</a></td>
+<td>Map ishlamagan dasturdan salom</td>
+</tr>
+<tr>
+<td><a href="http://localhost:5000/?muhammad=main">http://localhost:5000/?muhammad=main</a></td>
+<td>Ishlatilingan branch = main</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="built-in-middlewarelar">Built-in middleware’lar</h2>
+<p><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-9.0#built-in-middleware">https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-9.0#built-in-middleware</a> → ushbu link orqali <a href="http://ASP.NET">ASP.NET</a> Core’da biz middleware yozmasak ham, shundoq ham mavjud bo’lgan middleware’lar to’plami mavjud. Kirib o’qib chiqishni maslahat beraman.</p>
+<hr>
+<p>Xurmat bilan,</p>
+<p>Muhammad Khodjaev</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/wahidustoz/diary/blob/main/dotnet/middleware.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © Made with 💟 by <a href='https://t.me/wahidustoz'>Wahid Ustoz</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>CRON | Wahid Ustoz </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="CRON | Wahid Ustoz ">
+      
+      
+      <link rel="icon" href="../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/wahidustoz/diary/blob/main/tooling/CRON.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-2801S09L9Y"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-2801S09L9Y');
+      </script>
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Diary">
+            Diary
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="cron">CRON</h1>
+
+<p>CRON - Bu Unix-like (o'zbekcha ma'nosini topa olmadim) operatsion tizimlarda ma’lum bir vaqtda skriptlar yoki komandalarni ishga tushirishni avtomatlashtiruvchi va ishga tushish vaqtini belgilovchi foydali tool hisoblanadi.</p>
+<pre><code class="lang-graphql">* * * * * *
+| | | | | |
+| | | | | +--- Day of the week (0-6) (Sunday=0)
+| | | | +----- Month (1-12)
+| | | +------- Day of the month (1-31)
+| | +--------- Hour (0-23)
+| +----------- Minute (0-59)
++------------- Second (0-59) (optional)
+</code></pre>
+<p>Bu CRON sintaksisi bo’lib, unda aslida 5 ta bo’lim (*) bor ammo istasangiz 6 chi bo’limga sekundni yozsangiz ham bo’ladi.</p>
+<p>(*) Ushbu belgi “har” (каждый) degan ma’noni anglatadi va agar siz ushbu belgini qaysi bo’limda ishlatsangiz, masalan soat bo’limida, shunda dastur har soatda ishlaydi.</p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>Bu yerda yulduzchalar 5 ta (sekund yo’q). Demak bu degani dastur har minutda ishlaydi.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>Bu yerda bo’lsa yulduzchalar soni 6 ta (sekund ham qo’shilgan). Demak dastur har sekundda ishlaydi.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>0,30 * * * * * Dastur har 0 chi va 30 chi sekundlarda ishlaydi. E’tibor bering qolgan barchasi yulduzcha, demak har daqiqa, soat, kun, oy va hafta kunlarida ishlaydi.</li>
+</ul>
+<blockquote>
+<p>Masalan ushbu vaqtlarda ishlaydi:</p>
+<ul>
+<li>12:00:00</li>
+<li>12:00:30</li>
+<li>12:01:00</li>
+<li>12:01:30</li>
+<li>va hokazo</li>
+</ul>
+</blockquote>
+<hr>
+<ul>
+<li>30 * * * * * Bu ifodada esa dastur har daqiqaning aynan 30 chi sekundida ishlaydi.</li>
+</ul>
+<blockquote>
+<p>Masalan:</p>
+<ul>
+<li>12:00:30</li>
+<li>12:01:30</li>
+<li>12:02:30</li>
+<li>12:03:30</li>
+<li>va hokazo</li>
+</ul>
+</blockquote>
+<hr>
+<ul>
+<li>0 30 2 * * * Bu yerda esa dastur har kuni soat 02:30 da ishlaydi.</li>
+</ul>
+<hr>
+<ul>
+<li>0 30 2 10 10 5 ifodasi pastda.</li>
+</ul>
+<blockquote>
+<p>Ifoda:</p>
+<ul>
+<li>0 - 0 chi sekund</li>
+<li>30 - 30 chi daqiqa</li>
+<li>2 - soat 2</li>
+<li>10 - oyning 10 chi kuni</li>
+<li>10 - yilning 10 chi oyi</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>hafta kunining farqi yo’q</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>Bu yerda dastur shunday qilib har yili 10 chi Oktabrda soat 02:30 da ishga tushadi</p>
+<ul>
+<li>Lekin huddi shu yerda hafta kuniga 2 (ya’ni seshanba) berganimda, aynan 10 chi Oktabr qachonki seshanbaga tushsa dastur usha yildagina ishga tushardi.</li>
+</ul>
+<hr>
+<ul>
+<li>0 9 * * 0 Bu ifodada bo’lsa dastur har yakshanba kuni soat 09:00 da ishga tushadi. (Chunki 0 yakshanbani bildiradi)</li>
+</ul>
+<hr>
+<h2 id="cron-sozining-kelib-chiqishi">CRON so’zining kelib chiqishi</h2>
+<p>CRON so’zi yunoncha “CHRONAS” so’zidan olingan bo’lib, “vaqt” degan ma’noni anglatadi.</p>
+<hr>
+<h2 id="azure-function-timer-trigger">Azure Function Timer Trigger</h2>
+<p>Azure function ham sizga ushbu servisni taqdim etadi. Masalan <a href="https://t.me/MuazzinUz_bot">https//:t.me/muazzinuz_bot</a>  va <a href="https://t.me/HabitTrackerPlus_bot">https://t.me/HabitTrackerPlus_bot</a> telegram botlari foydalanuvchilarga eslatmalar yuborishi va holatlarni o’zgartirishi uchun ushbu servisdan foydalanaman. Masalan:</p>
+<pre><code class="lang-csharp">public async Task Run([TimerTrigger(&quot;0,30 * * * *&quot;)] TimerInfo myTimer)
+{
+    _logger.LogInformation($&quot;C# Timer trigger function executed at: {DateTime.Now}&quot;);
+
+    string timeZoneId = &quot;Central Asia Standard Time&quot;;
+    
+    // kod davomi bor
+  } 
+</code></pre>
+<p>Bu <a href="https://t.me/HabitTrackerPlus_bot">https://t.me/HabitTrackerPlus_bot</a> ning kodidan bir parcha bo’lib, u har yarim soatta ishlaydi chunki ushbu botda foydalanuvchi kunning istalgan yarim soatini tanlashi mumkin.</p>
+<p><img src="../images/tooling/image.webp" alt="https://t.me/HabitTrackerPlus_bot botidan misol"></p>
+<p><a href="https://t.me/HabitTrackerPlus_bot">https://t.me/HabitTrackerPlus_bot</a> botidan misol</p>
+<hr>
+<p><a href="https://t.me/MuazzinUz_bot">https://t.me/MuazzinUz_bot</a> da esa dastur har daqiqada ishlaydi. Namoz vaqtini oldindan bilsa bo’lmasligi uchun uni har daqiqada ishlaydigan qilgamman.</p>
+<ul>
+<li>0 * * * * * bu ifoda har daqiqada ishlasin degani.</li>
+</ul>
+<hr>
+<h3 id="shunday-qilib-cron-bu-dasturlarni-malum-vaqtda-ishlatish-uchun-tool-hisoblanar-ekan-dasturni-yilning-istalgan-oyining-istalgan-kuning-istalgan-soatida-ishga-tushadigan-qilib-qoysa-boladi">Shunday qilib, CRON bu dasturlarni ma'lum vaqtda ishlatish uchun tool hisoblanar ekan. Dasturni yilning istalgan oyining istalgan kuning istalgan soatida ishga tushadigan qilib qo'ysa bo'ladi.</h3>
+<hr>
+<p>Xurmat bilan,</p>
+<p>Muhammd Khodjaev</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/wahidustoz/diary/blob/main/tooling/CRON.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © Made with 💟 by <a href='https://t.me/wahidustoz'>Wahid Ustoz</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
