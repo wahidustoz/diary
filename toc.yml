@@ -50,6 +50,8 @@
       href: tooling/multiple-git-remotes.md
     - name: Semantic Versioning
       href: tooling/Semver.md
+    - name: CRON
+      href: tooling/CRON.md
 
 - name: Design Patterns 🧩
   href: patterns/index.md
