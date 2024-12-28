@@ -17,6 +17,8 @@
       href: dotnet/entity-model-dto.md
     - name: FluentValidation
       href: dotnet/fluentvalidation.md
+    - name: Middleware
+      href: dotnet/middleware.md
 
 - name: C# 
   href: csharp/index.md
