@@ -107,11 +107,8 @@ https://t.me/MuazzinUz_bot da esa dastur har daqiqada ishlaydi. Namoz vaqtini ol
 
 - 0 * * * * * bu ifoda har daqiqada ishlasin degani.
 
----
+--- 
 
-### Shunday qilib, CRON bu dasturlarni ma'lum vaqtda ishlatish uchun tool hisoblanar ekan. Dasturni yilning istalgan oyining istalgan kuning istalgan soatida ishga tushadigan qilib qo'ysa bo'ladi.
-
----
 Xurmat bilan,
 
 Muhammd Khodjaev
