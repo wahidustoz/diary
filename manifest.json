@@ -102,10 +102,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "dotnet/fluentvalidation.md",
+      "source_relative_path": "dotnet/fluent-validation.md",
       "output": {
         ".html": {
-          "relative_path": "dotnet/fluentvalidation.html"
+          "relative_path": "dotnet/fluent-validation.html"
         }
       },
       "version": ""
@@ -405,16 +405,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "tooling/Semver.md",
-      "output": {
-        ".html": {
-          "relative_path": "tooling/Semver.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "tooling/index.md",
       "output": {
         ".html": {
@@ -429,6 +419,16 @@
       "output": {
         ".html": {
           "relative_path": "tooling/multiple-git-remotes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tooling/semantic-versioning.md",
+      "output": {
+        ".html": {
+          "relative_path": "tooling/semantic-versioning.html"
         }
       },
       "version": ""
