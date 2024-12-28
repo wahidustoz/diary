@@ -48,6 +48,8 @@
       href: tooling/vscode-setup.md
     - name: Bir nechta git remote bilan ishlash 🖇️
       href: tooling/multiple-git-remotes.md
+    - name: Semantic Versioning
+      href: tooling/Semver.md
 
 - name: Design Patterns 🧩
   href: patterns/index.md
