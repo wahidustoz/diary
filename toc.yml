@@ -19,6 +19,8 @@
       href: dotnet/fluent-validation.md
     - name: Middleware
       href: dotnet/middleware.md
+    - name: IHttpClientFactory
+      href: dotnet/ihttpclientfactory.md
 
 - name: C# 
   href: csharp/index.md
