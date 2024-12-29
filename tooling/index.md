@@ -9,5 +9,6 @@ Here you will find a collection of useful tools and resources for your developme
         <a href="multiple-git-remotes.md" class="list-group-item list-group-item-action">Bir nechta <strong>git remote</strong> bilan ishlash 🖇️</a>
         <a href="semantic-versioning.md" class="list-group-item list-group-item-action">Versiyalarni raqamlash 🔢</a>
         <a href="cron.md" class="list-group-item list-group-item-action">Cron bilan vaqtni boshqarish ⏰</a>
+        <a href="add-ssh-key.md" class="list-group-item list-group-item-action">SSH kalitini qo'shish 🔒</a>
     </div>
 </div>
