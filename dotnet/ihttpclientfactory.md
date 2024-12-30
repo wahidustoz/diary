@@ -6,7 +6,7 @@ Bugungi maqolada `IHttpClientFactory` interface’i bilan qanday qilib `HttpClie
 
 ## `IHttpClientFactory` o’zi nima?
 
-Yuqorida ta’kidlaganimdek, IHttpClientFactory bilan biz `HttpClient` ochsak bo’ladi. Xo’sh buning nima afzalliklari bor, oddiy ochib ishlatib ketursam bo’lmaydimi degan savol tug’ilishi mumkin. Quyida qachonki biz `AddHttpClient` qilib servisni registratsiyadan o’tkazsak, biz quyidagi afzalliklarga ega bo’lamiz:
+Yuqorida ta’kidlaganimdek, IHttpClientFactory bilan biz `HttpClient` ochsak bo’ladi, xo’sh buning nima afzalliklari bor, oddiy ochib ishlatib ketursam bo’lmaydimi degan savol tug’ilishi mumkin. Quyida qachonki biz `AddHttpClient` qilib servisni registratsiyadan o’tkazsak, biz quyidagi afzalliklarga ega bo’lamiz:
 
 - `HttpClient` ni DI (Dependency Injection)’ga tayyor qo’shib qo’yadi.
 - Turli-xil API’lar uchun `HttpClient`larni nomlab qo’ysak bo’ladi.
