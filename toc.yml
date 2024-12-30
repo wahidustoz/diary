@@ -54,6 +54,8 @@
       href: tooling/semantic-versioning.md
     - name: CRON ⏰
       href: tooling/cron.md
+    - name: SSH kalit qo'shish 🔒
+      href: tooling/add-ssh-key.md
 
 - name: Design Patterns 🧩
   href: patterns/index.md
