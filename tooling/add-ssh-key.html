@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> | Wahid Ustoz </title>
+      <title>SSH kalitini Github.com&#39;ga qo&#39;shish | Wahid Ustoz </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" | Wahid Ustoz ">
+      <meta name="title" content="SSH kalitini Github.com&#39;ga qo&#39;shish | Wahid Ustoz ">
       
       
       <link rel="icon" href="../images/favicon/favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/wahidustoz/diary/blob/main/tooling/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/wahidustoz/diary/blob/main/tooling/add-ssh-key.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -78,24 +78,54 @@
         </div>
 
         <article data-uid="">
+<h1 id="ssh-kalitini-githubcomga-qoshish">SSH kalitini Github.com'ga qo'shish</h1>
 
-<h3 id="tooling-">Tooling ⚙️</h3>
-<p>Here you will find a collection of useful tools and resources for your development workflow. 🛠️ ⚙️</p>
-<div class="row g-0 my-5">
-    <div class="list-group card col-lg-4 col-md-6">
-        <a href="vscode-install.html" class="list-group-item list-group-item-action">VS Code o'rnatish ✨</a>
-        <a href="vscode-setup.html" class="list-group-item list-group-item-action">VS Code sozlash 🪛</a>
-        <a href="multiple-git-remotes.html" class="list-group-item list-group-item-action">Bir nechta <strong>git remote</strong> bilan ishlash 🖇️</a>
-        <a href="semantic-versioning.html" class="list-group-item list-group-item-action">Versiyalarni raqamlash 🔢</a>
-        <a href="cron.md" class="list-group-item list-group-item-action">Cron bilan vaqtni boshqarish ⏰</a>
-        <a href="add-ssh-key.html" class="list-group-item list-group-item-action">SSH kalitini qo'shish 🔒</a>
-    </div>
-</div>
+<p>Ushbu maqolada SSH kaliti yo'q bo'lsa yangisini ochish va bor bo'lsa Github.com profilimizga qo'shishni ko'rib chiqamiz.</p>
+<h2 id="1-bosqich--kompyuterda-ssh-bormi-yoki-yoqmi-tekshirish"><a href="https://dev.to/muhammad_khodjaev/ssh-kalitini-githubcomga-qoshish-heh#1bosqich-kompyuterda-ssh-bormi-yoki-yoqmi-tekshirish"></a>1-bosqich  <em>Kompyuterda SSH bormi yoki yo'qmi tekshirish</em></h2>
+<ol>
+<li>Kompyuterimizda  <strong>Git Bash</strong>'ni ochamiz.</li>
+<li><code>ls -al ~/.ssh</code>  mana shu komandani kiritamiz.</li>
+<li>Agarda sizning kompyuteringizda allaqachon SSH key bo'lsa quyidagi fayllardan biri bo'ladi:  <code>id_rsa.pub</code>  <code>id_ecsda.pub</code>  <code>id_ed25519.pub</code></li>
+</ol>
+<blockquote>
+<p>Agarda sizda ushbu fayllardan biri bo'lsa, 4-bosqichga o'tib ketavering! Agarda bo'lmasa, hozir 2 va 3 chi bosqichlarda yangisini ochishni o'rganamiz.</p>
+</blockquote>
+<h2 id="2-bosqich--kompyuterda-yangi-ssh-ochish"><a href="https://dev.to/muhammad_khodjaev/ssh-kalitini-githubcomga-qoshish-heh#2bosqich-kompyuterda-yangi-ssh-ochish"></a>2-bosqich  <em>Kompyuterda yangi SSH ochish</em></h2>
+<ol>
+<li>Git Bash'ni ochamiz</li>
+<li><code>ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;</code>  mana shu komandani kiritamiz. &gt; Qo'shtirnoq ichiga Github profilingiz ulangan pochta manzilini kiritasiz. (qo'shtirnoq olib tashlanmaydi)</li>
+<li>SSH'ni saqlash uchun fayl so'raydi. Default holatda berilgan faylga saqlash uchun shunchaki enter'ni bosishingiz kifoya.</li>
+<li>Ana endi &quot;Enter passphrase&quot; so'raydi ya'ni kod. Esingizda qoladigan kodni kiritasiz</li>
+<li>Va kiritgan kodingizni yana bir bor kiritasiz.</li>
+</ol>
+<h2 id="3-bosqich--sshni-ssh-agentga-qoshish"><a href="https://dev.to/muhammad_khodjaev/ssh-kalitini-githubcomga-qoshish-heh#3bosqich-sshni-sshagentga-qoshish"></a>3-bosqich  <em>SSH'ni ssh-agent'ga qo'shish</em></h2>
+<ol>
+<li>PowerShell'ni ochamiz.</li>
+<li>ssh-add c:/Users/YOU/.ssh/id_ed25519 mana shu komandani kiritamiz</li>
+</ol>
+<blockquote>
+<p>Users va YOU degan joyga o'zingizning kompyuteringizdagi fayl nomlarini kiritishingiz esingizdan chiqmasin!</p>
+</blockquote>
+<h2 id="4-bosqich--githubcomga-kirib-ssh-ni-qoshish"><a href="https://dev.to/muhammad_khodjaev/ssh-kalitini-githubcomga-qoshish-heh#4bosqich-githubcomga-kirib-ssh-ni-qoshish"></a>4-bosqich  <em>Github.com'ga kirib SSH ni qo'shish</em></h2>
+<ol>
+<li>PowerShell'ni ochamiz</li>
+<li>cd .ssh qilib SSH joylashgan faylga kiramiz</li>
+<li>code . qilib VS Code'da ochib olamiz</li>
+<li>Kirib .pub bilan tugagan faylga kiramiz va nima bor bo'lsa ushani ko'chirib olamiz (oxirida sizning Github'ga ulangan pochta manzilingiz bo'lishi kerak)</li>
+<li>Github.com'ga kiramiz va settings qismiga o'tib SSH and GPG keys bo'limiga kiramiz</li>
+<li>NEW SSH key'ni bosamiz</li>
+<li>Title degan joyga SSH uchun nom beramiz, masalan Muhammad's SSH Key</li>
+<li>Key degan joyga .pub bilan tugagan fayldan olgan uzuuun yozuvimizni paste qilamiz</li>
+<li>Add SSH key'ni bosamiz</li>
+<li>Sizdan github profilingizning parolini so'rashi mumkin, uni kiritamiz</li>
+</ol>
+<hr>
+<p>Tabriklayman, siz SSH'ni muvaffaqiyatli qo'shdingiz!</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/wahidustoz/diary/blob/main/tooling/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/wahidustoz/diary/blob/main/tooling/add-ssh-key.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

@@ -415,6 +415,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "tooling/add-ssh-key.md",
+      "output": {
+        ".html": {
+          "relative_path": "tooling/add-ssh-key.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "tooling/index.md",
       "output": {
         ".html": {
