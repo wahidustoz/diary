@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>IHttpClientFactory in .NET | Wahid Ustoz </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="IHttpClientFactory in .NET | Wahid Ustoz ">
+      
+      
+      <link rel="icon" href="../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/wahidustoz/diary/blob/main/dotnet/ihttpclientfactory.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-2801S09L9Y"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-2801S09L9Y');
+      </script>
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Diary">
+            Diary
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="ihttpclientfactory-in-net">IHttpClientFactory in .NET</h1>
+
+<p>Bugungi maqolada <code>IHttpClientFactory</code> interface’i bilan qanday qilib <code>HttpClient</code> ochishni ko’rib chiqamiz. Buni amalga oshirishda bizga <code>Dependency Injection (DI)</code> yordamga keladi. Aslida <code>IHttpClientFactory</code> .NET Core 2.1 (<strong>May 30, 2018)</strong> da chiqqan. Biz bu interface bilan HttpClient yaratsak nima afzalliklari bo’ladi degan savol tug’ilishi tabiiy albatta. Agarda <code>IHttpClientFactory</code> bilan <code>HttpClient</code> ochadigan bo’lsak biz unga o’zimiz hohlagancha <code>configuration</code>  bersak bo’ladi. <em>Давайте gapni cho’zmasdan</em> bu interface haqida batafsil gaplashishni boshlaymiz, kettik 🚀.</p>
+<hr>
+<h2 id="ihttpclientfactory-ozi-nima"><code>IHttpClientFactory</code> o’zi nima?</h2>
+<p>Yuqorida ta’kidlaganimdek, IHttpClientFactory bilan biz <code>HttpClient</code> ochsak bo’ladi, xo’sh buning nima afzalliklari bor, oddiy ochib ishlatib ketursam bo’lmaydimi degan savol tug’ilishi mumkin. Quyida qachonki biz <code>AddHttpClient</code> qilib servisni registratsiyadan o’tkazsak, biz quyidagi afzalliklarga ega bo’lamiz:</p>
+<ul>
+<li><code>HttpClient</code> ni DI (Dependency Injection)’ga tayyor qo’shib qo’yadi.</li>
+<li>Turli-xil API’lar uchun <code>HttpClient</code>larni nomlab qo’ysak bo’ladi.</li>
+<li><code>HttpClient</code>ning umrini (lifetime) boshqarishga yo’l ochiladi.</li>
+<li>Log qo’shish imkonini beradi.</li>
+</ul>
+<hr>
+<h2 id="ihttpclientfactory-ishlatilishi"><code>IHttpClientFactory</code> ishlatilishi</h2>
+<p>Bizda bir-nechta <em>вариант’lar</em> bor:</p>
+<ul>
+<li><a href="https://www.notion.so/IHttpClientFactory-in-NET-16b7df59bb4d803889adcd88bd086017?pvs=21">Oddiy ishlatilinishi (Basic usage)</a></li>
+<li><a href="https://www.notion.so/IHttpClientFactory-in-NET-16b7df59bb4d803889adcd88bd086017?pvs=21">Nomlash orqali ishlatish (Named clients)</a></li>
+<li><a href="https://www.notion.so/IHttpClientFactory-in-NET-16b7df59bb4d803889adcd88bd086017?pvs=21">Turlash orqali ishlatish (Typed Clients)</a></li>
+</ul>
+<p>Bular orasidan eng zo’ri esa dastur nimani talab qilayotganidan kelib chiqilgan holda aniqlanadi.</p>
+<p>Bularni esa birma-bir ko’rib chiqamiz, ketti: 🚀</p>
+<h3 id="oddiy-ishlatilinishi-basic-usage">Oddiy ishlatilinishi (Basic usage)</h3>
+<p><code>IHttpClientFactory</code>ni servis ichiga qo’shish uchun <code>AddHttpClient</code>ni chaqiramiz:</p>
+<pre><code class="lang-csharp">using httpclient;
+
+HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
+
+builder.Services.AddHttpClient();
+builder.Services.AddTransient&lt;TodoService&gt;();
+
+using IHost host = builder.Build();
+</code></pre>
+<p>Va uni qanday qilib <code>TodoService.cs</code> da chaqirishni ko’ramiz:</p>
+<pre><code class="lang-csharp">using System.Net.Http.Json;
+using System.Text.Json;
+using Microsoft.Extensions.Logging;
+
+namespace httpclient;
+
+public sealed class TodoService(
+    IHttpClientFactory httpClientFactory, // Bu yerda IHttpClientFactoryni inject qilamiz
+    ILogger&lt;TodoService&gt; logger)
+{
+    public async Task&lt;Todo[]&gt; GetUserTodosAsync(int userId)
+    {
+        using HttpClient client = httpClientFactory.CreateClient(); // Client ochamiz
+
+        try
+        {
+            Todo[]? todos = await client.GetFromJsonAsync&lt;Todo[]&gt;(
+                $&quot;https://jsonplaceholder.typicode.com/todos?userId={userId}&quot;,
+                new JsonSerializerOptions(JsonSerializerDefaults.Web)); // Va uni ishlatamiz
+
+            return todos ?? [];
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(&quot;Error getting something fun to say: {Error}&quot;, ex);
+        }
+
+        return [];
+    }
+}
+</code></pre>
+<p>Shu qadar, tamom. Mana shunday qilib oddiygina <code>HttpClient</code> ochib uni ishlataveramiz, hech kim hech qanday mo’nelik bildirmaydi.</p>
+<hr>
+<h3 id="nomlash-orqali-named-clients">Nomlash orqali (Named Clients)</h3>
+<p><code>HttpClient</code>ni nomlash orqali ishlatish bizga bir xolatda kerak bo’ladi:</p>
+<ul>
+<li>Bir-nechta <code>HttpClient</code>lar bir necha xil <code>configuration</code> bilan kerak bo’lib qolganda.</li>
+</ul>
+<p>Hop, lekin qanday qilib <code>HttpClient</code>ga <code>configuration</code> qo’shish mumkin? Uni servislarga registratsiya qilayotganda (asosan Program.cs’da) qo’shib ketamiz:</p>
+<pre><code class="lang-csharp">builder.Services.AddHttpClient(&quot;Private&quot;, client =&gt; client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
+    .AddHttpMessageHandler&lt;BaseAddressAuthorizationMessageHandler&gt;();
+builder.Services.AddHttpClient(&quot;Public&quot;, client =&gt; client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
+</code></pre>
+<p>Ushbu misolda biz <code>HttpClient</code>ni nomini Private va Public qilyapmiz va qachonki biz <code>HttpClient</code> Public nomi bilan chaqirganimizda bizga aynan shu <code>configuration</code> bilan <code>HttpClient</code> ochiladi, tamom.</p>
+<pre><code class="lang-csharp">public class SomeService(
+    HttpClient client,
+    IHttpClientFactory clientFactory,
+    JsonSerializerOptions jsonOptions) : ISomeService
+{
+	public async Task&lt;Something?&gt; GetByNumberAsync(
+	        string number, 
+	        bool usePrivateClient = false,
+	        CancellationToken cancellationToken = default)
+	    {  
+	        var httpClient = client;
+	
+	        if (usePrivateClient is false)
+	            httpClient = clientFactory.CreateClient(&quot;Public&quot;);
+	
+	        var item = await httpClient.GetFromJsonAsync&lt;Something&gt;(
+	            $&quot;api/certificates/{number}&quot;,
+	            jsonOptions,
+	            cancellationToken);
+	        return item;
+	    }
+}
+</code></pre>
+<p>Va ushbu misolda <code>Something</code> degan nimadurni <code>id</code>si orqali olishi kerak ekan va qachonki biz oddiy <code>HttpClient</code> chaqirsak u bizga doim <code>Private</code> bo’lib keladi, lekin biz aynan shu <code>method</code> ni ichida <code>Public</code> qilinganini chaqirmoqchimiz, shunchaki tekshirib agarda Private bo’lsa Public bo’lganini olyabmiz, tamom. Shunda <code>Public</code> qilib nomlangan <code>Configuration</code> li <code>HttpClient</code>imiz ishlaydi.</p>
+<hr>
+<h3 id="turlash-orqali-typed-client">Turlash orqali (Typed client)</h3>
+<ul>
+<li>Nomlash turi (named client) bilan deyarli bir-xil imkoniyatlar beradi.</li>
+<li><a href="https://learn.microsoft.com/en-us/visualstudio/ide/using-intellisense">IntelliSense</a>’ni bilan ta’minlaydi.</li>
+<li>Servisga registratsiya qilingan <code>HttpClient</code> faqatgina bir joyda ishlatilinadi va usha servisga registratsiya paytida <code>Configure</code> qilsak bo’ladi. Demak u nomidan kelib chiqadigan bo’lsakham turlangan <code>client</code> ekan:
+<ul>
+<li>Demak bir dona <code>backend endpoint</code> uchun ishlaydi.</li>
+</ul>
+</li>
+<li>Servisga registratsiya qilindimi demak <code>DI</code> sharofati bilan dasturimizning istalgan joyida <code>inject</code> qilib ishlatib keta olamiz.</li>
+</ul>
+<p>Shunchaki buni <code>Program.cs</code>da servisga registratsiya qilayotganimizda aynan qaysi servis uchun bu <code>client</code> ishlashini berib ketishimiz kerak shunda u <code>Typed Client</code> bo’ladi:</p>
+<pre><code class="lang-csharp">builder.Services.AddHttpClient&lt;TodoService&gt;(
+    client =&gt;
+    {
+        client.BaseAddress = new Uri(&quot;https://jsonplaceholder.typicode.com/&quot;);
+			  client.DefaultRequestHeaders.UserAgent.ParseAdd(&quot;dotnet-docs&quot;);
+    });
+</code></pre>
+<p>Bu yerda e’tibor bersangis <code>AddHttpClient</code>ni ichiga <code>TodoService</code> ni berib yuboryapmiz. Va <code>client.DefaultRequestHeaders.UserAgent.ParseAdd(&quot;dotnet-docs&quot;);</code> bu qism esa <code>header</code>ga “dotnet-docs” yozuvini qo’shib qo’yadi.</p>
+<p><code>Turlash (typed client)</code>lar <code>Transient</code> sifatida <code>DI (dependency injection)</code> ga qo’yiladi.</p>
+<hr>
+<h2 id="post-put-va-delete-uchun-request">POST, PUT va DELETE uchun request</h2>
+<p>Yuqoridagi misollarda faqatgina <code>GET</code> uchun misol keltirilgan, ammo <code>HttpClient</code> boshqa turdagi HTTP amallariniham bajara oladi:</p>
+<ul>
+<li><code>POST</code></li>
+<li><code>PUT</code></li>
+<li><code>DELETE</code></li>
+<li><code>PATCH</code></li>
+<li>Va boshqalar</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/wahidustoz/diary/blob/main/dotnet/ihttpclientfactory.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © Made with 💟 by <a href='https://t.me/wahidustoz'>Wahid Ustoz</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
