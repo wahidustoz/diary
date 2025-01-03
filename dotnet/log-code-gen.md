@@ -20,3 +20,6 @@ Keyin ushbu logging methodni quyidagicha ishlatsa bo'ladi.
 
 [!code-csharp[](snippets/log-code-gen-3.cs?highlight=8)]
 
+--- 
+
+[!INCLUDE [<author>](../authors/wahid_abduhakimov.html)]

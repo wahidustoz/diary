@@ -223,3 +223,7 @@ builder.Services.AddDbContext<AppDbContext>((provider, options) =>
 
 Yuqoridagi misollardan ko’rinib turibdi agar dastur davomida yetarlicha log xabarlar qoldirmoqchi bo’lsangiz kodda judaham noise *(shovqin — chalg’ituvchi qismlar)* juda ko’payib ketadi. Buni oldini olish uchun Logging Abstraction qo’llash kerak.
 Bu haqida batafsil keyingi postda.
+
+---
+
+[!INCLUDE [<author>](../authors/wahid_abduhakimov.html)]

@@ -157,3 +157,7 @@ Yangi versiya chiqqanida faqatgina ushbu raqamlardan foylanibgina qolmasdan foyd
 ## Xulosa
 
 *SemVer dan foydalanib siz nafaqat dasturni versiyalaysiz balki foydalanuvchilar bilan ishonchli aloqa o’rnata olasiz. Foydalanuvchilar yanglilanish tugmasini bosishdan oldin nima yangilanishlar qo’shilganini bilib olishligi mumkin. Kichik bir kutubxona qilyapsizmi yoki biror bir katta dastur tuzyapsizmi farqi yo’q, SemVer bilan dasturingizni ma’noliroq, chunarliroq versiyalaysiz.*
+
+---
+
+[!INCLUDE [<author>](../authors/muhammad_khodjaev.html)]

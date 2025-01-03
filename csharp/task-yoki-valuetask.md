@@ -141,3 +141,7 @@ Agar sizga yuqoridagi imkoniyatlar chindan ham zarur bo’lsa, `.AsTask()` metho
 
 > **Ushbu maqolada qandaydir xatolik topsangiz habar bering.**
 >
+
+---
+
+[!INCLUDE [<author>](../authors/wahid_abduhakimov.html)]

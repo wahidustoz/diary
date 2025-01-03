@@ -59,3 +59,7 @@ Dizayn patternlar asosiy 3 kategoriyaga bo'linadi:
 
 > [!TIP]
 > Keyingi postlar dizayn patternlarni har biriga to'xtalib hayotiy misollar bilan tushintirib beraman 🫡
+
+---
+
+[!INCLUDE [<author>](../authors/wahid_abduhakimov.html)]

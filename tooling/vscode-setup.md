@@ -86,3 +86,7 @@ Local redis klient, redis instance’lar va cache boshqaruvi uchun ajoyib extens
 2. Rasmda ko’rsatilgan tugmani bosib yangi profil yarating va zavqlaning
 
 ![Importing VsCode Profile](../images/tooling/vscode-setup-1.png)
+
+---
+
+[!INCLUDE [<author>](../authors/wahid_abduhakimov.html)]

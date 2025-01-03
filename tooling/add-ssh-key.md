@@ -41,3 +41,7 @@ Ushbu maqolada SSH kaliti yo'q bo'lsa yangisini ochish va bor bo'lsa Github.com 
 ----------
 
 Tabriklayman, siz SSH'ni muvaffaqiyatli qo'shdingiz!
+
+----------
+
+[!INCLUDE [<author>](../authors/muhammad_khodjaev.html)]
