@@ -12,7 +12,7 @@
   "algorithms/index.html": {
     "href": "algorithms/index.html",
     "title": "| Wahid Ustoz",
-    "keywords": "Algorithms / Data Structures :abacus: Here we explore some of the most commonly used algoritms and data structures with easy to follow examples. Hash Maps - intervyu kaliti \uD83D\uDDDD️ Binary Heap C# | Data Structure"
+    "keywords": "Algorithms / Data Structures :abacus: Here we explore some of the most commonly used algoritms and data structures with easy to follow examples. \uD83D\uDDDD️ Hash Maps - intervyu kaliti Binary Heap C# | Data Structure"
   },
   "csharp/csharp-12.html": {
     "href": "csharp/csharp-12.html",
@@ -22,7 +22,7 @@
   "csharp/index.html": {
     "href": "csharp/index.html",
     "title": "| Wahid Ustoz",
-    "keywords": "C# related posts Here you will find a comprehensive collection of resources and information meticulously curated for C# enthusiasts. Task vs ValueTask C# 12 \uD83D\uDE32 Remove metodi ✂️"
+    "keywords": "C# related posts Here you will find a comprehensive collection of resources and information meticulously curated for C# enthusiasts. Task vs ValueTask \uD83D\uDE32 C# 12 ✂️ Remove metodi"
   },
   "csharp/remove.html": {
     "href": "csharp/remove.html",
@@ -107,7 +107,7 @@
   "tooling/index.html": {
     "href": "tooling/index.html",
     "title": "| Wahid Ustoz",
-    "keywords": "Tooling ⚙️ Here you will find a collection of useful tools and resources for your development workflow. \uD83D\uDEE0️ ⚙️ VS Code o'rnatish ✨ VS Code sozlash \uD83E\uDE9B Bir nechta git remote bilan ishlash \uD83D\uDD87️ Versiyalarni raqamlash \uD83D\uDD22 Cron bilan vaqtni boshqarish ⏰ SSH kalitini qo'shish \uD83D\uDD12"
+    "keywords": "Tooling ⚙️ Here you will find a collection of useful tools and resources for your development workflow. \uD83D\uDEE0️ ⚙️ ✨ VS Code o'rnatish \uD83E\uDE9B VS Code sozlash \uD83D\uDD87️ Bir nechta git remote bilan ishlash \uD83D\uDD22 Versiyalarni raqamlash ⏰ Cron bilan vaqtni boshqarish \uD83D\uDD12 SSH kalitini qo'shish"
   },
   "tooling/multiple-git-remotes.html": {
     "href": "tooling/multiple-git-remotes.html",
