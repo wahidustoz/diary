@@ -5,63 +5,63 @@
   href: dotnet/index.md
   expanded: true
   items:
-    - name: Logging Levels
+    - name: Log Levels
       href: dotnet/log-levels.md
-    - name: Logging Code Generation
+    - name: Log Generation
       href: dotnet/log-code-gen.md
     - name: .NET 8
       href: dotnet/dotnet-8.md
-    - name: ASP.NET Core 8.0
+    - name: ASP.NET 8
       href: dotnet/aspnetcore-8.md
-    - name: Dto, Model va Entity
+    - name: Entity / Model / Dto
       href: dotnet/entity-model-dto.md
-    - name: FluentValidation
+    - name: Validation
       href: dotnet/fluent-validation.md
     - name: Middleware
       href: dotnet/middleware.md
-    - name: IHttpClientFactory
+    - name: HttpClient
       href: dotnet/ihttpclientfactory.md
 
 - name: C# 
   href: csharp/index.md
   expanded: true
   items:
-    - name: Task vs ValueTask
+    - name: Task / Value Task
       href: csharp/task-yoki-valuetask.md
-    - name: 😲 C# 12 - nimalar qo'shildi?
+    - name: 😲 C# 12
       href: csharp/csharp-12.md
-    - name: ✂️ C# Remove() metodi
+    - name: ✂️ Remove()
       href: csharp/remove.md
 
-- name: Algorithms / Data Structures
+- name: Algorithms
   href: algorithms/index.md
   expanded: true
   items:
-    - name: 🗝️ Hash Maps - intervyu kaliti 
+    - name: 🗝 HashMap
       href: algorithms/hashmaps.md
-    - name: Binary Heap C# | Data Structure
+    - name: Binary Heap
       href: algorithms/binaryheap.md
 
-- name: ⚙️ Tooling 
+- name: ⚙️ Tools
   href: tooling/index.md
   expanded: true
   items:
-    - name: ✨ VS Code o'rnatish 
+    - name: ✨ VS o'rnatish
       href: tooling/vscode-install.md
-    - name: 🪛 VS Code sozlash 
+    - name: 🪛 VS sozlash
       href: tooling/vscode-setup.md
-    - name: 🖇️ Bir nechta git remote bilan ishlash 
+    - name: 🖇 Git remote
       href: tooling/multiple-git-remotes.md
-    - name: 🔢 Semantic Versioning 
+    - name: 🔢 Versioning
       href: tooling/semantic-versioning.md
-    - name: ⏰ CRON 
+    - name: ⏰ CRON
       href: tooling/cron.md
-    - name: 🔒 SSH kalit qo'shish 
+    - name: 🔒 SSH kalit
       href: tooling/add-ssh-key.md
 
-- name: 🧩 Design Patterns 
+- name: 🧩 Patterns
   href: patterns/index.md
   expanded: true
 
-- name: 📔 Glossary 
+- name: 📔 Glossary
   href: glossary.md
