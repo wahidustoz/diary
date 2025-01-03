@@ -28,9 +28,9 @@
   items:
     - name: Task vs ValueTask
       href: csharp/task-yoki-valuetask.md
-    - name: C# 12 - nimalar qo'shildi?
+    - name: 😲 C# 12 - nimalar qo'shildi?
       href: csharp/csharp-12.md
-    - name: C# Remove() metodi
+    - name: ✂️ C# Remove() metodi
       href: csharp/remove.md
 
 - name: Algorithms / Data Structures
