@@ -118,3 +118,7 @@ Ma’lum bir ma’lumot boshqa ma’lumotga qaram bo’lishiham mumkin, masalan 
 ----------
 
 Murakkabroq ishlatish — loyiha talabiga qarab o’zgarib ketaveradi. Ko’proq ma’lumot olish uchun albatta FluentValidation’ning rasmiy dokumentatsiyasini o’qib chiqishni qattiq tavsiya qilaman: [https://docs.fluentvalidation.net/en/latest/aspnet.html](https://docs.fluentvalidation.net/en/latest/aspnet.html**)
+
+---
+
+[!INCLUDE [<author>](../authors/muhammad_khodjaev.html)]

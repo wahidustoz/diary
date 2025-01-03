@@ -67,3 +67,7 @@ Values: [10, 20, 40, 50]
 ### [](https://dev.to/muhammad_khodjaev/cda-remove-20pm#xulosa)Xulosa
 
 > _Xulosa qilib aytadigan bo'lsak,  `Remove()`  ishlatganimizda -> element qidiriladi, o'chirib tashlangandan so'ng qolgan elementlar chapga suriladi,  `Count`  kamayadi._
+
+---
+
+[!INCLUDE [<author>](../authors/muhammad_khodjaev.html)]
