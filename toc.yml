@@ -1,4 +1,4 @@
-- name: Onboard 🚀
+- name: 🚀 Onboard 
   href: index.md
 
 - name: .NET
@@ -42,7 +42,7 @@
     - name: Binary Heap C# | Data Structure
       href: algorithms/binaryheap.md
 
-- name: Tooling ⚙️
+- name: ⚙️ Tooling 
   href: tooling/index.md
   expanded: true
   items:
@@ -63,5 +63,5 @@
   href: patterns/index.md
   expanded: true
 
-- name: Glossary 📔
+- name: 📔 Glossary 
   href: glossary.md
