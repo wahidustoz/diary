@@ -37,7 +37,7 @@
   href: algorithms/index.md
   expanded: true
   items:
-    - name: Hash Maps - intervyu kaliti 🗝️
+    - name: 🗝️ Hash Maps - intervyu kaliti 
       href: algorithms/hashmaps.md
     - name: Binary Heap C# | Data Structure
       href: algorithms/binaryheap.md
@@ -46,20 +46,20 @@
   href: tooling/index.md
   expanded: true
   items:
-    - name: VS Code o'rnatish ✨
+    - name: ✨ VS Code o'rnatish 
       href: tooling/vscode-install.md
-    - name: VS Code sozlash 🪛
+    - name: 🪛 VS Code sozlash 
       href: tooling/vscode-setup.md
-    - name: Bir nechta git remote bilan ishlash 🖇️
+    - name: 🖇️ Bir nechta git remote bilan ishlash 
       href: tooling/multiple-git-remotes.md
-    - name: Semantic Versioning 🔢
+    - name: 🔢 Semantic Versioning 
       href: tooling/semantic-versioning.md
-    - name: CRON ⏰
+    - name: ⏰ CRON 
       href: tooling/cron.md
-    - name: SSH kalit qo'shish 🔒
+    - name: 🔒 SSH kalit qo'shish 
       href: tooling/add-ssh-key.md
 
-- name: Design Patterns 🧩
+- name: 🧩 Design Patterns 
   href: patterns/index.md
   expanded: true
 
