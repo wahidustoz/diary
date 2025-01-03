@@ -242,6 +242,26 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/authors/abduvohid_abduhakimov.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/authors/abduvohid_abduhakimov.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/authors/muhammad_khodjaev.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/authors/muhammad_khodjaev.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/csharp/csharp12-1024x576.png",
       "output": {
         "resource": {
@@ -356,6 +376,36 @@
       "output": {
         "resource": {
           "relative_path": "images/icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/social_medias/instagram.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/social_medias/instagram.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/social_medias/linkedIn.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/social_medias/linkedIn.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/social_medias/telegram.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/social_medias/telegram.png"
         }
       },
       "version": ""
