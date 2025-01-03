@@ -217,3 +217,7 @@ public class Solution
 > Keyingi maqolada [**Binary Heap**](./binaryheap.md) *Data Structure*ni **C#**ni eng zamonaviy *feature*larini qo'llagan holda implementatsiya qilamiz.
 > 
 > Shu kabi sifatli o'zbek tilidagi kontentni qo'llab quvvatlash uchun bizni [**Telegram Kanalimiz**](https://t.me/wahidustoz)ga obuna bo'ling.
+
+---
+
+[!INCLUDE [<author>](../authors/wahid_abduhakimov.html)]

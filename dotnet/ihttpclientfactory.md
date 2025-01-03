@@ -160,3 +160,7 @@ Yuqoridagi misollarda faqatgina `GET` uchun misol keltirilgan, ammo `HttpClient`
 - `DELETE`
 - `PATCH`
 - Va boshqalar
+
+---
+
+[!INCLUDE [<author>](../authors/muhammad_khodjaev.html)]

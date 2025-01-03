@@ -32,3 +32,7 @@ winget install Microsoft.DotNet.SDK.8
 <br/>
 
 :warning: Har bir yangi qo'shilgan Feature ustida batafsil postlarni shu yerda berib boraman. Yangiliklardan qolib ketmaslik uchun [Telegram kanalim](https://t.me/wahidsblog)ga obuna bo'ling!
+
+---
+
+[!INCLUDE [<author>](../authors/wahid_abduhakimov.html)]

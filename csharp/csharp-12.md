@@ -67,3 +67,7 @@ app.MapGet("/users", async (IUserService service, int? page = 1, int? pageSize =
 
 > [!TIP]
 > Yuqorida *lambda expression* yangi imkoniyatidan foydalanib Pagination uchun default qiymatlar berib ketilgan.
+
+---
+
+[!INCLUDE [<author>](../authors/wahid_abduhakimov.html)]

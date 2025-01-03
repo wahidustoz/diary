@@ -47,3 +47,7 @@ app.MapPost("/register", async([FromForm] RegisterModel model) =>
 Native AOT orqali publish qilingan dasturlarni hajmi juda kichi bo'ladi, ular juda tez ishga tushadi va juda ham kam RAM talab qiladi.
 
 [Bu yerda](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/native-aot?view=aspnetcore-8.0) batafsil o'qing!
+
+--- 
+
+[!INCLUDE [<author>](../authors/wahid_abduhakimov.html)]

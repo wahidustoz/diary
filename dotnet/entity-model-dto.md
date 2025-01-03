@@ -105,3 +105,7 @@ Quyida **Entity**, **Model**, **DTO** va Mapperlar birgalikda qanday ishlashini 
 4. **Mapperlar** esa ularning barchasini birlashtirib, hammasini zavq bilan boshqarishga imkon beradi. 😎
 
 Kodda tartib va chiroyli arxitektura — bu haqiqiy "pro" bo'lishning kaliti! 🔑
+
+---
+
+[!INCLUDE [<author>](../authors/wahid_abduhakimov.html)]

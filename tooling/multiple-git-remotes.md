@@ -72,3 +72,7 @@ git push gitlab main
 
 ## 🎉 You've made it!
 Hammasi tayyor! Endi siz **GitHub** va **GitLab**'ni bir vaqtda boshqarishingiz mumkin. 👏🚀
+
+---
+
+[!INCLUDE [<author>](../authors/wahid_abduhakimov.html)]

@@ -11,5 +11,6 @@ Here you will discover an extensive array of the most recent news, cutting-edge 
         <a href="entity-model-dto.md" class="list-group-item list-group-item-action">Dto, Model va Entity</a>
         <a href="middleware.md" class="list-group-item list-group-item-action">Middleware</a>
         <a href="fluent-validation.md" class="list-group-item list-group-item-action">FluentValidation</a>
+        <a href="ihttpclientfactory.md" class="list-group-item list-group-item-action">IHttpClientFactory</a>
     </div>
 </div>
