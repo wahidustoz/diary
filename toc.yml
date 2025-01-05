@@ -65,3 +65,10 @@
 
 - name: 📔 Glossary
   href: glossary.md
+
+- name: ⛓️ Blockchain
+  href: blockchain/index.md
+  expanded: true
+  items:
+    - name: Sepolia'ga API integratsiya qilish
+      href: 
