@@ -1,5 +1,8 @@
 # **Linux Swap: Swap nima va uni qanday yaratish mumkin?**
 
+[!INCLUDE [<author>](../authors/wahid_abduhakimov.html)]
+---
+
 ## **Swap nima va uning ahamiyati?**
 Tasavvur qiling, sizning xonangiz bor va u kitoblar bilan to‘lib ketgan. Agar yangi kitob qo‘shmoqchi bo‘lsangiz, lekin joy qolmagan bo‘lsa, vaqtincha ba'zi eski kitoblarni javondan olib, boshqa joyga qo‘yishingiz kerak. Keyinchalik kerak bo‘lganda ularni qaytarib olishingiz mumkin. **Swap huddi shu jarayon kabi ishlaydi.**
 
