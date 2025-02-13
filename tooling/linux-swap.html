@@ -105,8 +105,8 @@
 <hr>
 <p><br><br></p>
 <h2 id="swap-nima-va-uning-ahamiyati">Swap nima va uning ahamiyati?</h2>
-<div class="alert alert-light">
-<h5>INFO</h5>
+<div class="NOTE">
+<h5>Note</h5>
 <p>Tasavvur qiling, sizning xonangiz bor va u kitoblar bilan to‘lib ketgan. Agar yangi kitob qo‘shmoqchi bo‘lsangiz, lekin joy qolmagan bo‘lsa, vaqtincha ba'zi eski kitoblarni javondan olib, boshqa joyga qo‘yishingiz kerak. Keyinchalik kerak bo‘lganda ularni qaytarib olishingiz mumkin. <em>Swap huddi shu jarayon kabi ishlaydi.</em></p>
 </div>
 <p>Linux tizimida <strong>operativ xotira (RAM)</strong> to‘lib ketganida, tizim ishlamay qolmasligi uchun kam ishlatiladigan ma’lumotlarni <strong>swap hududiga</strong> (diskda ajratilgan maxsus joy) vaqtincha ko‘chiradi. Shu tariqa, tizim barqaror ishlashda davom etadi.</p>
@@ -118,14 +118,14 @@
 <h2 id="linux-tizimida-swap-yaratish">Linux tizimida swap yaratish</h2>
 <p>Agar tizimingizda swap yo‘q bo‘lsa yoki mavjud swap hajmini oshirmoqchi bo'lsangiz, quyidagi bosqichlarni bajaring:</p>
 <p><br><br></p>
-<h2 id="1-swap-mavjudligini-tekshirish">1. Swap mavjudligini tekshirish</h2>
+<h3 id="1-swap-mavjudligini-tekshirish">1. Swap mavjudligini tekshirish</h3>
 <p>Birinchi navbatda, swap yo‘qligini tekshirib olamiz:</p>
 <pre><code class="lang-bash">swapon --show
 </code></pre>
 <p>Agar hech narsa ko‘rinmasa, swap yo‘q degani.</p>
 <hr>
 <p><br><br></p>
-<h2 id="2-swap-fayl-yaratish">2. Swap fayl yaratish</h2>
+<h3 id="2-swap-fayl-yaratish">2. Swap fayl yaratish</h3>
 <p>2GB swap fayl yaratish uchun:</p>
 <pre><code class="lang-bash">sudo fallocate -l 2G /swapfile
 </code></pre>
@@ -135,19 +135,19 @@
 <p><code>fallocate</code> swap faylni tez yaratadi, lekin ba'zi eski tizimlarda ishlamasligi mumkin. <code>dd</code> usuli esa sekinroq, lekin hamma tizimlarda ishlaydi.</p>
 <hr>
 <p><br><br></p>
-<h2 id="3-swap-fayl-uchun-ruxsatlarni-sozlash">3. Swap fayl uchun ruxsatlarni sozlash</h2>
+<h3 id="3-swap-fayl-uchun-ruxsatlarni-sozlash">3. Swap fayl uchun ruxsatlarni sozlash</h3>
 <p>Xavfsizlik uchun faqat tizim swap faylga murojaat qila olishi kerak:</p>
 <pre><code class="lang-bash">sudo chmod 600 /swapfile
 </code></pre>
 <hr>
 <p><br><br></p>
-<h2 id="4-swap-faylni-formatlash">4. Swap faylni formatlash</h2>
+<h3 id="4-swap-faylni-formatlash">4. Swap faylni formatlash</h3>
 <p>Swap sifatida sozlash:</p>
 <pre><code class="lang-bash">sudo mkswap /swapfile
 </code></pre>
 <hr>
 <p><br><br></p>
-<h2 id="5-swap-ni-faollashtirish">5. Swap-ni faollashtirish</h2>
+<h3 id="5-swap-ni-faollashtirish">5. Swap-ni faollashtirish</h3>
 <p>Endi swap-ni yoqamiz:</p>
 <pre><code class="lang-bash">sudo swapon /swapfile
 </code></pre>
@@ -158,14 +158,14 @@ swapon --show
 <p>Agar swap ro‘yxatda ko‘rinsa, demak, hammasi to‘g‘ri ishlamoqda.</p>
 <hr>
 <p><br><br></p>
-<h2 id="6-swap-ni-doimiy-qilish">6. Swap-ni doimiy qilish</h2>
+<h3 id="6-swap-ni-doimiy-qilish">6. Swap-ni doimiy qilish</h3>
 <p>Tizimni qayta yuklagandan keyin swap avtomatik ravishda yoqilishi uchun <code>/etc/fstab</code> fayliga quyidagi qatorni qo‘shamiz:</p>
 <pre><code class="lang-bash">echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 </code></pre>
 <p>Bu qator tizim yuklanganda swap faylni avtomatik ravishda ulaydi.</p>
 <hr>
 <p><br><br></p>
-<h2 id="7-swapni-ishlatish-darajasini-sozlash-ixtiyoriy">7. Swapni ishlatish darajasini sozlash (ixtiyoriy)</h2>
+<h3 id="7-swapni-ishlatish-darajasini-sozlash-ixtiyoriy">7. Swapni ishlatish darajasini sozlash (ixtiyoriy)</h3>
 <p><strong>Swappiness</strong> - bu tizim qanchalik tez-tez swap-dan foydalanishini belgilaydi.</p>
 <p>Joriy sozlamani tekshirish:</p>
 <pre><code class="lang-bash">cat /proc/sys/vm/swappiness
