@@ -8,6 +8,7 @@
 
 ### Swap nima va uning ahamiyati?
 
+> [!INFO]
 > Tasavvur qiling, sizning xonangiz bor va u kitoblar bilan to‘lib ketgan. Agar yangi kitob qo‘shmoqchi bo‘lsangiz, lekin joy qolmagan bo‘lsa, vaqtincha ba'zi eski kitoblarni javondan olib, boshqa joyga qo‘yishingiz kerak. Keyinchalik kerak bo‘lganda ularni qaytarib olishingiz mumkin. _Swap huddi shu jarayon kabi ishlaydi._
 
 Linux tizimida **operativ xotira (RAM)** to‘lib ketganida, tizim ishlamay qolmasligi uchun kam ishlatiladigan ma’lumotlarni **swap hududiga** (diskda ajratilgan maxsus joy) vaqtincha ko‘chiradi. Shu tariqa, tizim barqaror ishlashda davom etadi.
