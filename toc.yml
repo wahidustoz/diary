@@ -48,6 +48,8 @@
   items:
     - name: ✨ VS o'rnatish
       href: tooling/vscode-install.md
+    - name: 💾 Linux Swap
+      href: tooling/linux-swap.md
     - name: 🪛 VS sozlash
       href: tooling/vscode-setup.md
     - name: 🖇 Git remote
