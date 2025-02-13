@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Linux Swap: Swap nima va uni qanday yaratish mumkin? | Wahid Ustoz </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Linux Swap: Swap nima va uni qanday yaratish mumkin? | Wahid Ustoz ">
+      
+      
+      <link rel="icon" href="../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/wahidustoz/diary/blob/main/tooling/linux-swap.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-2801S09L9Y"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-2801S09L9Y');
+      </script>
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Diary">
+            Diary
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="linux-swap-swap-nima-va-uni-qanday-yaratish-mumkin"><strong>Linux Swap: Swap nima va uni qanday yaratish mumkin?</strong></h1>
+
+<h2 id="swap-nima-va-uning-ahamiyati"><strong>Swap nima va uning ahamiyati?</strong></h2>
+<p>Tasavvur qiling, sizning xonangiz bor va u kitoblar bilan to‘lib ketgan. Agar yangi kitob qo‘shmoqchi bo‘lsangiz, lekin joy qolmagan bo‘lsa, vaqtincha ba'zi eski kitoblarni javondan olib, boshqa joyga qo‘yishingiz kerak. Keyinchalik kerak bo‘lganda ularni qaytarib olishingiz mumkin. <strong>Swap huddi shu jarayon kabi ishlaydi.</strong></p>
+<p>Linux tizimida <strong>operativ xotira (RAM)</strong> to‘lib ketganida, tizim ishlamay qolmasligi uchun kam ishlatiladigan ma’lumotlarni <strong>swap hududiga</strong> (diskda ajratilgan maxsus joy) vaqtincha ko‘chiradi. Shu tariqa, tizim barqaror ishlashda davom etadi.</p>
+<h2 id="swap-bolmasa-nima-boladi"><strong>Swap bo‘lmasa nima bo‘ladi?</strong></h2>
+<p>Agar swap bo‘lmasa va operativ xotira to‘lib ketsa, tizim dasturlarni majburan yopishga yoki hatto osilib qolishga majbur bo‘ladi. Tizimda yetarli RAM bo‘lmasa, operatsion tizim muhim bo‘lmagan jarayonlarni yopadi yoki tizim sekinlashib, hatto ishlamay qolishi mumkin. Ayniqsa, <strong>kam RAM</strong> (masalan, 2GB yoki 4GB) bo‘lgan tizimlarda swap juda muhim.</p>
+<hr>
+<h2 id="linux-tizimida-swap-yaratish"><strong>Linux tizimida swap yaratish</strong></h2>
+<p>Agar tizimingizda swap yo‘q bo‘lsa yoki mavjud swap hajmini oshirmoqchi bo‘lsangiz, quyidagi bosqichlarni bajaring:</p>
+<h3 id="1-swap-mavjudligini-tekshirish"><strong>1. Swap mavjudligini tekshirish</strong></h3>
+<p>Birinchi navbatda, swap yo‘qligini tekshirib olamiz:</p>
+<pre><code class="lang-bash">swapon --show
+</code></pre>
+<p>Agar hech narsa ko‘rinmasa, swap yo‘q degani.</p>
+<hr>
+<h3 id="2-swap-fayl-yaratish"><strong>2. Swap fayl yaratish</strong></h3>
+<p>2GB swap fayl yaratish uchun:</p>
+<pre><code class="lang-bash">sudo fallocate -l 2G /swapfile
+</code></pre>
+<p>Agar <code>fallocate</code> ishlamasa, quyidagi usuldan foydalaning:</p>
+<pre><code class="lang-bash">sudo dd if=/dev/zero of=/swapfile bs=1M count=2048
+</code></pre>
+<p><code>fallocate</code> swap faylni tez yaratadi, lekin ba'zi eski tizimlarda ishlamasligi mumkin. <code>dd</code> usuli esa sekinroq, lekin hamma tizimlarda ishlaydi.</p>
+<hr>
+<h3 id="3-swap-fayl-uchun-ruxsatlarni-sozlash"><strong>3. Swap fayl uchun ruxsatlarni sozlash</strong></h3>
+<p>Xavfsizlik uchun faqat tizim swap faylga murojaat qila olishi kerak:</p>
+<pre><code class="lang-bash">sudo chmod 600 /swapfile
+</code></pre>
+<hr>
+<h3 id="4-swap-faylni-formatlash"><strong>4. Swap faylni formatlash</strong></h3>
+<p>Swap sifatida sozlash:</p>
+<pre><code class="lang-bash">sudo mkswap /swapfile
+</code></pre>
+<hr>
+<h3 id="5-swap-ni-faollashtirish"><strong>5. Swap-ni faollashtirish</strong></h3>
+<p>Endi swap-ni yoqamiz:</p>
+<pre><code class="lang-bash">sudo swapon /swapfile
+</code></pre>
+<p>Ishlayotganligini tekshiramiz:</p>
+<pre><code class="lang-bash">free -h
+swapon --show
+</code></pre>
+<p>Agar swap ro‘yxatda ko‘rinsa, demak, hammasi to‘g‘ri ishlamoqda.</p>
+<hr>
+<h3 id="6-swap-ni-doimiy-qilish"><strong>6. Swap-ni doimiy qilish</strong></h3>
+<p>Tizimni qayta yuklagandan keyin swap avtomatik ravishda yoqilishi uchun <code>/etc/fstab</code> fayliga quyidagi qatorni qo‘shamiz:</p>
+<pre><code class="lang-bash">echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+</code></pre>
+<p>Bu qator tizim yuklanganda swap faylni avtomatik ravishda ulaydi.</p>
+<hr>
+<h3 id="7-swapni-ishlatish-darajasini-sozlash-ixtiyoriy"><strong>7. Swapni ishlatish darajasini sozlash (ixtiyoriy)</strong></h3>
+<p><strong>Swappiness</strong> - bu tizim qanchalik tez-tez swap-dan foydalanishini belgilaydi.</p>
+<p>Joriy sozlamani tekshirish:</p>
+<pre><code class="lang-bash">cat /proc/sys/vm/swappiness
+</code></pre>
+<p>Odatiy qiymat <strong>60</strong> bo‘ladi. Agar swap kamroq ishlatilishini xohlasangiz, <strong>10 yoki 20</strong> qilib qo‘ying:</p>
+<pre><code class="lang-bash">echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+</code></pre>
+<p>Agar tizimingizda yetarli RAM bo‘lsa va swap kamroq ishlatilishini istasangiz, bu qiymatni pasaytirish mumkin.</p>
+<hr>
+<h2 id="xulosa"><strong>Xulosa</strong></h2>
+<p>Swap - Linux tizimining barqaror ishlashida muhim rol o‘ynaydi. Ayniqsa, kam RAM-ga ega kompyuterlar uchun swap hajmini to‘g‘ri sozlash tizim ish faoliyatini sezilarli darajada yaxshilashi mumkin.</p>
+<p>Tizimingizdagi RAM miqdoriga qarab swap hajmini belgilash tavsiya etiladi:</p>
+<ul>
+<li><strong>4GB RAM</strong> uchun <strong>2GB swap</strong></li>
+<li><strong>8GB RAM</strong> uchun <strong>4GB swap</strong></li>
+<li><strong>16GB RAM</strong> va undan ko‘p bo‘lsa, swap <strong>minimal (1GB-2GB)</strong> bo‘lishi mumkin.</li>
+</ul>
+<p>Endi siz swap faylni qanday yaratishni va uni qanday sozlashni bilasiz! 🚀 Agar savollaringiz bo‘lsa, bemalol so‘rang. 😊</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/wahidustoz/diary/blob/main/tooling/linux-swap.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © Made with 💟 by <a href='https://t.me/wahidustoz'>Wahid Ustoz</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
