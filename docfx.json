@@ -29,11 +29,11 @@
     "output": "_site",
     "globalMetadata": {
       "_enableSearch": true,
-      "_appTitle": "Wahid Ustoz",
-      "_appName": "Diary",
+      "_appTitle": "wahidustoz",
+      "_appName": "wahidustoz",
       "_appLogoPath": "images/icon.png",
       "_appFaviconPath": "images/favicon/favicon.ico",
-      "_appFooter": "© Made with 💟 by <a href='https://t.me/wahidustoz'>Wahid Ustoz</a>",
+      "_appFooter": "© Made with 💟 by <a href='https://t.me/wahidustoz'>wahidustoz</a>",
       "_enableNewTab": true,
       "_enableNavbar": false,
       "_googleAnalyticsTagId": "G-2801S09L9Y"
@@ -51,7 +51,7 @@
     "disableGitFeatures": false
   },
   "sitemap": {
-    "baseUrl": "https://wahid-d.github.io/diary",
+    "baseUrl": "https://wahidustoz.github.io/diary",
     "priority": 0.1,
     "changefreq": "daily"
   }
