@@ -8,7 +8,7 @@
 
 ## Swap nima va uning ahamiyati?
 
-> [!INFO]
+> [!NOTE]
 > Tasavvur qiling, sizning xonangiz bor va u kitoblar bilan to‘lib ketgan. Agar yangi kitob qo‘shmoqchi bo‘lsangiz, lekin joy qolmagan bo‘lsa, vaqtincha ba'zi eski kitoblarni javondan olib, boshqa joyga qo‘yishingiz kerak. Keyinchalik kerak bo‘lganda ularni qaytarib olishingiz mumkin. _Swap huddi shu jarayon kabi ishlaydi._
 
 Linux tizimida **operativ xotira (RAM)** to‘lib ketganida, tizim ishlamay qolmasligi uchun kam ishlatiladigan ma’lumotlarni **swap hududiga** (diskda ajratilgan maxsus joy) vaqtincha ko‘chiradi. Shu tariqa, tizim barqaror ishlashda davom etadi.
@@ -29,7 +29,7 @@ Agar tizimingizda swap yo‘q bo‘lsa yoki mavjud swap hajmini oshirmoqchi bo'l
 
 <br><br>
 
-## 1. Swap mavjudligini tekshirish
+### 1. Swap mavjudligini tekshirish
 
 Birinchi navbatda, swap yo‘qligini tekshirib olamiz:
 
@@ -43,7 +43,7 @@ Agar hech narsa ko‘rinmasa, swap yo‘q degani.
 
 <br><br>
 
-## 2. Swap fayl yaratish
+### 2. Swap fayl yaratish
 
 2GB swap fayl yaratish uchun:
 
@@ -63,7 +63,7 @@ sudo dd if=/dev/zero of=/swapfile bs=1M count=2048
 
 <br><br>
 
-## 3. Swap fayl uchun ruxsatlarni sozlash
+### 3. Swap fayl uchun ruxsatlarni sozlash
 
 Xavfsizlik uchun faqat tizim swap faylga murojaat qila olishi kerak:
 
@@ -75,7 +75,7 @@ sudo chmod 600 /swapfile
 
 <br><br>
 
-## 4. Swap faylni formatlash
+### 4. Swap faylni formatlash
 
 Swap sifatida sozlash:
 
@@ -87,7 +87,7 @@ sudo mkswap /swapfile
 
 <br><br>
 
-## 5. Swap-ni faollashtirish
+### 5. Swap-ni faollashtirish
 
 Endi swap-ni yoqamiz:
 
@@ -108,7 +108,7 @@ Agar swap ro‘yxatda ko‘rinsa, demak, hammasi to‘g‘ri ishlamoqda.
 
 <br><br>
 
-## 6. Swap-ni doimiy qilish
+### 6. Swap-ni doimiy qilish
 
 Tizimni qayta yuklagandan keyin swap avtomatik ravishda yoqilishi uchun `/etc/fstab` fayliga quyidagi qatorni qo‘shamiz:
 
@@ -122,7 +122,7 @@ Bu qator tizim yuklanganda swap faylni avtomatik ravishda ulaydi.
 
 <br><br>
 
-## 7. Swapni ishlatish darajasini sozlash (ixtiyoriy)
+### 7. Swapni ishlatish darajasini sozlash (ixtiyoriy)
 
 **Swappiness** - bu tizim qanchalik tez-tez swap-dan foydalanishini belgilaydi.
 
