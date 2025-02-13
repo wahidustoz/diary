@@ -105,18 +105,18 @@
 <hr>
 <h4 id="swap-nima-va-uning-ahamiyati">Swap nima va uning ahamiyati?</h4>
 <p>Tasavvur qiling, sizning xonangiz bor va u kitoblar bilan to‘lib ketgan. Agar yangi kitob qo‘shmoqchi bo‘lsangiz, lekin joy qolmagan bo‘lsa, vaqtincha ba'zi eski kitoblarni javondan olib, boshqa joyga qo‘yishingiz kerak. Keyinchalik kerak bo‘lganda ularni qaytarib olishingiz mumkin. <strong>Swap huddi shu jarayon kabi ishlaydi.</strong></p>
-<p>Linux tizimida <strong>operativ xotira (RAM)</strong> to‘lib ketganida, tizim ishlamay qolmasligi uchun kam ishlatiladigan ma’lumotlarni <strong>swap hududiga</strong> (diskda ajratilgan maxsus joy) vaqtincha ko‘chiradi. Shu tariqa, tizim barqaror ishlashda davom etadi.
-<br></p>
+<p>Linux tizimida <strong>operativ xotira (RAM)</strong> to‘lib ketganida, tizim ishlamay qolmasligi uchun kam ishlatiladigan ma’lumotlarni <strong>swap hududiga</strong> (diskda ajratilgan maxsus joy) vaqtincha ko‘chiradi. Shu tariqa, tizim barqaror ishlashda davom etadi.</p>
 <h4 id="swap-bolmasa-nima-boladi">Swap bo‘lmasa nima bo‘ladi?</h4>
-<h2 id="agar-swap-bolmasa-va-operativ-xotira-tolib-ketsa-tizim-dasturlarni-majburan-yopishga-yoki-hatto-osilib-qolishga-majbur-boladi-tizimda-yetarli-ram-bolmasa-operatsion-tizim-muhim-bolmagan-jarayonlarni-yopadi-yoki-tizim-sekinlashib-hatto-ishlamay-qolishi-mumkin-ayniqsa-kam-ram-masalan-2gb-yoki-4gb-bolgan-tizimlarda-swap-juda-muhim">Agar swap bo‘lmasa va operativ xotira to‘lib ketsa, tizim dasturlarni majburan yopishga yoki hatto osilib qolishga majbur bo‘ladi. Tizimda yetarli RAM bo‘lmasa, operatsion tizim muhim bo‘lmagan jarayonlarni yopadi yoki tizim sekinlashib, hatto ishlamay qolishi mumkin. Ayniqsa, <strong>kam RAM</strong> (masalan, 2GB yoki 4GB) bo‘lgan tizimlarda swap juda muhim.</h2>
-<p><br><br></p>
+<p>Agar swap bo‘lmasa va operativ xotira to‘lib ketsa, tizim dasturlarni majburan yopishga yoki hatto osilib qolishga majbur bo‘ladi. Tizimda yetarli RAM bo‘lmasa, operatsion tizim muhim bo‘lmagan jarayonlarni yopadi yoki tizim sekinlashib, hatto ishlamay qolishi mumkin. Ayniqsa, <strong>kam RAM</strong> (masalan, 2GB yoki 4GB) bo'lgan tizimlarda swap juda muhim.</p>
+<hr>
 <h4 id="linux-tizimida-swap-yaratish">Linux tizimida swap yaratish</h4>
 <p>Agar tizimingizda swap yo‘q bo‘lsa yoki mavjud swap hajmini oshirmoqchi bo'lsangiz, quyidagi bosqichlarni bajaring:</p>
 <h5 id="1-swap-mavjudligini-tekshirish">1. Swap mavjudligini tekshirish</h5>
 <p>Birinchi navbatda, swap yo‘qligini tekshirib olamiz:</p>
 <pre><code class="lang-bash">swapon --show
 </code></pre>
-<h2 id="agar-hech-narsa-korinmasa-swap-yoq-degani">Agar hech narsa ko‘rinmasa, swap yo‘q degani.</h2>
+<p>Agar hech narsa ko‘rinmasa, swap yo‘q degani.</p>
+<hr>
 <h5 id="2-swap-fayl-yaratish">2. Swap fayl yaratish</h5>
 <p>2GB swap fayl yaratish uchun:</p>
 <pre><code class="lang-bash">sudo fallocate -l 2G /swapfile
@@ -124,7 +124,8 @@
 <p>Agar <code>fallocate</code> ishlamasa, quyidagi usuldan foydalaning:</p>
 <pre><code class="lang-bash">sudo dd if=/dev/zero of=/swapfile bs=1M count=2048
 </code></pre>
-<h2 id="fallocate-swap-faylni-tez-yaratadi-lekin-bazi-eski-tizimlarda-ishlamasligi-mumkin-dd-usuli-esa-sekinroq-lekin-hamma-tizimlarda-ishlaydi"><code>fallocate</code> swap faylni tez yaratadi, lekin ba'zi eski tizimlarda ishlamasligi mumkin. <code>dd</code> usuli esa sekinroq, lekin hamma tizimlarda ishlaydi.</h2>
+<p><code>fallocate</code> swap faylni tez yaratadi, lekin ba'zi eski tizimlarda ishlamasligi mumkin. <code>dd</code> usuli esa sekinroq, lekin hamma tizimlarda ishlaydi.</p>
+<hr>
 <h5 id="3-swap-fayl-uchun-ruxsatlarni-sozlash">3. Swap fayl uchun ruxsatlarni sozlash</h5>
 <p>Xavfsizlik uchun faqat tizim swap faylga murojaat qila olishi kerak:</p>
 <pre><code class="lang-bash">sudo chmod 600 /swapfile
@@ -143,12 +144,14 @@
 <pre><code class="lang-bash">free -h
 swapon --show
 </code></pre>
-<h2 id="agar-swap-royxatda-korinsa-demak-hammasi-togri-ishlamoqda">Agar swap ro‘yxatda ko‘rinsa, demak, hammasi to‘g‘ri ishlamoqda.</h2>
+<p>Agar swap ro‘yxatda ko‘rinsa, demak, hammasi to‘g‘ri ishlamoqda.</p>
+<hr>
 <h5 id="6-swap-ni-doimiy-qilish">6. Swap-ni doimiy qilish</h5>
 <p>Tizimni qayta yuklagandan keyin swap avtomatik ravishda yoqilishi uchun <code>/etc/fstab</code> fayliga quyidagi qatorni qo‘shamiz:</p>
 <pre><code class="lang-bash">echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 </code></pre>
-<h2 id="bu-qator-tizim-yuklanganda-swap-faylni-avtomatik-ravishda-ulaydi">Bu qator tizim yuklanganda swap faylni avtomatik ravishda ulaydi.</h2>
+<p>Bu qator tizim yuklanganda swap faylni avtomatik ravishda ulaydi.</p>
+<hr>
 <h5 id="7-swapni-ishlatish-darajasini-sozlash-ixtiyoriy">7. Swapni ishlatish darajasini sozlash (ixtiyoriy)</h5>
 <p><strong>Swappiness</strong> - bu tizim qanchalik tez-tez swap-dan foydalanishini belgilaydi.</p>
 <p>Joriy sozlamani tekshirish:</p>
@@ -158,16 +161,15 @@ swapon --show
 <pre><code class="lang-bash">echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 </code></pre>
-<h2 id="agar-tizimingizda-yetarli-ram-bolsa-va-swap-kamroq-ishlatilishini-istasangiz-bu-qiymatni-pasaytirish-mumkin">Agar tizimingizda yetarli RAM bo‘lsa va swap kamroq ishlatilishini istasangiz, bu qiymatni pasaytirish mumkin.</h2>
-<p><br><br></p>
+<p>Agar tizimingizda yetarli RAM bo‘lsa va swap kamroq ishlatilishini istasangiz, bu qiymatni pasaytirish mumkin.</p>
+<hr>
 <h4 id="xulosa">Xulosa</h4>
 <p>Swap - Linux tizimining barqaror ishlashida muhim rol o‘ynaydi. Ayniqsa, kam RAM-ga ega kompyuterlar uchun swap hajmini to‘g‘ri sozlash tizim ish faoliyatini sezilarli darajada yaxshilashi mumkin.</p>
 <p>Tizimingizdagi RAM miqdoriga qarab swap hajmini belgilash tavsiya etiladi:</p>
 <ul>
 <li><strong>4GB RAM</strong> uchun <strong>2GB swap</strong></li>
 <li><strong>8GB RAM</strong> uchun <strong>4GB swap</strong></li>
-<li><strong>16GB RAM</strong> va undan ko‘p bo‘lsa, swap <strong>minimal (1GB-2GB)</strong> bo‘lishi mumkin.
-<br><br></li>
+<li><strong>16GB RAM</strong> va undan ko‘p bo‘lsa, swap <strong>minimal (1GB-2GB)</strong> bo‘lishi mumkin.</li>
 </ul>
 <p>Endi siz swap faylni qanday yaratishni va uni qanday sozlashni bilasiz! 🚀 Agar savollaringiz bo‘lsa, bemalol so‘rang. 😊</p>
 
