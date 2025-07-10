@@ -11,5 +11,6 @@ Here you will find a collection of useful tools and resources for your developme
         <a href="semantic-versioning.md" class="list-group-item list-group-item-action">🔢 Versiyalarni raqamlash</a>
         <a href="cron.md" class="list-group-item list-group-item-action">⏰ Cron bilan vaqtni boshqarish</a>
         <a href="add-ssh-key.md" class="list-group-item list-group-item-action">🔒 SSH kalitini qo'shish</a>
+        <a href="pull-request-maslahatlar.md" class="list-group-item list-group-item-action">🚀 Pull Request yaratish san'ati</a>
     </div>
 </div>
