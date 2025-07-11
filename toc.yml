@@ -60,6 +60,8 @@
       href: tooling/cron.md
     - name: 🔒 SSH kalit
       href: tooling/add-ssh-key.md
+    - name: 🚀 Pull Request
+      href: tooling/pull-request-maslahatlar.md
 
 - name: 🧩 Patterns
   href: patterns/index.md
@@ -67,6 +69,3 @@
 
 - name: 📔 Glossary
   href: glossary.md
-
-- name: 🚀 Pull Request
-  href: tooling/pull-request-maslahatlar.md
