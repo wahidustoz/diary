@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>&#128640; Sifatli Pull Request yaratish san&#39;ati: Jamoa hamkorligining kaliti | wahidustoz </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="&#128640; Sifatli Pull Request yaratish san&#39;ati: Jamoa hamkorligining kaliti | wahidustoz ">
+      
+      
+      <link rel="icon" href="../images/favicon/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/wahidustoz/diary/blob/main/tooling/pull-request-maslahatlar.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-2801S09L9Y"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-2801S09L9Y');
+      </script>
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="wahidustoz">
+            wahidustoz
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="-sifatli-pull-request-yaratish-sanati-jamoa-hamkorligining-kaliti">🚀 Sifatli Pull Request yaratish san'ati: Jamoa hamkorligining kaliti</h1>
+
+<hr>
+<h2 id="-pull-request-nima">🤔 Pull Request nima?</h2>
+<p>Tasavvur qiling, siz guruh bilan birgalikda katta kitob yozyapsiz. Har bir yozuvchi o'z bobini yozadi, lekin kitobga qo'shishdan oldin, boshqa yozuvchilar uni ko'rib chiqishi kerak. <strong>Pull Request (PR)</strong> aynan shunday vazifani bajaradi - bu sizning kodingizni asosiy loyihaga qo'shishdan oldin ko'rib chiqish uchun so'rov.</p>
+<h3 id="-oddiy-hayotdan-misol">🏠 Oddiy hayotdan misol</h3>
+<p>Pull Request xuddi uyingizni ta'mirlashga o'xshaydi:</p>
+<ul>
+<li><strong>Siz</strong> - ustasiz 🔨</li>
+<li><strong>Uyingiz</strong> - asosiy loyiha 🏠</li>
+<li><strong>Ta'mirlash rejangiz</strong> - sizning o'zgartirishlaringiz 📋</li>
+<li><strong>Oila a'zolaringiz</strong> - jamoadoshlaringiz 👨‍👩‍👧‍👦</li>
+</ul>
+<p>Ta'mirlashni boshlashdan oldin, oilangizga rejangizni ko'rsatib, ularning fikrini so'raysiz. Xuddi shunday, PR orqali jamoadoshlaringizga o'zgartirishlaringizni ko'rsatib, tasdiqlashlarini so'raysiz.</p>
+<hr>
+<h2 id="-nima-uchun-pull-request-muhim">💡 Nima uchun Pull Request muhim?</h2>
+<h3 id="1-xatolarni-oldini-olish-">1. <strong>Xatolarni oldini olish</strong> 🛡️</h3>
+<p>Ikki ko'z bitta ko'zdan yaxshi ko'radi. Jamoadoshlaringiz sizning e'tibordan chetda qolgan xatolarni topishi mumkin.</p>
+<h3 id="2-bilim-almashish-">2. <strong>Bilim almashish</strong> 📚</h3>
+<p>PR orqali jamoa a'zolari bir-biridan o'rganadi va loyiha haqida ko'proq ma'lumotga ega bo'ladi.</p>
+<h3 id="3-kod-sifatini-oshirish-">3. <strong>Kod sifatini oshirish</strong> ⭐</h3>
+<p>Ko'rib chiqish jarayoni kodning umumiy sifatini oshiradi va standartlarga muvofiqligini ta'minlaydi.</p>
+<h3 id="4-tarixni-saqlash-">4. <strong>Tarixni saqlash</strong> 📜</h3>
+<p>Har bir PR loyihaning qanday rivojlanganini ko'rsatuvchi tarixiy hujjat bo'lib xizmat qiladi.</p>
+<h3 id="5-jamoaviy-masuliyat-">5. <strong>Jamoaviy mas'uliyat</strong> 🤝</h3>
+<p>Kod faqat bir kishiga tegishli emas, balki butun jamoa uchun tushunarli va qo'llab-quvvatlanadigan bo'ladi.</p>
+<hr>
+<h2 id="-yaxshi-pull-request-qanday-boladi">✨ Yaxshi Pull Request qanday bo'ladi?</h2>
+<h3 id="-1-kichik-va-aniq">📏 1. <strong>Kichik va aniq</strong></h3>
+<blockquote>
+<p>&quot;Toma-toma ko'l bo'lur&quot; - o'zbek maqoli</p>
+</blockquote>
+<p>Yaxshi PR:</p>
+<ul>
+<li>✅ Bitta aniq vazifani hal qiladi</li>
+<li>✅ 200-400 qator koddan oshmaydi</li>
+<li>✅ 15 daqiqada ko'rib chiqilishi mumkin</li>
+</ul>
+<h3 id="-2-tushunarli-sarlavha-va-tavsif">📝 2. <strong>Tushunarli sarlavha va tavsif</strong></h3>
+<p><strong>Yomon misol:</strong></p>
+<pre><code>&quot;Bug fix&quot;
+&quot;Yangilanish&quot;
+&quot;Test&quot;
+</code></pre>
+<p><strong>Yaxshi misol:</strong></p>
+<pre><code>&quot;🐛 Foydalanuvchi login qilganda xatolikni tuzatish&quot;
+&quot;✨ Mahsulotlar ro'yxatiga qidiruv funksiyasi qo'shish&quot;
+&quot;📱 Mobil qurilmalar uchun menyuni moslashtirish&quot;
+</code></pre>
+<h3 id="-3-vizual-misol-screenshot">📸 3. <strong>Vizual misol (screenshot)</strong></h3>
+<p>Agar sizning o'zgartirishingiz ko'rinadigan bo'lsa, skrinshot yoki GIF qo'shing:</p>
+<pre><code class="lang-markdown">### Oldin:
+Biror bir rasm
+
+### Keyin:
+Biror bir rasm
+</code></pre>
+<h3 id="-4-aniq-maqsad">🎯 4. <strong>Aniq maqsad</strong></h3>
+<p>PR tavsifida quyidagilarni ko'rsating:</p>
+<ul>
+<li><strong>Muammo:</strong> Qanday muammoni hal qilyapsiz?</li>
+<li><strong>Yechim:</strong> Qanday hal qildingiz?</li>
+<li><strong>Natija:</strong> Nimaga erishdingiz?</li>
+</ul>
+<hr>
+<h2 id="-pull-request-yaratish-bosqichlari">🔧 Pull Request yaratish bosqichlari</h2>
+<h3 id="1-tayyorgarlik">1️⃣ <strong>Tayyorgarlik</strong></h3>
+<pre><code class="lang-bash"># Yangi branch yarating
+git checkout -b yangi-funksiya
+
+# O'zgartirishlarni amalga oshiring
+# ...kod yozish...
+
+# O'zgartirishlarni saqlang
+git add .
+git commit -m &quot;Aniq va tushunarli commit xabar&quot;
+</code></pre>
+<h3 id="2-pr-shablonini-toldirish">2️⃣ <strong>PR shablonini to'ldirish</strong></h3>
+<pre><code class="lang-markdown">## 📋 O'zgartirishlar tavsifi
+[Bu yerda nima qilganingizni tushuntiring]
+
+## 🎯 Muammo
+[Qaysi muammoni hal qilyapsiz?]
+
+## 💡 Yechim
+[Qanday hal qildingiz?]
+
+## ✅ Test qilish
+- [ ] Mahalliy muhitda test qildim
+- [ ] Barcha testlar muvaffaqiyatli o'tdi
+- [ ] Mobil qurilmalarda tekshirdim
+
+## 📸 Skrinshot/Demo
+[Agar mavjud bo'lsa]
+
+## 🔗 Bog'liq issue
+Fixes #123
+</code></pre>
+<h3 id="3-korib-chiquvchilarni-tayinlash">3️⃣ <strong>Ko'rib chiquvchilarni tayinlash</strong></h3>
+<ul>
+<li>Mavzuni yaxshi biladigan jamoadoshlarni tanlang</li>
+<li>1-3 ta ko'rib chiquvchi optimal</li>
+<li>Shoshilinch bo'lsa, Slack/Teams, Telegram orqali xabar bering</li>
+</ul>
+<hr>
+<h2 id="-eng-yaxshi-amaliyotlar">🌟 Eng yaxshi amaliyotlar</h2>
+<h3 id="1-commit-xabarlarini-togri-yozing">1. <strong>Commit xabarlarini to'g'ri yozing</strong></h3>
+<pre><code class="lang-bash"># Yomon ❌
+git commit -m &quot;fix&quot;
+git commit -m &quot;asdf&quot;
+git commit -m &quot;done&quot;
+
+# Yaxshi ✅
+git commit -m &quot;feat: mahsulot qo'shish funksiyasini yaratish&quot;
+git commit -m &quot;fix: login sahifasidagi validatsiya xatosini tuzatish&quot;
+git commit -m &quot;docs: API dokumentatsiyasini yangilash&quot;
+</code></pre>
+<h3 id="2-oz-pr-ingizni-birinchi-bolib-korib-chiqing">2. <strong>O'z PR-ingizni birinchi bo'lib ko'rib chiqing</strong></h3>
+<p>PR yaratishdan oldin:</p>
+<ul>
+<li>🔍 O'z kodingizni qaytadan o'qing</li>
+<li>🧹 Keraksiz console.log va commentlarni o'chiring</li>
+<li>📐 Kod formatlashni tekshiring</li>
+<li>🧪 Testlarni ishga tushiring</li>
+</ul>
+<h3 id="3-context-kontekst-bering">3. <strong>Context (kontekst) bering</strong></h3>
+<pre><code class="lang-markdown">## 🔍 Kontekst
+Bu o'zgartirishlar #125 issue-ni hal qilish uchun qilingan. 
+Foydalanuvchilar mobil qurilmalarda menyuni ochishda 
+qiyinchilikka duch kelishgan. Bu PR mobil uchun 
+alohida menyu qo'shadi.
+
+## 🤔 Muqobil yechimlar
+1. CSS Media Query ishlatish - lekin murakkab animatsiyalar uchun mos emas
+2. Alohida mobil sahifa - ortiqcha kod takrorlanishi
+3. **Tanlangan:** Responsive hamburger menyu - eng optimal yechim
+</code></pre>
+<h3 id="4-review-commentlariga-professional-javob-bering">4. <strong>Review commentlariga professional javob bering</strong></h3>
+<pre><code class="lang-markdown"># Yomon javob ❌
+&quot;Men to'g'ri qilganman, o'zingiz xato qilyapsiz&quot;
+
+# Yaxshi javob ✅
+&quot;Rahmat fikringiz uchun! Men bu yondashuvni tanladim chunki:
+1. Performance jihatdan tezroq
+2. Kelajakda kengaytirish oson
+3. Mavjud kod bilan mos keladi
+
+Lekin sizning taklifingiz ham mantiqli. Agar xohlasangiz, 
+o'zgartirishim mumkin. Nima deb o'ylaysiz?&quot;
+</code></pre>
+<hr>
+<h2 id="-xatolardan-qochish">⚠️ Xatolardan qochish</h2>
+<h3 id="1-juda-katta-pr-yaratish">1. <strong>Juda katta PR yaratish</strong></h3>
+<p>❌ 1000+ qator kod
+✅ Kichik, mantiqiy bo'laklarga bo'ling</p>
+<h3 id="2-tavsif-yozmaslik">2. <strong>Tavsif yozmaslik</strong></h3>
+<p>❌ Bo'sh PR tavsif
+✅ Batafsil tushuntirish</p>
+<h3 id="3-testlarsiz-pr">3. <strong>Testlarsiz PR</strong></h3>
+<p>❌ &quot;Keyinroq test yozaman&quot;
+✅ Kod bilan birga test yozing</p>
+<h3 id="4-force-push-qilish">4. <strong>Force push qilish</strong></h3>
+<p>❌ <code>git push --force</code> review paytida
+✅ Yangi commitlar qo'shing</p>
+<h3 id="5-shaxsiy-qabul-qilish">5. <strong>Shaxsiy qabul qilish</strong></h3>
+<p>❌ Tanqidni hujum deb qabul qilish
+✅ O'rganish imkoniyati deb qarash</p>
+<hr>
+<h2 id="-bonus-pr-review-qilish-sanati">🎁 Bonus: PR Review qilish san'ati</h2>
+<h3 id="korib-chiquvchi-sifatida">Ko'rib chiquvchi sifatida:</h3>
+<h4 id="1-ijobiy-boshlang">1. <strong>Ijobiy boshlang</strong></h4>
+<pre><code class="lang-markdown">&quot;Ajoyib ish! 👏 Login tezligi ancha yaxshilangan. 
+Bir nechta kichik takliflarim bor...&quot;
+</code></pre>
+<h4 id="2-aniq-takliflar-bering">2. <strong>Aniq takliflar bering</strong></h4>
+<pre><code class="lang-markdown"># Yomon ❌
+&quot;Bu kod yomon&quot;
+
+# Yaxshi ✅
+&quot;Bu funksiyani alohida utility funksiya qilib chiqarsak,
+qayta ishlatish oson bo'lardi. Masalan:
+```js
+function formatDate(date) {
+  // ...
+}
+```&quot;x
+</code></pre>
+<h4 id="3-savol-bering-buyruq-bermang">3. <strong>Savol bering, buyruq bermang</strong></h4>
+<pre><code class="lang-markdown"># Yomon ❌
+&quot;Buni o'zgartiring!&quot;
+
+# Yaxshi ✅
+&quot;Bu yondashuvning sababi nima? Async/await 
+ishlatish bu yerda yaxshiroq bo'lmasmidi?&quot;
+</code></pre>
+<hr>
+<h2 id="-pr-statistikasi">📊 PR Statistikasi</h2>
+<p>Yaxshi jamoalarda:</p>
+<ul>
+<li>📉 O'rtacha PR hajmi: 200-400 qator</li>
+<li>⏱️ Review vaqti: 1-24 soat</li>
+<li>💬 O'rtacha comment soni: 3-10 ta</li>
+<li>✅ Birinchi urinishda qabul qilish: 30-40%</li>
+</ul>
+<hr>
+<h2 id="-xulosa">🎯 Xulosa</h2>
+<p>Pull Request - bu shunchaki kod qo'shish emas, bu:</p>
+<ul>
+<li>🤝 Jamoa bilan hamkorlik</li>
+<li>📚 O'zaro o'rganish</li>
+<li>🏗️ Sifatli mahsulot yaratish</li>
+<li>💡 Bilim almashish</li>
+</ul>
+<h3 id="eslab-qoling">Eslab qoling:</h3>
+<blockquote>
+<p>&quot;Yaxshi PR yaratish - bu hunar. Yaxshi review qilish - bu san'at.
+Ikkalasini birgalikda qilish - bu professional dasturchilik.&quot;</p>
+</blockquote>
+<h3 id="-harakatga-oting">🚀 Harakatga o'ting!</h3>
+<ol>
+<li>Keyingi PR-ingizda ushbu tamoyillarni qo'llang</li>
+<li>Jamoadoshlaringizga ulashing</li>
+<li>PR madaniyatini yaxshilashga hissa qo'shing</li>
+</ol>
+<hr>
+<h2 id="-qoshimcha-resurslar">📚 Qo'shimcha resurslar</h2>
+<ul>
+<li><a href="https://docs.github.com/en/pull-requests">GitHub PR Guidelines</a></li>
+<li><a href="https://docs.gitlab.com/ee/user/project/merge_requests/best_practices.html">GitLab Merge Request Best Practices</a></li>
+<li><a href="https://www.atlassian.com/blog/git/written-unwritten-guide-pull-requests">Effective Pull Requests</a></li>
+</ul>
+<hr>
+<div style="display: flex; align-items: center; gap: 10px;">
+<!-- Avatar -->
+<p><img src="../images/authors/muhammad_khodjaev.png" alt="Muhammad's Avatar" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-top: 20px;"></p>
+<!-- Name and Social Links -->
+<div style="display: flex; flex-direction: column; justify-content: center;">
+    <strong style="font-size: 16px;">Muhammad Khodjaev</strong>
+    <div style="display: flex; align-items: center; gap: 8px; margin-top: 5px;">
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/muhammad-khodjayev" target="_blank">
+  <img src="../images/social_medias/linkedIn.png" alt="LinkedIn" style="width: 20px; height: 20px; border-radius: 3px; display: block;">
+  </a>
+  
+  <!-- Telegram -->
+  <a href="https://t.me/dotnetwithmuhammad" target="_blank">
+  <img src="../images/social_medias/telegram.png" alt="Telegram" style="width: 20px; height: 20px; border-radius: 3px; display: block;">
+  </a>
+  
+  <!-- Instagram -->
+  <a href="https://instagram.com/muhammad_khodjaev_" target="_blank">
+  <img src="../images/social_medias/instagram.png" alt="Instagram" style="width: 20px; height: 20px; border-radius: 3px; display: block;">
+  </a>
+  
+  </div>
+  </div>
+  
+  </div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/wahidustoz/diary/blob/main/tooling/pull-request-maslahatlar.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © Made with 💟 by <a href='https://t.me/wahidustoz'>wahidustoz</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

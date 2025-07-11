@@ -515,6 +515,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "tooling/pull-request-maslahatlar.md",
+      "output": {
+        ".html": {
+          "relative_path": "tooling/pull-request-maslahatlar.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "tooling/semantic-versioning.md",
       "output": {
         ".html": {
